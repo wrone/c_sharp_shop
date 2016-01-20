@@ -1,5 +1,5 @@
 DELIMITER //
-CREATE FUNCTION beverageBuy (param_id_product INT, param_quant INT, param_id_user INT, param_id_addr INT, param_id_shipp_m INT, param_id_payment INT)
+CREATE FUNCTION productBuy (param_id_product INT, param_quant INT, param_id_user INT, param_id_addr INT, param_id_shipp_m INT, param_id_payment INT)
 RETURNS CHAR(50)
 BEGIN
 DECLARE tmpQuantity, tmpOrderID, tmpOrderItemID INT;
@@ -15,19 +15,28 @@ IF tmpQuantity >= param_quant THEN
 	WHERE Products.ID = param_id_product;
 
 	SELECT
-	MAX(Orders.ID)
+	MAX(ID)
 	FROM
 	orders INTO tmpOrderID;
+    
+	IF tmpOrderID IS NULL THEN
+    SET tmpOrderID = 0;
+    END IF;
 
-	INSERT INTO orders (Orders.ID, Users_ID, Adresses_ID, Shipping_methods_ID, Payments_ID, Date)
+	INSERT INTO orders (Orders.ID, Users_ID, Addresses_ID, Shipping_methods_ID, Payments_ID, Date)
 	VALUES (tmpOrderID + 1, param_id_user, param_id_addr, param_id_shipp_m, param_id_payment, NOW());
 	
 	SELECT
-	MAX(Order_items.ID)
+	MAX(ID)
 	FROM
 	order_items INTO tmpOrderItemID;
-	
-	INSERT INTO order_items (Order_items.ID, Products.ID, Quantity, Orders.ID)
+    
+	IF tmpOrderItemID IS NULL THEN
+    SET tmpOrderItemID = 0;
+    END IF;
+    
+    
+	INSERT INTO order_items (ID, Products_ID, Quantity, Orders_ID)
 	VALUES (tmpOrderItemID + 1, param_id_product, param_quant, tmpOrderID + 1);
 	RETURN CONCAT('Successfully');
 ELSE
@@ -35,3 +44,6 @@ RETURN CONCAT('Error');
 END IF;
 END; //
 DELIMITER ;
+
+
+select productBuy(1, 3, 1, 1, 1, 1);
