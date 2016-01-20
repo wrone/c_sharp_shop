@@ -5,10 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWeb"
         mc:Ignorable="d"
-        Title="2281488" Height="686" Width="1197">
-    <Window.Background>
-        <ImageBrush ImageSource="D:\C# Course\TestWeb\TestWeb/background.png"/>
-    </Window.Background>
+        Title="2281488" Height="686" Width="1197" Background="#FF7C7C7C" Foreground="White">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="-38,385,0,0" VerticalAlignment="Top"/>
         <StackPanel x:Name="login_logout_StackPanel" HorizontalAlignment="Left" Height="138" Margin="10,14,0,0" VerticalAlignment="Top" Width="201"/>
