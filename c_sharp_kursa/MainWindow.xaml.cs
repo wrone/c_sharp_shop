@@ -33,7 +33,7 @@ namespace c_sharp_kursa
             InitializeComponent();
             //ConnectToDB("<database_ip>", "<port>", "<table_name>", "<username>", "<password>");
 
-            dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
+            dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
 
             //List<string> list = dbConn.ReadData("SELECT * FROM Users");
             //MessageBox.Show(list[1]);
