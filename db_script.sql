@@ -5,19 +5,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema shop
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema shop
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `shop` DEFAULT CHARACTER SET utf8 ;
+USE `shop` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Users`
+-- Table `shop`.`Users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Users` (
+CREATE TABLE IF NOT EXISTS `shop`.`Users` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NULL,
   `Lastname` VARCHAR(45) NULL,
@@ -31,9 +31,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Addresses`
+-- Table `shop`.`Addresses`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Addresses` (
+CREATE TABLE IF NOT EXISTS `shop`.`Addresses` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NULL,
   `Lastname` VARCHAR(45) NULL,
@@ -45,9 +45,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Shipping_methods`
+-- Table `shop`.`Shipping_methods`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Shipping_methods` (
+CREATE TABLE IF NOT EXISTS `shop`.`Shipping_methods` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NULL,
   `Price` VARCHAR(45) NULL,
@@ -56,9 +56,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Payments`
+-- Table `shop`.`Payments`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Payments` (
+CREATE TABLE IF NOT EXISTS `shop`.`Payments` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Date` DATE NULL,
   `CardNumber` VARCHAR(45) NULL,
@@ -71,9 +71,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Orders`
+-- Table `shop`.`Orders`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Orders` (
+CREATE TABLE IF NOT EXISTS `shop`.`Orders` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Users_ID` INT NOT NULL,
   `Addresses_ID` INT NOT NULL,
@@ -87,33 +87,32 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Orders` (
   INDEX `fk_Orders_Payments1_idx` (`Payments_ID` ASC),
   CONSTRAINT `fk_Orders_Users`
     FOREIGN KEY (`Users_ID`)
-    REFERENCES `mydb`.`Users` (`ID`)
+    REFERENCES `shop`.`Users` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Orders_Addresses1`
     FOREIGN KEY (`Addresses_ID`)
-    REFERENCES `mydb`.`Addresses` (`ID`)
+    REFERENCES `shop`.`Addresses` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Orders_Shipping_methods1`
     FOREIGN KEY (`Shipping_methods_ID`)
-    REFERENCES `mydb`.`Shipping_methods` (`ID`)
+    REFERENCES `shop`.`Shipping_methods` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Orders_Payments1`
     FOREIGN KEY (`Payments_ID`)
-    REFERENCES `mydb`.`Payments` (`ID`)
+    REFERENCES `shop`.`Payments` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Products`
+-- Table `shop`.`Products`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Products` (
+CREATE TABLE IF NOT EXISTS `shop`.`Products` (
   `ID` INT NOT NULL AUTO_INCREMENT,
-  `Categories_ID` INT NOT NULL,
   `Name` VARCHAR(45) NULL,
   `Description` VARCHAR(45) NULL,
   `Release_date` DATE NULL,
@@ -128,9 +127,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Order_items`
+-- Table `shop`.`Order_items`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Order_items` (
+CREATE TABLE IF NOT EXISTS `shop`.`Order_items` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Orders_ID` INT NOT NULL,
   `Products_ID` INT NOT NULL,
@@ -140,12 +139,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Order_items` (
   INDEX `fk_Order_items_Products1_idx` (`Products_ID` ASC),
   CONSTRAINT `fk_Order_items_Orders1`
     FOREIGN KEY (`Orders_ID`)
-    REFERENCES `mydb`.`Orders` (`ID`)
+    REFERENCES `shop`.`Orders` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Order_items_Products1`
     FOREIGN KEY (`Products_ID`)
-    REFERENCES `mydb`.`Products` (`ID`)
+    REFERENCES `shop`.`Products` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

@@ -33,12 +33,13 @@ namespace c_sharp_kursa
             InitializeComponent();
             //ConnectToDB("<database_ip>", "<port>", "<table_name>", "<username>", "<password>");
 
-            dbConn = new DatabaseConnection("127.0.0.1", "3306", "mydb", "root", "root");
+            dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
 
             //List<string> list = dbConn.ReadData("SELECT * FROM Users");
             //MessageBox.Show(list[1]);
 
-            UserRegister("da", "da", "da", "da", "da", "da");
+            UserRegister("da", "da", "da2", "da", "da", "da");
+            ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
         }
 
         //public void ConnectToDB(string host, string port, string dbName, string user, string password)
@@ -93,15 +94,16 @@ namespace c_sharp_kursa
             }
             return false;
         }
-        public bool ProductRegister(string name, string desc, string releaseDate, string endDate, string Quantity, string price, string category, string manufacturer, string picture)
+        public bool ProductRegister(string name, string desc, string releaseDate, string endDate, int quantity, double price, string category, string manufacturer, string picture)
         {
             //List<string> loginList = dbConn.ReadData("select Login from Users");
 
             //if (!loginList.Contains(login))
             //{
-                dbConn.WriteData("INSERT INTO Users(Name, Lastname, Login, Password, Email, Phone, Role)"
-                               + "VALUES('" + name + "', '" + lastname + "', '" + login + "', '"
-                               + password + "', '" + email + "', '" + phone + "', 'User')");
+            dbConn.WriteData("INSERT INTO Products(Name, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer, Picture)"
+                           + "VALUES('" + name + "', '" + desc + "', '" + releaseDate + "', '"
+                           + endDate + "', " + quantity + ", " + price + ", '" + category + "', '"
+                           + manufacturer + "', '" + picture + "')");
 
                 return true;
             //}
