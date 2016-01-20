@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="TestWeb.cartBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestWeb"
+             mc:Ignorable="d" d:DesignWidth="300" Width="201" Height="73.5">
+    <Grid>
+        <Label x:Name="label1" Content="Items count in cart:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="cartInfoButton" Content="..." HorizontalAlignment="Left" Margin="105,41,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="cartInfoNumber" Content="0" HorizontalAlignment="Left" Margin="126,10,0,0" VerticalAlignment="Top" Width="54"/>
+    </Grid>
+</UserControl>
