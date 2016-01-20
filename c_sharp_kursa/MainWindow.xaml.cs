@@ -121,7 +121,11 @@ namespace c_sharp_kursa
 
             return GetLastID("Addresses");
         }
+        // param_id_product INT, param_quant INT, param_id_user INT, param_id_addr INT, param_id_shipp_m INT, param_id_payment INT
+        public void BuyProduct(int productID, int quant, int userID, int addrID, int shipMetID, int payID)
+        {
 
+        }
 
 
 
