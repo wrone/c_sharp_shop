@@ -38,8 +38,10 @@ namespace c_sharp_kursa
             //List<string> list = dbConn.ReadData("SELECT * FROM Users");
             //MessageBox.Show(list[1]);
 
-            UserRegister("da", "da", "da2", "da", "da", "da");
-            ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
+            //UserRegister("da", "da", "da2", "da", "da", "da");
+            //ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
+            //PaymentRegister("2008-11-11", "da", "da", "da", "2008-11-11", 12);
+            //AddressRegister("da", "da", "da2", "da", "da", "da");
         }
 
         //public void ConnectToDB(string host, string port, string dbName, string user, string password)
@@ -94,20 +96,40 @@ namespace c_sharp_kursa
             }
             return false;
         }
-        public bool ProductRegister(string name, string desc, string releaseDate, string endDate, int quantity, double price, string category, string manufacturer, string picture)
+        public int ProductRegister(string name, string desc, string releaseDate, string endDate, int quantity, double price, string category, string manufacturer, string picture)
         {
-            //List<string> loginList = dbConn.ReadData("select Login from Users");
-
-            //if (!loginList.Contains(login))
-            //{
             dbConn.WriteData("INSERT INTO Products(Name, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer, Picture)"
                            + "VALUES('" + name + "', '" + desc + "', '" + releaseDate + "', '"
                            + endDate + "', " + quantity + ", " + price + ", '" + category + "', '"
                            + manufacturer + "', '" + picture + "')");
 
-                return true;
-            //}
-            //return false;
+            return GetLastID("Products");
         }
+        public int PaymentRegister(string date, string cardNumber, string holdersName, string holdersLastname, string expDate, double money)
+        {
+            dbConn.WriteData("INSERT INTO Payments(Date, CardNumber, CardHoldersName, CardHoldersLastname, ExpDate, Amount)"
+                            + "VALUES('" + date + "', '" + cardNumber + "', '" + holdersName + "', '"
+                            + holdersLastname + "', '" + expDate + "', " + money + ")");
+
+            return GetLastID("Payments");
+        }
+        public int AddressRegister(string name, string lastname, string phone, string email, string address, string city)
+        {
+            dbConn.WriteData("INSERT INTO Addresses(Name, Lastname, Phone, Email, Address, City)"
+                           + "VALUES('" + name + "', '" + lastname + "', '" + phone + "', '"
+                           + email + "', '" + address + "', '" + city + "')");
+
+            return GetLastID("Addresses");
+        }
+
+
+
+
+        public int GetLastID(string table)
+        {
+            int id = Convert.ToInt32(dbConn.ReadData("select max(ID) from " + table + ")")[0]);
+            return 0;
+        }
+
     }
 }

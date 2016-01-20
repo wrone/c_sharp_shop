@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `shop`.`Addresses` (
   `Phone` VARCHAR(45) NULL,
   `Email` VARCHAR(45) NULL,
   `Address` VARCHAR(45) NULL,
+  `City` VARCHAR(45) NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB;
 
