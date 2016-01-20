@@ -35,7 +35,8 @@ namespace TestWeb
         public MainWindow()
         {
             InitializeComponent();
-            dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
+            //dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
+            dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
 
             //UserRegister("da", "da", "da32ac", "da", "da", "da");
             //ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
@@ -150,6 +151,14 @@ namespace TestWeb
             int id = Convert.ToInt32(dbConn.ReadData("select max(ID) from " + table)[0]);
             return 0;
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ProductRegister reg = new ProductRegister();
+            reg.
+            reg.Show();
+        }
+
 
     }
 }

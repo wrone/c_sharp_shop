@@ -24,8 +24,8 @@
         <TextBox x:Name="productQuantity" HorizontalAlignment="Left" Height="23" Margin="103,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="productManufacturer" HorizontalAlignment="Left" Height="23" Margin="103,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="productCategoryComboBox" HorizontalAlignment="Left" Margin="103,209,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="productPictureSelectButton" Content="Select" HorizontalAlignment="Left" Margin="103,290,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="productAddButton" Content="Add" HorizontalAlignment="Left" Margin="225,315,0,0" VerticalAlignment="Top" Width="78"/>
+        <Button x:Name="productPictureSelectButton" Content="Select" HorizontalAlignment="Left" Margin="103,290,0,0" VerticalAlignment="Top" Width="120" Click="productPictureSelectButton_Click"/>
+        <Button x:Name="productAddButton" Content="Add" HorizontalAlignment="Left" Margin="225,315,0,0" VerticalAlignment="Top" Width="78" Click="productAddButton_Click"/>
 
     </Grid>
 </UserControl>

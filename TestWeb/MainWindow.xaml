@@ -38,6 +38,7 @@
             <Button x:Name="nextButton" Content="&gt;" Canvas.Left="821" Canvas.Top="445" Width="38"/>
             <Label x:Name="label" Content="/" Canvas.Left="811" Canvas.Top="419"/>
         </Canvas>
+        <Button x:Name="button" Content="Add Product" HorizontalAlignment="Left" Margin="72,468,0,0" VerticalAlignment="Top" Width="128" Click="button_Click"/>
 
     </Grid>
 </Window>

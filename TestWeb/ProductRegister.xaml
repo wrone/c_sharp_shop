@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWeb"
+        xmlns:c_sharp_kursa="clr-namespace:c_sharp_kursa" x:Class="TestWeb.ProductRegister"
+        mc:Ignorable="d"
+        Title="ProductRegister" Height="405" Width="341">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="257*"/>
+            <ColumnDefinition Width="76*"/>
+        </Grid.ColumnDefinitions>
+
+        <c_sharp_kursa:productAdd x:Name="ucRegister" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

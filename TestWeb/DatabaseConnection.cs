@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace c_sharp_kursa
 {
-    class DatabaseConnection
+    public class DatabaseConnection
     {
         private MySqlConnection connection;
         private MySqlCommand cmd;
@@ -28,6 +28,20 @@ namespace c_sharp_kursa
             try
             {
                 cmd.CommandText = query; //"INSERT INTO Users(ID, Name, Lastname) VALUES(2, 'da', 'net')";
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void WriteDataWithValue(string query, string value, Object obj)
+        {
+            try
+            {
+                cmd.CommandText = query; //"INSERT INTO Users(ID, Name, Lastname) VALUES(2, 'da', 'net')";
+                cmd.Parameters.AddWithValue("@value", obj);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)
