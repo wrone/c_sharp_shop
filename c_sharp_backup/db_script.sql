@@ -15,6 +15,32 @@ CREATE SCHEMA IF NOT EXISTS `shop` DEFAULT CHARACTER SET utf8 ;
 USE `shop` ;
 
 -- -----------------------------------------------------
+-- Table `shop`.`Shipping_methods`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`Shipping_methods` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(45) NULL,
+  `Price` VARCHAR(45) NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `shop`.`Payments`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `shop`.`Payments` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `Date` DATE NULL,
+  `CardNumber` VARCHAR(45) NULL,
+  `CardHoldersName` VARCHAR(45) NULL,
+  `CardHoldersLastname` VARCHAR(45) NULL,
+  `ExpDate` DATE NULL,
+  `Amount` DECIMAL(6,2) NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `shop`.`Users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shop`.`Users` (
@@ -46,28 +72,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `shop`.`Shipping_methods`
+-- Table `shop`.`Users_has_Addresses`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `shop`.`Shipping_methods` (
+CREATE TABLE IF NOT EXISTS `shop`.`Users_has_Addresses` (
   `ID` INT NOT NULL AUTO_INCREMENT,
-  `Name` VARCHAR(45) NULL,
-  `Price` VARCHAR(45) NULL,
-  PRIMARY KEY (`ID`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `shop`.`Payments`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `shop`.`Payments` (
-  `ID` INT NOT NULL AUTO_INCREMENT,
-  `Date` DATE NULL,
-  `CardNumber` VARCHAR(45) NULL,
-  `CardHoldersName` VARCHAR(45) NULL,
-  `CardHoldersLastname` VARCHAR(45) NULL,
-  `ExpDate` DATE NULL,
-  `Amount` DECIMAL(6,2) NULL,
-  PRIMARY KEY (`ID`))
+  `Users_ID` INT NOT NULL,
+  `Addresses_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_Users_has_Addresses_Addresses1_idx` (`Addresses_ID` ASC),
+  INDEX `fk_Users_has_Addresses_Users1_idx` (`Users_ID` ASC),
+  CONSTRAINT `fk_Users_has_Addresses_Users1`
+    FOREIGN KEY (`Users_ID`)
+    REFERENCES `shop`.`Users` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Users_has_Addresses_Addresses1`
+    FOREIGN KEY (`Addresses_ID`)
+    REFERENCES `shop`.`Addresses` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -76,26 +99,14 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `shop`.`Orders` (
   `ID` INT NOT NULL AUTO_INCREMENT,
-  `Users_ID` INT NOT NULL,
-  `Addresses_ID` INT NOT NULL,
   `Shipping_methods_ID` INT NOT NULL,
   `Payments_ID` INT NOT NULL,
+  `Users_has_Addresses_ID` INT NOT NULL,
   `Date` DATE NULL,
   PRIMARY KEY (`ID`),
-  INDEX `fk_Orders_Users_idx` (`Users_ID` ASC),
-  INDEX `fk_Orders_Addresses1_idx` (`Addresses_ID` ASC),
   INDEX `fk_Orders_Shipping_methods1_idx` (`Shipping_methods_ID` ASC),
   INDEX `fk_Orders_Payments1_idx` (`Payments_ID` ASC),
-  CONSTRAINT `fk_Orders_Users`
-    FOREIGN KEY (`Users_ID`)
-    REFERENCES `shop`.`Users` (`ID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Orders_Addresses1`
-    FOREIGN KEY (`Addresses_ID`)
-    REFERENCES `shop`.`Addresses` (`ID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_Orders_Users_has_Addresses1_idx` (`Users_has_Addresses_ID` ASC),
   CONSTRAINT `fk_Orders_Shipping_methods1`
     FOREIGN KEY (`Shipping_methods_ID`)
     REFERENCES `shop`.`Shipping_methods` (`ID`)
@@ -104,6 +115,11 @@ CREATE TABLE IF NOT EXISTS `shop`.`Orders` (
   CONSTRAINT `fk_Orders_Payments1`
     FOREIGN KEY (`Payments_ID`)
     REFERENCES `shop`.`Payments` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Orders_Users_has_Addresses1`
+    FOREIGN KEY (`Users_has_Addresses_ID`)
+    REFERENCES `shop`.`Users_has_Addresses` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -115,14 +131,14 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `shop`.`Products` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NULL,
-  `Description` VARCHAR(45) NULL,
+  `Description` TEXT NULL,
   `Release_date` DATE NULL,
   `End_date` DATE NULL,
   `Quantity` INT NULL,
   `Price` DECIMAL(6,2) NULL,
   `Category` VARCHAR(45) NULL,
   `Manufacturer` VARCHAR(45) NULL,
-  `Picture` VARCHAR(45) NULL,
+  `Picture` BLOB NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB;
 
