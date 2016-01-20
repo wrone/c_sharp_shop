@@ -1,0 +1,37 @@
+DELIMITER //
+CREATE FUNCTION beverageBuy (param_id_product INT, param_quant INT, param_id_user INT, param_id_addr INT, param_id_shipp_m INT, param_id_payment INT)
+RETURNS CHAR(50)
+BEGIN
+DECLARE tmpQuantity, tmpOrderID, tmpOrderItemID INT;
+SELECT
+Quantity
+FROM
+products
+WHERE
+Products.ID = param_id_product INTO tmpQuantity;
+IF tmpQuantity >= param_quant THEN
+	UPDATE products SET
+	Quantity = Quantity - param_quant
+	WHERE Products.ID = param_id_product;
+
+	SELECT
+	MAX(Orders.ID)
+	FROM
+	orders INTO tmpOrderID;
+
+	INSERT INTO orders (Orders.ID, Users_ID, Adresses_ID, Shipping_methods_ID, Payments_ID, Date)
+	VALUES (tmpOrderID + 1, param_id_user, param_id_addr, param_id_shipp_m, param_id_payment, NOW());
+	
+	SELECT
+	MAX(Order_items.ID)
+	FROM
+	order_items INTO tmpOrderItemID;
+	
+	INSERT INTO order_items (Order_items.ID, Products.ID, Quantity, Orders.ID)
+	VALUES (tmpOrderItemID + 1, param_id_product, param_quant, tmpOrderID + 1);
+	RETURN CONCAT('Successfully');
+ELSE
+RETURN CONCAT('Error');
+END IF;
+END; //
+DELIMITER ;
