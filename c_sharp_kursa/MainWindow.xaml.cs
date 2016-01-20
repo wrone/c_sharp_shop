@@ -31,57 +31,14 @@ namespace c_sharp_kursa
         public MainWindow()
         {
             InitializeComponent();
-            //ConnectToDB("<database_ip>", "<port>", "<table_name>", "<username>", "<password>");
-
             dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
 
-            //List<string> list = dbConn.ReadData("SELECT * FROM Users");
-            //MessageBox.Show(list[1]);
-
-            //UserRegister("da", "da", "da2", "da", "da", "da");
+            //UserRegister("da", "da", "da32", "da", "da", "da");
             //ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
             //PaymentRegister("2008-11-11", "da", "da", "da", "2008-11-11", 12);
             //AddressRegister("da", "da", "da2", "da", "da", "da");
         }
 
-        //public void ConnectToDB(string host, string port, string dbName, string user, string password)
-        //{
-        //    MyConnection = "Server=" + host + ";Port=" + port + ";Database=" + dbName + ";Uid=" + user + ";Pwd=" + password + ";";
-        //    connection = new MySqlConnection(MyConnection);
-        //    connection.Open();
-        //}
-
-        ////Test query, just to know how command execution is proceeded. Function should be changed when the DB diagramm is done. 
-        //public void ExecuteQuery()
-        //{
-        //    try
-        //    {
-        //        cmd = connection.CreateCommand();
-        //        cmd.CommandText = "INSERT INTO Valsts(Pilseta, Valsts) VALUES(@Pilseta, @Valsts)";
-        //        cmd.Parameters.AddWithValue("@Pilseta", "Ventspils");
-        //        cmd.Parameters.AddWithValue("@Valsts", "Latvija");
-        //        cmd.ExecuteNonQuery();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
-
-        //public void LoadData()
-        //{
-        //    string text = "";
-        //    cmd = connection.CreateCommand();
-        //    cmd.CommandText = "SELECT * FROM Gramata";
-        //    dataReader = cmd.ExecuteReader();
-
-        //    while (dataReader.Read())
-        //    {
-        //        text += dataReader["<column_name>"];
-        //    }
-
-        //    dataReader.Close();
-        //}
         public bool UserRegister(string name, string lastname, string login, string password, string email, string phone)
         {
             List<string> loginList = dbConn.ReadData("select Login from Users");
@@ -121,7 +78,6 @@ namespace c_sharp_kursa
 
             return GetLastID("Addresses");
         }
-        // param_id_product INT, param_quant INT, param_id_user INT, param_id_addr INT, param_id_shipp_m INT, param_id_payment INT
         public void BuyProduct(int productID, int quant, int userID, int addrID, int shipMetID, int payID)
         {
 
