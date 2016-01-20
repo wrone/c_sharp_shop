@@ -52,3 +52,6 @@ D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\userAdd.baml
 D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.g.resources
 D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
 D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe.config
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.exe
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.pdb

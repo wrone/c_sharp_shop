@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace TestWeb
@@ -26,7 +25,7 @@ namespace TestWeb
         List<itemFrame> itemsList = new List<itemFrame>();
         List<StackPanel> stackPanelList = new List<StackPanel>();
         //List<typeShopBox> typeList = new List<typeShopBox>();
-
+        // VAJSA
         //private string MyConnection;
         //private MySqlConnection connection;
         //private MySqlCommand cmd;
