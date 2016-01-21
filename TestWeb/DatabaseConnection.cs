@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace c_sharp_kursa
 {
-    class DatabaseConnection
+    public class DatabaseConnection
     {
         private MySqlConnection connection;
         private MySqlCommand cmd;

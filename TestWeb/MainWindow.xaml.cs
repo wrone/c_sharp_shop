@@ -64,7 +64,7 @@ namespace TestWeb
             }
 
             // Login Register
-            loginHeaderBox lHB = new loginHeaderBox(this);
+            loginHeaderBox lHB = new loginHeaderBox(this, dbConn);
             login_logout_StackPanel.Children.Add(lHB);
             
             //typeShopBox tSB = new typeShopBox("Man");
