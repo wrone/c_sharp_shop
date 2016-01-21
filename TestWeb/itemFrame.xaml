@@ -9,6 +9,6 @@
         <Button x:Name="button" Content="Add to cart" HorizontalAlignment="Left" Margin="6,147,0,0" VerticalAlignment="Top" Width="59" Height="20" Background="#FF999999" FontSize="10.667" BorderBrush="Black"/>
         <Label x:Name="priceLabel" Content="0.00" HorizontalAlignment="Left" Margin="83,147,0,0" VerticalAlignment="Top" Height="20" Width="39" FontSize="9.333" Background="#FFFBEAEA"/>
         <Label x:Name="nameLabel" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="139"/>
-        <Label x:Name="textLabel" Content="Text" HorizontalAlignment="Center" VerticalAlignment="Top" Height="122" Width="139" Margin="0,25,0,0" FontSize="9.333"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="113" Margin="6,25,0,0" VerticalAlignment="Top" Width="123"/>
     </Grid>
 </UserControl>

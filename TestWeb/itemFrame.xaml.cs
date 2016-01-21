@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +25,12 @@ namespace TestWeb
         {
             InitializeComponent();
         }
+
+        public void SetImage(BitmapImage img)
+        {
+            image.Source = img;
+        }
+
+
     }
 }

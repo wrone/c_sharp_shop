@@ -38,6 +38,10 @@ namespace TestWeb
             //dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
             dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
 
+
+            dbConn.ReadBlobData(1);
+
+
             //UserRegister("da", "da", "da32ac", "da", "da", "da");
             //ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
             //PaymentRegister("2008-11-11", "da", "da", "da", "2008-11-11", 12);
@@ -59,7 +63,7 @@ namespace TestWeb
             for (int i = 0; i < 10; i++)
             {
                 iF = new itemFrame();
-                
+                iF.SetImage(dbConn.ReadBlobData(1));
                 stackPanelList[i].Children.Add(iF);
             }
 
