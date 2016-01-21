@@ -22,8 +22,8 @@ namespace c_sharp_kursa
     /// </summary>
     public partial class productAdd : UserControl
     {
-        byte[] buffer_new;
-        DatabaseConnection conn;
+        private DatabaseConnection conn;
+        private FileStream fs;
 
         public productAdd()
         {
@@ -47,11 +47,14 @@ namespace c_sharp_kursa
             {
                 string filename = dlg.FileName;
 
-                FileStream fs = new FileStream(@filename, FileMode.Open);
-                BufferedStream bf = new BufferedStream(fs);
-                byte[] buffer = new byte[bf.Length];
-                bf.Read(buffer, 0, buffer.Length);
-                buffer_new = buffer;
+                fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                //BufferedStream bf = new BufferedStream(fs);
+                //byte[] buffer = new byte[bf.Length];
+                //bf.Read(buffer, 0, buffer.Length);
+                //buffer_new = buffer;
+
+                //string query = @"INSERT INTO Products(id, fileimage) VALUES ('stringhex',x'" + hex + "')";
+
             }
 
         }
@@ -71,9 +74,33 @@ namespace c_sharp_kursa
 
             //Console.WriteLine("Task Performed!");
             //Console.ReadLine();
-            conn.WriteDataWithValue("insert into Products(Picture) values(@image)", "@image", buffer_new);
 
+            //conn.WriteDataWithValue("insert into Products(Picture) values(@image)", "@image", buffer_new);
+
+            byte[] rawData = new byte[fs.Length];
+            fs.Read(rawData, 0, (int)fs.Length);
+            fs.Close();
+            //byte[] to HEX STRING
+            string hex = BitConverter.ToString(rawData);
+            //'F3-F5-01-A3' to 'F3F501A3'
+            hex = hex.Replace("-", "");
+
+            ProductRegister(txtBoxName.Text, txtBoxDesc.Text, txtBoxReleaseDate.Text, txtBoxEndDate.Text, 
+                Convert.ToInt32(txtBoxQuantity.Text), Convert.ToInt32(txtBoxPrice.Text), 
+                cmbBoxCategory.Text, txtBoxManufacturer.Text, hex);
         }
+
+        private void ProductRegister(string name, string desc, string releaseDate, string endDate, int quantity, double price, string category, string manufacturer, string picture)
+        {
+            string query = @"INSERT INTO Products(Name, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer, Picture)"
+                           + "VALUES('" + name + "', '" + desc + "', '" + releaseDate + "', '"
+                           + endDate + "', " + quantity + ", " + price + ", '" + "categorija" + "', '"
+                           + manufacturer + "', x'" + picture + "')";
+
+            conn.WriteData(query);
+        }
+
+
 
 
 

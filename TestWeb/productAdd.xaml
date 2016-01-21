@@ -16,15 +16,15 @@
         <Label x:Name="label_Copy6" Content="Category*:" HorizontalAlignment="Left" Margin="37,209,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy7" Content="Manufacturer*:" HorizontalAlignment="Left" Margin="14,261,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy8" Content="Picture:" HorizontalAlignment="Left" Margin="54,287,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="productName" HorizontalAlignment="Left" Height="23" Margin="108,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="productDescription" HorizontalAlignment="Left" Height="77" Margin="108,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox x:Name="productReleaseDate" HorizontalAlignment="Left" Height="23" Margin="103,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="productEndDate" HorizontalAlignment="Left" Height="23" Margin="225,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="productPrice" HorizontalAlignment="Left" Height="23" Margin="103,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="productQuantity" HorizontalAlignment="Left" Height="23" Margin="103,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="productManufacturer" HorizontalAlignment="Left" Height="23" Margin="103,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="productCategoryComboBox" HorizontalAlignment="Left" Margin="103,209,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="productPictureSelectButton" Content="Select" HorizontalAlignment="Left" Margin="103,290,0,0" VerticalAlignment="Top" Width="120" Click="productPictureSelectButton_Click"/>
+        <TextBox x:Name="txtBoxName" HorizontalAlignment="Left" Height="23" Margin="108,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtBoxDesc" HorizontalAlignment="Left" Height="77" Margin="108,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox x:Name="txtBoxReleaseDate" HorizontalAlignment="Left" Height="23" Margin="103,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="2008-11-11"/>
+        <TextBox x:Name="txtBoxEndDate" HorizontalAlignment="Left" Height="23" Margin="225,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="2008-11-11"/>
+        <TextBox x:Name="txtBoxPrice" HorizontalAlignment="Left" Height="23" Margin="103,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtBoxQuantity" HorizontalAlignment="Left" Height="23" Margin="103,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtBoxManufacturer" HorizontalAlignment="Left" Height="23" Margin="103,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbBoxCategory" HorizontalAlignment="Left" Margin="103,209,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="openDialog" Content="Select" HorizontalAlignment="Left" Margin="103,290,0,0" VerticalAlignment="Top" Width="120" Click="productPictureSelectButton_Click"/>
         <Button x:Name="productAddButton" Content="Add" HorizontalAlignment="Left" Margin="225,315,0,0" VerticalAlignment="Top" Width="78" Click="productAddButton_Click"/>
 
     </Grid>

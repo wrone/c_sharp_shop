@@ -114,12 +114,12 @@ namespace TestWeb
             }
             return false;
         }
-        public int ProductRegister(string name, string desc, string releaseDate, string endDate, int quantity, double price, string category, string manufacturer, string picture)
+        public int ProductRegister(string name, string desc, string releaseDate, string endDate, int quantity, double price, string category, string manufacturer, Image image)
         {
             dbConn.WriteData("INSERT INTO Products(Name, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer, Picture)"
                            + "VALUES('" + name + "', '" + desc + "', '" + releaseDate + "', '"
                            + endDate + "', " + quantity + ", " + price + ", '" + category + "', '"
-                           + manufacturer + "', '" + picture + "')");
+                           + manufacturer + "', '" + image + "')");
 
             return GetLastID("Products");
         }
@@ -154,8 +154,7 @@ namespace TestWeb
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ProductRegister reg = new ProductRegister();
-            reg.
+            ProductRegister reg = new ProductRegister(dbConn);
             reg.Show();
         }
 
