@@ -1,6 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +80,68 @@ namespace c_sharp_kursa
             dataReader.Close();
             connection.Close();
         }
+
+        public Image BlobDataReader()
+        {
+            cmd.CommandText = ("SELECT ID, Picture FROM Products");
+
+            Stream stream = null;
+            BinaryWriter writer = null;
+
+            // Size of the BLOB buffer.
+            int bufferSize = 1024;
+            // The BLOB byte[] buffer to be filled by GetBytes.
+            byte[] outByte = new byte[bufferSize];
+            // The bytes returned from GetBytes.
+            long retval;
+            // The starting position in the BLOB output.
+            long startIndex = 0;
+
+            // The publisher id to use in the file name.
+            string pubID = "";
+
+            // Open the connection and read data into the DataReader.
+            connection.Open();
+            dataReader = cmd.ExecuteReader(CommandBehavior.SequentialAccess);
+
+            while (dataReader.Read())
+            {
+                // Get the publisher id, which must occur before getting the logo.
+                pubID = dataReader.GetString(0);
+
+                // Create a file to hold the output.
+                stream = new MemoryStream();
+                writer = new BinaryWriter(stream);
+
+                // Reset the starting byte for the new BLOB.
+                startIndex = 0;
+
+                // Read bytes into outByte[] and retain the number of bytes returned.
+                retval = dataReader.GetBytes(1, startIndex, outByte, 0, bufferSize);
+
+                // Continue while there are bytes beyond the size of the buffer.
+                while (retval == bufferSize)
+                {
+                    writer.Write(outByte);
+                    writer.Flush();
+                    // Reposition start index to end of last buffer and fill buffer.
+                    startIndex += bufferSize;
+                    retval = dataReader.GetBytes(1, startIndex, outByte, 0, bufferSize);
+                }
+                // Write the remaining buffer.
+                writer.Write(outByte, 0, (int)retval - 1);
+                writer.Flush();
+
+                // Close the output file.
+                writer.Close();
+                stream.Close();
+            }
+
+            return Image.FromStream(stream);
+        }
+
+        
+
 
     }
 }

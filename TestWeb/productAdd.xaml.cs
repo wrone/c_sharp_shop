@@ -77,6 +77,23 @@ namespace c_sharp_kursa
 
             //conn.WriteDataWithValue("insert into Products(Picture) values(@image)", "@image", buffer_new);
 
+            //byte[] rawData = new byte[fs.Length];
+            //fs.Read(rawData, 0, (int)fs.Length);
+            //fs.Close();
+            ////byte[] to HEX STRING
+            //string hex = BitConverter.ToString(rawData);
+            ////'F3-F5-01-A3' to 'F3F501A3'
+            //hex = hex.Replace("-", "");
+
+            string hex = ImageToHEX(fs);
+
+            ProductRegister(txtBoxName.Text, txtBoxDesc.Text, txtBoxReleaseDate.Text, txtBoxEndDate.Text, 
+                Convert.ToInt32(txtBoxQuantity.Text), Convert.ToInt32(txtBoxPrice.Text), 
+                cmbBoxCategory.Text, txtBoxManufacturer.Text, hex);
+        }
+
+        public string ImageToHEX(FileStream fs)
+        {
             byte[] rawData = new byte[fs.Length];
             fs.Read(rawData, 0, (int)fs.Length);
             fs.Close();
@@ -85,9 +102,7 @@ namespace c_sharp_kursa
             //'F3-F5-01-A3' to 'F3F501A3'
             hex = hex.Replace("-", "");
 
-            ProductRegister(txtBoxName.Text, txtBoxDesc.Text, txtBoxReleaseDate.Text, txtBoxEndDate.Text, 
-                Convert.ToInt32(txtBoxQuantity.Text), Convert.ToInt32(txtBoxPrice.Text), 
-                cmbBoxCategory.Text, txtBoxManufacturer.Text, hex);
+            return hex;
         }
 
         private void ProductRegister(string name, string desc, string releaseDate, string endDate, int quantity, double price, string category, string manufacturer, string picture)
