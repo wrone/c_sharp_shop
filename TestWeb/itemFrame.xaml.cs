@@ -21,9 +21,24 @@ namespace TestWeb
     /// </summary>
     public partial class itemFrame : UserControl
     {
-        public itemFrame()
+        MainWindow mw;
+        itemInformation iI;
+        int index;
+        public itemFrame(MainWindow mw, itemInformation iI)
         {
+            this.mw = mw;
+            this.iI = iI;
             InitializeComponent();
+        }
+
+        public void setIndex(int index)
+        {
+            this.index = index;
+        }
+
+        public void getIndex()
+        {
+            iI.setIndex(index);
         }
 
         public void SetImage(BitmapImage img)
@@ -31,6 +46,11 @@ namespace TestWeb
             image.Source = img;
         }
 
-
+        private void informationButton_Click(object sender, RoutedEventArgs e)
+        {
+            mw.homePage.Children.Clear();
+            mw.hideOrUnhideAll(1);
+            mw.homePage.Children.Add(iI);
+        }
     }
 }

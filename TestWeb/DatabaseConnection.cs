@@ -19,7 +19,7 @@ namespace c_sharp_kursa
 
         public DatabaseConnection(string host, string port, string dbName, string user, string password)
         {
-            string str = "Server=" + host + ";Port=" + port + ";Database=" + dbName + ";Uid=" + user + ";Pwd=" + password + "; convert zero datetime=True";
+            string str = "Server=" + host + ";Port=" + port + ";Database=" + dbName + ";Uid=" + user + ";Pwd=" + password + ";";
             connection = new MySqlConnection(str);
             connection.Open();
 

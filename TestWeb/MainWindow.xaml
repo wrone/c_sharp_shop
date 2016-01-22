@@ -5,46 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWeb"
         mc:Ignorable="d"
-        Title="2281488" Height="897.26" Width="1197" Background="#FF7C7C7C" Foreground="White">
+        Title="2281488" Height="686" Width="1197" Background="#FF7C7C7C" Foreground="White">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="-38,385,0,0" VerticalAlignment="Top"/>
         <StackPanel x:Name="login_logout_StackPanel" HorizontalAlignment="Left" Height="138" Margin="10,14,0,0" VerticalAlignment="Top" Width="201"/>
         <StackPanel x:Name="cartInfoBox" HorizontalAlignment="Left" Height="76" Margin="10,157,0,0" VerticalAlignment="Top" Width="201"/>
         <Button x:Name="startPageButton" Content="Home" HorizontalAlignment="Left" Margin="216,132,0,0" VerticalAlignment="Top" Width="285" Click="startPageButton_Click"/>
-        <Button x:Name="contactButton" Content="Contact" HorizontalAlignment="Left" Margin="516,132,0,0" VerticalAlignment="Top" Width="140"/>
-        <Button x:Name="button_Copy2" Content="..." HorizontalAlignment="Left" Margin="666,132,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button x:Name="contactButton" Content="Contact" HorizontalAlignment="Left" Margin="516,132,0,0" VerticalAlignment="Top" Width="140" Click="contactButton_Click"/>
+        <Button x:Name="testButton" Content="..." HorizontalAlignment="Left" Margin="666,132,0,0" VerticalAlignment="Top" Width="140" Click="testButton_Click"/>
         <Button x:Name="button_Copy3" Content="..." HorizontalAlignment="Left" Margin="816,132,0,0" VerticalAlignment="Top" Width="140"/>
         <Button x:Name="button_Copy4" Content="..." HorizontalAlignment="Left" Margin="966,132,0,0" VerticalAlignment="Top" Width="140"/>
-        <Button x:Name="typeChoiceButton1" Content="item category 1" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="typeChoiceButton2" Content="item category 2" HorizontalAlignment="Left" Margin="10,328,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="typeChoiceButton3" Content="item category 3" HorizontalAlignment="Left" Margin="10,352,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="typeChoiceButton4" Content="item category 4" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
+        <Button x:Name="proteinButton" Content="Protein" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" Width="201" Height="22" Click="proteinButton_Click"/>
+        <Button x:Name="creatineButton" Content="Creatine" HorizontalAlignment="Left" Margin="10,328,0,0" VerticalAlignment="Top" Width="201" Height="22" Click="creatineButton_Click"/>
+        <Button x:Name="aminoAcidsButton" Content="Amino acids" HorizontalAlignment="Left" Margin="10,352,0,0" VerticalAlignment="Top" Width="201" Height="22" Click="aminoAcidsButton_Click"/>
+        <Button x:Name="carbohydratesButton" Content="Carbohydrates" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Width="201" Height="22" Click="carbohydratesButton_Click"/>
         <Button x:Name="typeChoiceButton5" Content="item category 5" HorizontalAlignment="Left" Margin="10,402,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
         <Button x:Name="typeChoiceButton6" Content="item category 6" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Canvas HorizontalAlignment="Left" Height="665" Margin="216,157,0,0" VerticalAlignment="Top" Width="910" Background="#FF7A7A7A" RenderTransformOrigin="0.5,0.5">
-            <Canvas.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-0.286"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="-1.182"/>
-                </TransformGroup>
-            </Canvas.RenderTransform>
-            <StackPanel x:Name="sp2" Height="177" Canvas.Left="199" Canvas.Top="10" Width="145" Background="Black"/>
-            <StackPanel x:Name="sp1" Height="177" Canvas.Left="10" Canvas.Top="10" Width="144.334" Background="Black"/>
-            <StackPanel x:Name="sp4" Height="177" Canvas.Left="573" Canvas.Top="10" Width="145" Background="Black"/>
-            <StackPanel x:Name="sp3" Height="177" Canvas.Left="384" Canvas.Top="10" Width="144" Background="Black"/>
-            <StackPanel x:Name="sp5" Height="177" Canvas.Left="758" Canvas.Top="10" Width="144" Background="Black"/>
-            <StackPanel x:Name="sp7" Height="178" Canvas.Left="199" Canvas.Top="224" Width="145" Background="Black"/>
-            <StackPanel x:Name="sp6" Height="178" Canvas.Left="10" Canvas.Top="224" Width="144" Background="Black"/>
-            <StackPanel x:Name="sp9" Height="178" Canvas.Left="573" Canvas.Top="224" Width="145" Background="Black"/>
-            <StackPanel x:Name="sp8" Height="178" Canvas.Left="384" Canvas.Top="224" Width="144" Background="Black"/>
-            <StackPanel x:Name="sp10" Height="178" Canvas.Left="758" Canvas.Top="224" Width="144" Background="Black"/>
-            <Label x:Name="currentPageLabel" Content="1" Canvas.Left="784" Canvas.Top="419"/>
-            <Label x:Name="allPageLabel" Content="100" Canvas.Left="826" Canvas.Top="419"/>
-            <Button x:Name="PreviousButton" Content="&lt;" Canvas.Left="778" Canvas.Top="445" Width="38"/>
-            <Button x:Name="nextButton" Content="&gt;" Canvas.Left="821" Canvas.Top="445" Width="38"/>
-            <Label x:Name="label" Content="/" Canvas.Left="811" Canvas.Top="419"/>
+        <Canvas HorizontalAlignment="Left" Height="473" Margin="216,157,0,0" VerticalAlignment="Top" Width="910" Background="#FF7A7A7A">
+            <StackPanel x:Name="sp2" Height="177" Canvas.Left="199" Canvas.Top="10" Width="145" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp1" Height="177" Canvas.Left="10" Canvas.Top="10" Width="144.334" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp4" Height="177" Canvas.Left="573" Canvas.Top="10" Width="145" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp3" Height="177" Canvas.Left="384" Canvas.Top="10" Width="144" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp5" Height="177" Canvas.Left="758" Canvas.Top="10" Width="144" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp7" Height="178" Canvas.Left="199" Canvas.Top="224" Width="145" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp6" Height="178" Canvas.Left="10" Canvas.Top="224" Width="144" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp9" Height="178" Canvas.Left="573" Canvas.Top="224" Width="145" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp8" Height="178" Canvas.Left="384" Canvas.Top="224" Width="144" Background="Black" Visibility="Hidden"/>
+            <StackPanel x:Name="sp10" Height="178" Canvas.Left="758" Canvas.Top="224" Width="144" Background="Black" Visibility="Hidden"/>
+            <Label x:Name="currentPageLabel" Content="1" Canvas.Left="784" Canvas.Top="419" Visibility="Hidden"/>
+            <Label x:Name="allPageLabel" Content="100" Canvas.Left="826" Canvas.Top="419" Visibility="Hidden"/>
+            <Button x:Name="PreviousButton" Content="&lt;" Canvas.Left="778" Canvas.Top="445" Width="38" Click="PreviousButton_Click" Visibility="Hidden"/>
+            <Button x:Name="nextButton" Content="&gt;" Canvas.Left="821" Canvas.Top="445" Width="38" Click="nextButton_Click" Visibility="Hidden"/>
+            <Label x:Name="label" Content="/" Canvas.Left="811" Canvas.Top="419" Visibility="Hidden"/>
+            <StackPanel Height="100" Canvas.Left="34" Canvas.Top="26" Width="100" Visibility="Hidden"/>
+            <StackPanel x:Name="homePage" Height="414" Canvas.Left="34" Canvas.Top="26" Width="821" Background="#FF8B8686"/>
         </Canvas>
         <Button x:Name="button" Content="Add Product" HorizontalAlignment="Left" Margin="72,468,0,0" VerticalAlignment="Top" Width="128" Click="button_Click"/>
 

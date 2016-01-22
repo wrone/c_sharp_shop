@@ -22,19 +22,24 @@ namespace TestWeb
     public partial class logoutBox : UserControl
     {
         MainWindow mw;
-        public logoutBox(MainWindow mw)
+        DatabaseConnection dbConn;
+
+        public logoutBox(MainWindow mw, DatabaseConnection dbConn)
         {
             this.mw = mw;
+            this.dbConn = dbConn;
             InitializeComponent();
         }
 
         private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
             mw.login_logout_StackPanel.Children.Clear();
-            loginHeaderBox lHB = new loginHeaderBox(mw);
+            loginHeaderBox lHB = new loginHeaderBox(mw, dbConn);
             mw.login_logout_StackPanel.Children.Add(lHB);
 
             mw.cartInfoBox.Children.Clear();
+            mw.loginTmp = 0;
+            mw.hideUnhideAddButton(1);
         }
 
         private void testButton_Click(object sender, RoutedEventArgs e)

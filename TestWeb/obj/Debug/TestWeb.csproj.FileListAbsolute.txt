@@ -1,119 +1,84 @@
-D:\C# Course\TestWeb\TestWeb\bin\Debug\TestWeb.exe.config
-D:\C# Course\TestWeb\TestWeb\bin\Debug\TestWeb.exe
-D:\C# Course\TestWeb\TestWeb\bin\Debug\TestWeb.pdb
-D:\C# Course\TestWeb\TestWeb\obj\Debug\TestWeb.csprojResolveAssemblyReference.cache
-D:\C# Course\TestWeb\TestWeb\obj\Debug\MainWindow.g.cs
-D:\C# Course\TestWeb\TestWeb\obj\Debug\App.g.cs
-D:\C# Course\TestWeb\TestWeb\obj\Debug\TestWeb_MarkupCompile.cache
-D:\C# Course\TestWeb\TestWeb\obj\Debug\TestWeb_MarkupCompile.lref
-D:\C# Course\TestWeb\TestWeb\obj\Debug\MainWindow.baml
-D:\C# Course\TestWeb\TestWeb\obj\Debug\TestWeb.g.resources
-D:\C# Course\TestWeb\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
-D:\C# Course\TestWeb\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache
-D:\C# Course\TestWeb\TestWeb\obj\Debug\TestWeb.exe
-D:\C# Course\TestWeb\TestWeb\obj\Debug\TestWeb.pdb
-D:\C# Course\TestWeb\TestWeb\obj\Debug\itemFrame.g.cs
-D:\C# Course\TestWeb\TestWeb\obj\Debug\itemFrame.baml
-D:\C# Course\TestWeb\TestWeb\obj\Debug\productAdd.g.cs
-D:\C# Course\TestWeb\TestWeb\obj\Debug\userAdd.g.cs
-D:\C# Course\TestWeb\TestWeb\obj\Debug\productAdd.baml
-D:\C# Course\TestWeb\TestWeb\obj\Debug\userAdd.baml
-D:\C# Course\TestWeb\TestWeb\obj\Debug\loginHeaderBox.g.cs
-D:\C# Course\TestWeb\TestWeb\obj\Debug\loginHeaderBox.baml
-D:\C# Course\TestWeb\TestWeb\obj\Debug\logoutBox.g.cs
-D:\C# Course\TestWeb\TestWeb\obj\Debug\logoutBox.baml
-D:\C# Course\TestWeb\TestWeb\obj\Debug\App.baml
-D:\C# Course\TestWeb\TestWeb\obj\Debug\cartBox.g.cs
-D:\C# Course\TestWeb\TestWeb\obj\Debug\cartBox.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe.config
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.exe
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.pdb
-D:\C# Course TMP\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe
-D:\C# Course TMP\c_sharp_shop\TestWeb\bin\Debug\TestWeb.pdb
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.csprojResolveAssemblyReference.cache
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\cartBox.g.cs
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\itemFrame.g.cs
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\loginHeaderBox.g.cs
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\logoutBox.g.cs
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\MainWindow.g.cs
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\productAdd.g.cs
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\userAdd.g.cs
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\App.g.cs
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.cache
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.lref
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\App.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\cartBox.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\itemFrame.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\loginHeaderBox.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\logoutBox.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\MainWindow.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\productAdd.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\userAdd.baml
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.g.resources
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
-D:\C# Course TMP\c_sharp_shop\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe.config
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.exe
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.pdb
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe.config
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.exe
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.pdb
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.pdb
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.csprojResolveAssemblyReference.cache
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\cartBox.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\itemFrame.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\loginHeaderBox.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\logoutBox.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\MainWindow.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\productAdd.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\ProductRegister.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\userAdd.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\App.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.cache
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.lref
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\App.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\cartBox.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\itemFrame.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\loginHeaderBox.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\logoutBox.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\MainWindow.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\productAdd.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\ProductRegister.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\userAdd.baml
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.g.resources
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
-C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.pdb
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\cartBox.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\itemFrame.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\loginHeaderBox.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\logoutBox.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\MainWindow.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\productAdd.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\ProductRegister.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\userAdd.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Address.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Payment.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Shipping_type.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\App.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.cache
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.lref
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\App.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\cartBox.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\itemFrame.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\loginHeaderBox.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\logoutBox.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\MainWindow.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\productAdd.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\ProductRegister.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\userAdd.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Address.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Payment.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Shipping_type.baml
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.g.resources
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
-C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache
+D:\C#_Course\TestWeb\bin\Debug\TestWeb.exe.config
+D:\C#_Course\TestWeb\bin\Debug\TestWeb.exe
+D:\C#_Course\TestWeb\bin\Debug\TestWeb.pdb
+D:\C#_Course\TestWeb\obj\Debug\cartBox.g.cs
+D:\C#_Course\TestWeb\obj\Debug\itemFrame.g.cs
+D:\C#_Course\TestWeb\obj\Debug\loginHeaderBox.g.cs
+D:\C#_Course\TestWeb\obj\Debug\logoutBox.g.cs
+D:\C#_Course\TestWeb\obj\Debug\MainWindow.g.cs
+D:\C#_Course\TestWeb\obj\Debug\productAdd.g.cs
+D:\C#_Course\TestWeb\obj\Debug\ProductRegister.g.cs
+D:\C#_Course\TestWeb\obj\Debug\userAdd.g.cs
+D:\C#_Course\TestWeb\obj\Debug\App.g.cs
+D:\C#_Course\TestWeb\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\C#_Course\TestWeb\obj\Debug\TestWeb_MarkupCompile.cache
+D:\C#_Course\TestWeb\obj\Debug\TestWeb_MarkupCompile.lref
+D:\C#_Course\TestWeb\obj\Debug\App.baml
+D:\C#_Course\TestWeb\obj\Debug\cartBox.baml
+D:\C#_Course\TestWeb\obj\Debug\itemFrame.baml
+D:\C#_Course\TestWeb\obj\Debug\loginHeaderBox.baml
+D:\C#_Course\TestWeb\obj\Debug\logoutBox.baml
+D:\C#_Course\TestWeb\obj\Debug\MainWindow.baml
+D:\C#_Course\TestWeb\obj\Debug\productAdd.baml
+D:\C#_Course\TestWeb\obj\Debug\ProductRegister.baml
+D:\C#_Course\TestWeb\obj\Debug\userAdd.baml
+D:\C#_Course\TestWeb\obj\Debug\TestWeb.g.resources
+D:\C#_Course\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
+D:\C#_Course\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache
+D:\C#_Course\TestWeb\obj\Debug\TestWeb.exe
+D:\C#_Course\TestWeb\obj\Debug\TestWeb.pdb
+D:\C#_Course\TestWeb\obj\Debug\TestWeb.csprojResolveAssemblyReference.cache
+D:\C#_Course\TestWeb\obj\Debug\newsHomePage.g.cs
+D:\C#_Course\TestWeb\obj\Debug\newsHomePage.baml
+D:\C#_Course\TestWeb\obj\Debug\contactInfo.g.cs
+D:\C#_Course\TestWeb\obj\Debug\contactInfo.baml
+D:\C#_Course\TestWeb\obj\Debug\itemInformation.g.cs
+D:\C#_Course\TestWeb\obj\Debug\itemInformation.baml
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Address.g.cs
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Payment.g.cs
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Shipping_type.g.cs
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Address.baml
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Payment.baml
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Shipping_type.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\bin\Debug\TestWeb.exe.config
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.exe
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.pdb
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\bin\Debug\TestWeb.exe
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\bin\Debug\TestWeb.pdb
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.csprojResolveAssemblyReference.cache
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\cartBox.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\contactInfo.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\itemFrame.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\itemInformation.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\loginHeaderBox.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\logoutBox.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\MainWindow.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\newsHomePage.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\productAdd.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\ProductRegister.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\userAdd.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\usrCtrl_Address.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\usrCtrl_Payment.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\usrCtrl_Shipping_type.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\App.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.cache
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.lref
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\App.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\cartBox.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\contactInfo.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\itemFrame.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\itemInformation.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\loginHeaderBox.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\logoutBox.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\MainWindow.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\newsHomePage.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\productAdd.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\ProductRegister.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\userAdd.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\usrCtrl_Address.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\usrCtrl_Payment.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\usrCtrl_Shipping_type.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.g.resources
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache
