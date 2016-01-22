@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="TestWeb.newsHomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TestWeb"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="792" Height="120">
+    <Grid Background="#FFEAE1E1" Margin="10">
+        <Label x:Name="newsName" Content="Name ...." HorizontalAlignment="Left" Margin="47,10,0,0" VerticalAlignment="Top" Width="190" Background="#FF979797"/>
+        <Label x:Name="newsText" Content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="42" Width="672"/>
+        <Button x:Name="moreDetailsButton" Content="More details" HorizontalAlignment="Left" Margin="687,68,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="newsDateLabel" Content="00/00/0000" HorizontalAlignment="Left" Margin="633,10,0,0" VerticalAlignment="Top" Width="125"/>
+    </Grid>
+</UserControl>

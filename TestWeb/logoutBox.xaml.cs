@@ -35,6 +35,8 @@ namespace TestWeb
             mw.login_logout_StackPanel.Children.Add(lHB);
 
             mw.cartInfoBox.Children.Clear();
+            mw.loginTmp = 0;
+            mw.hideUnhideAddButton(1);
         }
 
         private void testButton_Click(object sender, RoutedEventArgs e)

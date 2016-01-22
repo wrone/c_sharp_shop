@@ -40,6 +40,9 @@ namespace TestWeb
             mw.cartInfoBox.Children.Clear();
             mw.cartInfoBox.Children.Add(cB);
 
+            mw.loginTmp = 1;
+            mw.hideUnhideAddButton(0);
+
         }
 
         private void signInButton_Click(object sender, RoutedEventArgs e)
