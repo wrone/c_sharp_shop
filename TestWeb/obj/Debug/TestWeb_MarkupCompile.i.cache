@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\c_sharp_shop\TestWeb\obj\Debug\
+D:\C#_Course\TestWeb\obj\Debug\
 TestWeb
 none
 false
 DEBUG;TRACE
-C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\c_sharp_shop\TestWeb\App.xaml
+D:\C#_Course\TestWeb\App.xaml
 141822265504
 
-28-886150783
-16-1890909203
+28-1690047456
+161959626417
 cartBox.xaml;contactInfo.xaml;itemFrame.xaml;itemInformation.xaml;loginHeaderBox.xaml;logoutBox.xaml;MainWindow.xaml;newsHomePage.xaml;productAdd.xaml;ProductRegister.xaml;userAdd.xaml;usrCtrl_Address.xaml;usrCtrl_Payment.xaml;usrCtrl_Shipping_type.xaml;
 
-True
+False
 

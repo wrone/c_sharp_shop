@@ -22,18 +22,16 @@ namespace TestWeb
     public partial class loginHeaderBox : UserControl
     {
         MainWindow mw;
-        DatabaseConnection dbConn;
-        public loginHeaderBox(MainWindow mw, DatabaseConnection dbConn)
+        public loginHeaderBox(MainWindow mw)
         {
             this.mw = mw;
-            this.dbConn = dbConn;
             InitializeComponent();
         }
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
             // Logout
-            logoutBox lB = new logoutBox(mw, dbConn);
+            logoutBox lB = new logoutBox(mw);
             lB.userNameTextBox.Content = loginIn.Text;
             mw.login_logout_StackPanel.Children.Clear();
             mw.login_logout_StackPanel.Children.Add(lB);
@@ -49,15 +47,6 @@ namespace TestWeb
 
         private void signInButton_Click(object sender, RoutedEventArgs e)
         {
-            Window registerWindow = new Window
-            {
-                Title = "New account",
-                Content = new userAdd(mw, dbConn),
-                Width = 300,
-                Height = 300,
-                ResizeMode = ResizeMode.NoResize
-            };
-            registerWindow.ShowDialog();
             //mw.stackPanelMain.Children.Clear();
             //userAdd uA = new userAdd();
             //mw.stackPanelMain.Children.Add(uA);

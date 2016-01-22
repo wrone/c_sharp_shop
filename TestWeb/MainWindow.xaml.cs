@@ -105,7 +105,7 @@ namespace TestWeb
 
 
             // Login Register
-            loginHeaderBox lHB = new loginHeaderBox(this, dbConn);
+            loginHeaderBox lHB = new loginHeaderBox(this);
             login_logout_StackPanel.Children.Add(lHB);
             
 
