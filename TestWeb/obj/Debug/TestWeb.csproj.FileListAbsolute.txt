@@ -82,3 +82,45 @@ C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debu
 C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.g.resources
 C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
 C:\Users\Alexey\Documents\Visual Studio 2015\Projects\test_shop\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe.config
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.exe
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.pdb
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.exe
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Debug\TestWeb.pdb
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\cartBox.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\contactInfo.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\itemFrame.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\itemInformation.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\loginHeaderBox.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\logoutBox.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\MainWindow.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\newsHomePage.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\productAdd.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\ProductRegister.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\userAdd.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Address.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Payment.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Shipping_type.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\App.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.cache
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb_MarkupCompile.lref
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\App.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\cartBox.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\contactInfo.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\itemFrame.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\itemInformation.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\loginHeaderBox.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\logoutBox.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\MainWindow.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\newsHomePage.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\productAdd.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\ProductRegister.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\userAdd.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Address.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Payment.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\usrCtrl_Shipping_type.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.g.resources
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.Properties.Resources.resources
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Debug\TestWeb.csproj.GenerateResource.Cache

@@ -23,7 +23,7 @@ IF tmpQuantity >= param_quant THEN
     SET tmpOrderID = 0;
     END IF;
 
-	INSERT INTO orders (Orders.ID, Users_ID, Addresses_ID, Shipping_methods_ID, Payments_ID, Date)
+	INSERT INTO orders (ID, Users_ID, Addresses_ID, Shipping_methods_ID, Payments_ID, Date)
 	VALUES (tmpOrderID + 1, param_id_user, param_id_addr, param_id_shipp_m, param_id_payment, NOW());
 	
 	SELECT

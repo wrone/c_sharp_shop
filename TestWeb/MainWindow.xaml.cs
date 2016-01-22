@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
+using System.Globalization;
 
 namespace TestWeb
 {
@@ -51,67 +52,75 @@ namespace TestWeb
         public MainWindow()
         {
             InitializeComponent();
-            dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
-            //dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
+            //dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
+            dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
 
-            dbConn.ReadBlobData(1);
-            GetCategoryCount("Protein");
+            int payID = PaymentRegister("2008-11-11", "asd", "asd", "asd", "2008-11-11", "14,87");
+            int addrID =  AddressRegister("asd", "asd", "asd", "asd", "asd", "asd");
+            // BuyProduct(int productID, int quantity, int userID, int addrID, int shipID, int payID)
+            BuyProduct(1, 3, 1, 4, 1, 4);
 
-            //UserRegister("da", "da", "da32ac", "da", "da", "da");
-            //ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
-            //PaymentRegister("2008-11-11", "da", "da", "da", "2008-11-11", 12);
-            //AddressRegister("da", "da", "da2", "da", "da", "da");
+            //dbConn.ReadBlobData(1);
+            //GetCategoryCount("Protein");
 
-
-            ProteinCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Protein'");
-            CreatineCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Creatine'");
-            AminoAcidsCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'AminoAcids'");
-            CarbohydratesCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Carbohydrates'");
-
-            List<string> ID = dbConn.ReadData("select ID from Products");
-            List<string> Name = dbConn.ReadData("select Name from Products");
-            List<string> Description = dbConn.ReadData("select Description from Products");
-            //List<string> Release_date = dbConn.ReadData("select Release_date from Products");
-            //List<string> End_date = dbConn.ReadData("select End_date from Products");
-            List<string> Quantity = dbConn.ReadData("select Quantity from Products");
-            List<string> Price = dbConn.ReadData("select Price from Products");
-            List<string> Manufacturer = dbConn.ReadData("select Manufacturer from Products");
-            for (int i = 0; i < ID.Count; i++)
-            {
-                ProductClass pC = new ProductClass(Convert.ToInt32(ID[i]), Name[i], Description[i], "a", "b", Convert.ToInt32(Quantity[i]), Convert.ToDouble(Price[i]), Manufacturer[i]);
-                productList.Add(pC);
-            }
-
-            iI = new itemInformation(this, productList);
+            ////UserRegister("da", "da", "da32ac", "da", "da", "da");
+            ////ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
+            ////PaymentRegister("2008-11-11", "da", "da", "da", "2008-11-11", 12);
+            ////AddressRegister("da", "da", "da2", "da", "da", "da");
 
 
-            stackPanelList.Add(sp1);
-            stackPanelList.Add(sp2);
-            stackPanelList.Add(sp3);
-            stackPanelList.Add(sp4);
-            stackPanelList.Add(sp5);
-            stackPanelList.Add(sp6);
-            stackPanelList.Add(sp7);
-            stackPanelList.Add(sp8);
-            stackPanelList.Add(sp9);
-            stackPanelList.Add(sp10);
+            //ProteinCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Protein'");
+            //CreatineCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Creatine'");
+            //AminoAcidsCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'AminoAcids'");
+            //CarbohydratesCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Carbohydrates'");
 
-            addNews("Today is bbbbbbbbbb", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "1.21.2016 14:33");
-            addNews("Today is aaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            for (int i = 0; i < newsList.Count; i++)
-            {
-                homePage.Children.Add(newsList[i]);
-            }
+            //List<string> ID = dbConn.ReadData("select ID from Products");
+            //List<string> Name = dbConn.ReadData("select Name from Products");
+            //List<string> Description = dbConn.ReadData("select Description from Products");
+            ////List<string> Release_date = dbConn.ReadData("select Release_date from Products");
+            ////List<string> End_date = dbConn.ReadData("select End_date from Products");
+            //List<string> Quantity = dbConn.ReadData("select Quantity from Products");
+            //List<string> Price = dbConn.ReadData("select Price from Products");
+            //List<string> Manufacturer = dbConn.ReadData("select Manufacturer from Products");
+            //for (int i = 0; i < ID.Count; i++)
+            //{
+            //    ProductClass pC = new ProductClass(Convert.ToInt32(ID[i]), Name[i], Description[i], "a", "b", Convert.ToInt32(Quantity[i]), Convert.ToDouble(Price[i]), Manufacturer[i]);
+            //    productList.Add(pC);
+            //}
+
+            //iI = new itemInformation(this, productList);
 
 
-            // Login Register
-            loginHeaderBox lHB = new loginHeaderBox(this, dbConn);
-            login_logout_StackPanel.Children.Add(lHB);
-            
+            //stackPanelList.Add(sp1);
+            //stackPanelList.Add(sp2);
+            //stackPanelList.Add(sp3);
+            //stackPanelList.Add(sp4);
+            //stackPanelList.Add(sp5);
+            //stackPanelList.Add(sp6);
+            //stackPanelList.Add(sp7);
+            //stackPanelList.Add(sp8);
+            //stackPanelList.Add(sp9);
+            //stackPanelList.Add(sp10);
+
+            //addNews("Today is bbbbbbbbbb", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "1.21.2016 14:33");
+            //addNews("Today is aaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            //for (int i = 0; i < newsList.Count; i++)
+            //{
+            //    homePage.Children.Add(newsList[i]);
+            //}
+
+
+            //// Login Register
+            //loginHeaderBox lHB = new loginHeaderBox(this, dbConn);
+            //login_logout_StackPanel.Children.Add(lHB);
+
 
         }
 
-
+        public void BuyProduct(int productID, int quantity, int userID, int addrID, int shipID, int payID)
+        {
+            dbConn.ReadData("select productBuy(" + productID + ", " + quantity + ", " + userID + ", " + addrID + ", " + shipID + ", " + payID + ")");
+        }
 
         public bool UserRegister(string name, string lastname, string login, string password, string email, string phone)
         {
@@ -141,11 +150,10 @@ namespace TestWeb
             return dbConn.ReadData("SELECT ID, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer FROM Products");
         }
 
-        public int PaymentRegister(string date, string cardNumber, string holdersName, string holdersLastname, string expDate, double money)
+        public int PaymentRegister(string date, string cardNumber, string holdersName, string holdersLastname, string expDate, string money)
         {
             dbConn.WriteData("INSERT INTO Payments(Date, CardNumber, CardHoldersName, CardHoldersLastname, ExpDate, Amount)"
-                            + "VALUES('" + date + "', '" + cardNumber + "', '" + holdersName + "', '"
-                            + holdersLastname + "', '" + expDate + "', " + money + ")");
+                            + " VALUES('" + date + "', '" + cardNumber + "', '" + holdersName + "', '" + holdersLastname + "', '" + expDate + "', '" + money.Replace(",", ".") + "')");
 
             return GetLastID("Payments");
         }
@@ -162,8 +170,7 @@ namespace TestWeb
 
         public int GetLastID(string table)
         {
-            int id = Convert.ToInt32(dbConn.ReadData("select max(ID) from " + table)[0]);
-            return 0;
+            return Convert.ToInt32(dbConn.ReadData("select max(ID) from " + table)[0]);
         }
 
 
