@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWeb"
         mc:Ignorable="d"
-        Title="2281488" Height="686" Width="1197" Background="#FF7C7C7C" Foreground="White">
+        Title="2281488" Height="897.26" Width="1197" Background="#FF7C7C7C" Foreground="White">
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="-38,385,0,0" VerticalAlignment="Top"/>
         <StackPanel x:Name="login_logout_StackPanel" HorizontalAlignment="Left" Height="138" Margin="10,14,0,0" VerticalAlignment="Top" Width="201"/>
@@ -21,7 +21,15 @@
         <Button x:Name="typeChoiceButton4" Content="item category 4" HorizontalAlignment="Left" Margin="10,376,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
         <Button x:Name="typeChoiceButton5" Content="item category 5" HorizontalAlignment="Left" Margin="10,402,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
         <Button x:Name="typeChoiceButton6" Content="item category 6" HorizontalAlignment="Left" Margin="10,426,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Canvas HorizontalAlignment="Left" Height="473" Margin="216,157,0,0" VerticalAlignment="Top" Width="910" Background="#FF7A7A7A">
+        <Canvas HorizontalAlignment="Left" Height="665" Margin="216,157,0,0" VerticalAlignment="Top" Width="910" Background="#FF7A7A7A" RenderTransformOrigin="0.5,0.5">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.286"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-1.182"/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
             <StackPanel x:Name="sp2" Height="177" Canvas.Left="199" Canvas.Top="10" Width="145" Background="Black"/>
             <StackPanel x:Name="sp1" Height="177" Canvas.Left="10" Canvas.Top="10" Width="144.334" Background="Black"/>
             <StackPanel x:Name="sp4" Height="177" Canvas.Left="573" Canvas.Top="10" Width="145" Background="Black"/>

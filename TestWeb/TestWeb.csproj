@@ -80,6 +80,7 @@
     <Compile Include="ProductRegister.xaml.cs">
       <DependentUpon>ProductRegister.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Shipment.cs" />
     <Compile Include="userAdd.xaml.cs">
       <DependentUpon>userAdd.xaml</DependentUpon>
     </Compile>

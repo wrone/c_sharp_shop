@@ -31,5 +31,21 @@ namespace TestWeb
             comboBox1.Items.Add(dt.Year.ToString());
             comboBox1.Items.Add((dt.Year + 1).ToString());
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ((Panel)this.Parent).Children.Remove(this);
+        }
+
+        public Payment GetPayment()
+        {
+            DateTime dateTime = DateTime.UtcNow.Date;
+            string date = dateTime.ToString("yyyy-MM-dd");
+            string expDate = comboBox.SelectedValue + "/" + comboBox1.SelectedValue;
+            return new Payment(-1, date, textBox.Text, textBox1.Text, textBox2.Text, expDate, 777);
+        }
+
+
     }
 }
+

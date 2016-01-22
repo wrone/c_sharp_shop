@@ -24,5 +24,17 @@ namespace TestWeb
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ((Panel)this.Parent).Children.Remove(this);
+        }
+
+        public Address GetAddress()
+        {
+            return new Address(-1, textBox.Text, textBox1.Text, textBox2.Text, textBox3.Text,
+                textBox4.Text, textBox5.Text);
+        }
+
     }
 }

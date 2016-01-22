@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestWeb"
-             mc:Ignorable="d" Height="142.215" Width="276.124">
+             mc:Ignorable="d" Height="173.548" Width="276.124">
     <Grid Margin="0,0,0,159">
-        <Canvas HorizontalAlignment="Left" Height="126" Margin="10,10,0,0" VerticalAlignment="Top" Width="256">
+        <Canvas HorizontalAlignment="Left" Height="155" Margin="10,10,0,-150" VerticalAlignment="Top" Width="256">
             <Label x:Name="label" Content="Card number" Canvas.Left="26" Canvas.Top="3"/>
             <Label x:Name="label1" Content="Holders name" Canvas.Left="21" Canvas.Top="29"/>
             <Label x:Name="label2" Content="Holders lastname" Canvas.Top="55" Canvas.Left="3"/>
@@ -16,6 +16,7 @@
             <TextBox x:Name="textBox2" Height="23" Canvas.Left="110" TextWrapping="Wrap" Text="TextBox" Canvas.Top="58" Width="120"/>
             <ComboBox x:Name="comboBox" Canvas.Left="110" Canvas.Top="86" Width="51"/>
             <ComboBox x:Name="comboBox1" Canvas.Left="179" Canvas.Top="86" Width="51"/>
+            <Button x:Name="button" Content="Buy" Canvas.Left="179" Canvas.Top="125" Width="75" Click="button_Click"/>
         </Canvas>
 
     </Grid>
