@@ -63,7 +63,7 @@ namespace TestWeb
             for (int i = 0; i < 10; i++)
             {
                 iF = new itemFrame();
-                iF.SetImage(dbConn.ReadBlobData(1));
+                //iF.SetImage(dbConn.ReadBlobData(1));
                 stackPanelList[i].Children.Add(iF);
             }
 
