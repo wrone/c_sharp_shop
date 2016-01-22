@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Address.cs" />
     <Compile Include="cartBox.xaml.cs">
       <DependentUpon>cartBox.xaml</DependentUpon>
     </Compile>
@@ -74,6 +75,7 @@
     <Compile Include="logoutBox.xaml.cs">
       <DependentUpon>logoutBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Payment.cs" />
     <Compile Include="productAdd.xaml.cs">
       <DependentUpon>productAdd.xaml</DependentUpon>
     </Compile>
