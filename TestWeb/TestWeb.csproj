@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Address.cs" />
     <Compile Include="cartBox.xaml.cs">
       <DependentUpon>cartBox.xaml</DependentUpon>
     </Compile>
@@ -83,6 +84,7 @@
     <Compile Include="newsHomePage.xaml.cs">
       <DependentUpon>newsHomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Payment.cs" />
     <Compile Include="productAdd.xaml.cs">
       <DependentUpon>productAdd.xaml</DependentUpon>
     </Compile>
@@ -90,9 +92,13 @@
     <Compile Include="ProductRegister.xaml.cs">
       <DependentUpon>ProductRegister.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Shipment.cs" />
     <Compile Include="userAdd.xaml.cs">
       <DependentUpon>userAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="usrCtrl_Address.xaml.cs" />
+    <Compile Include="usrCtrl_Payment.xaml.cs" />
+    <Compile Include="usrCtrl_Shipping_type.xaml.cs" />
     <Page Include="cartBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +152,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="userAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="usrCtrl_Address.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="usrCtrl_Payment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="usrCtrl_Shipping_type.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -20,15 +20,23 @@ namespace TestWeb
     /// </summary>
     public partial class itemInformation : UserControl
     {
-        string name, text;
-        double price;
-        Image imageTMP;
-        public itemInformation(/*string name, string text, double price, Image image*/)
+        List<ProductClass> productList;
+        int index;
+
+        MainWindow mw;
+        public itemInformation(MainWindow mw, List<ProductClass> productList)
         {
             InitializeComponent();
-            this.name = name;
-            this.text = text;
+            this.mw = mw;
+            this.productList = productList;
 
+            nameLabel.Content = productList[index + 1].getName();
+            descriptionLabel.Content = productList[index + 1].getDescription();
+        }
+
+        public void setIndex(int index)
+        {
+            this.index = index;
         }
     }
 }

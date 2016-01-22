@@ -36,6 +36,11 @@ namespace TestWeb
             this.index = index;
         }
 
+        public void getIndex()
+        {
+            iI.setIndex(index);
+        }
+
         public void SetImage(BitmapImage img)
         {
             image.Source = img;

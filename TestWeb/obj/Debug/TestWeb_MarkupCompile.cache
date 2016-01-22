@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\C#_Course\TestWeb\App.xaml
-11-780569174
+141822265504
 
-18-1217260686
+241738912434
 161959626417
-cartBox.xaml;contactInfo.xaml;itemFrame.xaml;itemInformation.xaml;loginHeaderBox.xaml;logoutBox.xaml;MainWindow.xaml;newsHomePage.xaml;productAdd.xaml;ProductRegister.xaml;userAdd.xaml;
+cartBox.xaml;contactInfo.xaml;itemFrame.xaml;itemInformation.xaml;loginHeaderBox.xaml;logoutBox.xaml;MainWindow.xaml;newsHomePage.xaml;productAdd.xaml;ProductRegister.xaml;userAdd.xaml;usrCtrl_Address.xaml;usrCtrl_Payment.xaml;usrCtrl_Shipping_type.xaml;
 
 False
 

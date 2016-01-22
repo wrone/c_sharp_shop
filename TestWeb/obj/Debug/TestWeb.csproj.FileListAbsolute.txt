@@ -34,3 +34,9 @@ D:\C#_Course\TestWeb\obj\Debug\contactInfo.g.cs
 D:\C#_Course\TestWeb\obj\Debug\contactInfo.baml
 D:\C#_Course\TestWeb\obj\Debug\itemInformation.g.cs
 D:\C#_Course\TestWeb\obj\Debug\itemInformation.baml
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Address.g.cs
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Payment.g.cs
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Shipping_type.g.cs
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Address.baml
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Payment.baml
+D:\C#_Course\TestWeb\obj\Debug\usrCtrl_Shipping_type.baml

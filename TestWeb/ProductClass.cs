@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestWeb
 {
-    class ProductClass
+    public class ProductClass
     {
         // SELECT ID, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer FROM Products
         int ID, Quantity;

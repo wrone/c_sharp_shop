@@ -12,7 +12,7 @@
         <Label x:Name="label2" Content="Picture:" HorizontalAlignment="Left" Margin="430,52,0,0" VerticalAlignment="Top"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="113" Margin="516,52,0,0" VerticalAlignment="Top" Width="122"/>
         <Label x:Name="label3" Content="Description:" HorizontalAlignment="Left" Margin="23,83,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4" Content="" HorizontalAlignment="Left" Margin="101,83,0,0" VerticalAlignment="Top" Height="213" Width="327"/>
+        <Label x:Name="descriptionLabel" Content="" HorizontalAlignment="Left" Margin="101,83,0,0" VerticalAlignment="Top" Height="213" Width="327"/>
         <Label x:Name="label5" Content="Price:" HorizontalAlignment="Left" Margin="58,318,0,0" VerticalAlignment="Top"/>
         <Label x:Name="priceLabel" Content="" HorizontalAlignment="Left" Margin="101,318,0,0" VerticalAlignment="Top"/>
         <Button x:Name="addButton" Content="Add to cart" HorizontalAlignment="Left" Margin="430,324,0,0" VerticalAlignment="Top" Width="75"/>

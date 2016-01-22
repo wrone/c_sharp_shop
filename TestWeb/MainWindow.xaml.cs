@@ -37,7 +37,7 @@ namespace TestWeb
         List<int> countOfItemsOnPage;
         List<itemFrame> itemFrameList = new List<itemFrame>();
 
-        itemInformation iI = new itemInformation();
+        itemInformation iI;
         List<string> ProteinCount;
         List<string> CreatineCount;
         List<string> AminoAcidsCount;
@@ -53,7 +53,6 @@ namespace TestWeb
             InitializeComponent();
             dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
             //dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
-
 
             dbConn.ReadBlobData(1);
             GetCategoryCount("Protein");
@@ -83,7 +82,7 @@ namespace TestWeb
                 productList.Add(pC);
             }
 
-            
+            iI = new itemInformation(this, productList);
 
 
             stackPanelList.Add(sp1);
@@ -104,43 +103,11 @@ namespace TestWeb
                 homePage.Children.Add(newsList[i]);
             }
 
-            //itemFrame iF;
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    iF = new itemFrame();
-            //    iF.SetImage(dbConn.ReadBlobData(1));
-            //    stackPanelList[i].Children.Add(iF);
-            //}
 
             // Login Register
             loginHeaderBox lHB = new loginHeaderBox(this);
             login_logout_StackPanel.Children.Add(lHB);
             
-            //typeShopBox tSB = new typeShopBox("Man");
-            //typeList.Add(tSB);
-            //tSB = new typeShopBox("WoMan");
-            //typeList.Add(tSB);
-
-            //for (int i = 0; i < typeList.Count; i++)
-            //{
-            //    typeMenu.Children.Add(typeList[i]);
-            //}
-
-
-            //itemFrame itF1 = new itemFrame();
-            //itF1.nameLabel.Content = "Nam1e";
-            //itF1.textLabel.Content = "Nam1e";
-            //itF1.priceLabel.Content = "2.14";
-            //grid.Children.Add(itF1);
-
-            //itemFrame itF = new itemFrame();
-            //itF.nameLabel.Content = "Nam2e";
-            //itF.textLabel.Content = "Nam2e";
-            //itF.priceLabel.Content = "3.14";
-            //grid.Children.Add(itF);
-
-            //userAdd ua = new userAdd();
-            //grid.Children.Add(ua);
 
         }
 
@@ -169,6 +136,11 @@ namespace TestWeb
 
             return GetLastID("Products");
         }
+        public List<string> ProductReader()
+        {
+            return dbConn.ReadData("SELECT ID, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer FROM Products");
+        }
+
         public int PaymentRegister(string date, string cardNumber, string holdersName, string holdersLastname, string expDate, double money)
         {
             dbConn.WriteData("INSERT INTO Payments(Date, CardNumber, CardHoldersName, CardHoldersLastname, ExpDate, Amount)"
@@ -185,10 +157,6 @@ namespace TestWeb
 
             return GetLastID("Addresses");
         }
-        public void BuyProduct(int productID, int quant, int userID, int addrID, int shipMetID, int payID)
-        {
-
-        }
 
 
 
@@ -197,6 +165,10 @@ namespace TestWeb
             int id = Convert.ToInt32(dbConn.ReadData("select max(ID) from " + table)[0]);
             return 0;
         }
+
+
+
+
 
         public int GetCategoryCount(string category)
         {
@@ -450,5 +422,7 @@ namespace TestWeb
             }
         }
         //////////////////////////////////////////////////////////////////////////////////////////
+
+
     }
 }
