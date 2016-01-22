@@ -127,6 +127,11 @@ namespace TestWeb
 
             return GetLastID("Products");
         }
+        public void ProductReader()
+        {
+            List<string> list = dbConn.ReadData("SELECT ID, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer FROM Products");
+        }
+
         public int PaymentRegister(string date, string cardNumber, string holdersName, string holdersLastname, string expDate, double money)
         {
             dbConn.WriteData("INSERT INTO Payments(Date, CardNumber, CardHoldersName, CardHoldersLastname, ExpDate, Amount)"
