@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace TestWeb
 {
@@ -11,9 +12,10 @@ namespace TestWeb
         // SELECT ID, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer FROM Products
         int ID, Quantity;
         string Description, Release_date, End_date, Category, Manufacturer, Name;
-        double Price; 
+        double Price;
+        BitmapImage bmp;
 
-        public ProductClass(int ID, string Name, string Description, string Release_date, string End_date, int Quantity, double Price, string Manufacturer)
+        public ProductClass(int ID, string Name, string Description, string Release_date, string End_date, int Quantity, double Price, string Manufacturer, BitmapImage bmp)
         {
             this.ID = ID;
             this.Name = Name;
@@ -23,6 +25,7 @@ namespace TestWeb
             this.Quantity = Quantity;
             this.Price = Price;
             this.Manufacturer = Manufacturer;
+            this.bmp = bmp;
         }
 
         public int getId()
@@ -63,6 +66,11 @@ namespace TestWeb
         public string getManufacturer()
         {
             return Manufacturer;
+        }
+
+        public BitmapImage getImage()
+        {
+            return bmp;
         }
     }
 }

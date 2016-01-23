@@ -29,6 +29,10 @@ namespace TestWeb
             this.mw = mw;
             this.iI = iI;
             InitializeComponent();
+
+
+            
+           
         }
 
         public void setIndex(int index)
@@ -36,9 +40,9 @@ namespace TestWeb
             this.index = index;
         }
 
-        public void getIndex()
+        public int getIndex()
         {
-            iI.setIndex(index);
+            return index;
         }
 
         public void SetImage(BitmapImage img)
@@ -51,6 +55,28 @@ namespace TestWeb
             mw.homePage.Children.Clear();
             mw.hideOrUnhideAll(1);
             mw.homePage.Children.Add(iI);
+            iI.changeInfo(index);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Items item = new Items(index - 1, 1);
+            int test = 0;
+            for (int i = 0; i < mw.cartBoxNew.itemList.Count; i++)
+            {
+                if (index - 1 == mw.cartBoxNew.itemList[i].getIndex())
+                {
+                    test = 1;
+                }
+            }
+            if (test == 0)
+            {
+                mw.cartBoxNew.itemList.Add(item);
+                mw.cartBoxNew.productList = mw.productList;
+                mw.cartBoxNew.imageList = mw.imageList;
+            }
+
+            mw.cartBoxNew.cartInfoNumber.Content = Convert.ToString(mw.cartBoxNew.itemList.Count);
         }
     }
 }

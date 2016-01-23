@@ -23,6 +23,7 @@ namespace TestWeb
     {
         MainWindow mw;
         DatabaseConnection dbConn;
+        public cartBox cB;
         public loginHeaderBox(MainWindow mw, DatabaseConnection dbConn)
         {
             this.mw = mw;
@@ -32,18 +33,31 @@ namespace TestWeb
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
+            string login = loginIn.Text;
+            string password = passwordIn.Password;
+
             // Logout
-            logoutBox lB = new logoutBox(mw, dbConn);
-            lB.userNameTextBox.Content = loginIn.Text;
-            mw.login_logout_StackPanel.Children.Clear();
-            mw.login_logout_StackPanel.Children.Add(lB);
+            if (checkCredentials(login, password))
+            {
+                cB = new cartBox(mw, dbConn);
+                mw.cartInfoBox.Children.Clear();
+                cB.cartInfoNumber.Content = "0";
+                cB.setName(login);
+                mw.cartInfoBox.Children.Add(cB);
 
-            cartBox cB = new cartBox(mw);
-            mw.cartInfoBox.Children.Clear();
-            mw.cartInfoBox.Children.Add(cB);
+                logoutBox lB = new logoutBox(mw, dbConn, login);
+                lB.userNameTextBox.Content = loginIn.Text;
+                mw.login_logout_StackPanel.Children.Clear();
+                mw.login_logout_StackPanel.Children.Add(lB);
 
-            mw.loginTmp = 1;
-            mw.hideUnhideAddButton(0);
+                mw.loginTmp = 1;
+                mw.hideUnhideAddButton(0);
+
+                if (GetRole(login).Equals("Seller"))
+                    mw.addNewProductButton.Visibility = Visibility.Visible;
+            }
+            else
+                MessageBox.Show("Login or password is invalid", "Invalid credentials");
 
         }
 
@@ -63,5 +77,20 @@ namespace TestWeb
             //mw.stackPanelMain.Children.Add(uA);
 
         }
+
+        public bool checkCredentials(string login, string password)
+        {
+            string query = "SELECT Login, Password FROM Users WHERE Login='" + login + "' AND Password='" + password + "'";
+            if (dbConn.ReadData(query).Count == 2)
+                return true;
+            return false;
+        }
+
+        public string GetRole(string login)
+        {
+            string query = "SELECT Role FROM Users WHERE Login='" + login + "'";
+            return dbConn.ReadData(query)[0];
+        }
+
     }
 }

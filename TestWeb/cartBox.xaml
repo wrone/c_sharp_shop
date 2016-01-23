@@ -7,7 +7,7 @@
              mc:Ignorable="d" d:DesignWidth="300" Width="201" Height="73.5">
     <Grid>
         <Label x:Name="label1" Content="Items count in cart:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="cartInfoButton" Content="..." HorizontalAlignment="Left" Margin="105,41,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="cartInfoButton" Content="Order information" HorizontalAlignment="Left" Margin="82,41,0,0" VerticalAlignment="Top" Width="109" Click="cartInfoButton_Click"/>
         <Label x:Name="cartInfoNumber" Content="0" HorizontalAlignment="Left" Margin="126,10,0,0" VerticalAlignment="Top" Width="54"/>
     </Grid>
 </UserControl>

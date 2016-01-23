@@ -28,7 +28,6 @@ namespace TestWeb
         public usrCtrl_Shipping_type()
         {
             InitializeComponent();
-
         }
 
         public void Init(DatabaseConnection conn)
@@ -47,9 +46,20 @@ namespace TestWeb
                 comboBox.Items.Add(s.Name);
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        //private void button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (comboBox.SelectedIndex == -1) comboBox.IsDropDownOpen = true;
+        //    else ((Panel)this.Parent).Children.Remove(this);
+        //}
+
+        public bool Execute()
         {
-            ((Panel)this.Parent).Children.Remove(this);
+            if (comboBox.SelectedIndex == -1)
+            {
+                comboBox.IsDropDownOpen = true;
+                return false;
+            }
+            else return true;
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TestWeb"
              mc:Ignorable="d" Height="177" Width="144.334">
     <Grid Background="#FF919191" Width="139" HorizontalAlignment="Left" Margin="3,3,0,3">
-        <Button x:Name="button" Content="Add to cart" HorizontalAlignment="Left" Margin="6,147,0,0" VerticalAlignment="Top" Width="57" Height="20" Background="#FF999999" FontSize="10.667" BorderBrush="Black"/>
+        <Button x:Name="button" Content="Add to cart" HorizontalAlignment="Left" Margin="6,147,0,0" VerticalAlignment="Top" Width="57" Height="20" Background="#FF999999" FontSize="10.667" BorderBrush="Black" Click="button_Click"/>
         <Label x:Name="priceLabel" Content="0.00" HorizontalAlignment="Left" Margin="68,147,0,0" VerticalAlignment="Top" Height="20" Width="39" FontSize="9.333" Background="#FFB6B6B6"/>
         <Label x:Name="nameLabel" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="139"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="113" Margin="6,25,0,0" VerticalAlignment="Top" Width="123"/>

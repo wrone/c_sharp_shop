@@ -27,16 +27,17 @@ namespace c_sharp_kursa
             dataReader = null;
         }
 
-        public void WriteData(string query)
+        public bool WriteData(string query)
         {
             try
             {
                 cmd.CommandText = query; //"INSERT INTO Users(ID, Name, Lastname) VALUES(2, 'da', 'net')";
                 cmd.ExecuteNonQuery();
+                return true;
             }
             catch (Exception)
             {
-                throw;
+                return false;
             }
         }
 

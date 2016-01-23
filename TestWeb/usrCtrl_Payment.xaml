@@ -4,19 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestWeb"
-             mc:Ignorable="d" Height="173.548" Width="276.124">
+             mc:Ignorable="d" Height="192.011" Width="276.124">
     <Grid Margin="0,0,0,159">
-        <Canvas HorizontalAlignment="Left" Height="155" Margin="10,10,0,-150" VerticalAlignment="Top" Width="256">
-            <Label x:Name="label" Content="Card number" Canvas.Left="26" Canvas.Top="3"/>
-            <Label x:Name="label1" Content="Holders name" Canvas.Left="21" Canvas.Top="29"/>
-            <Label x:Name="label2" Content="Holders lastname" Canvas.Top="55" Canvas.Left="3"/>
-            <Label x:Name="label3" Content="Expiration date" Canvas.Top="81" Canvas.Left="16"/>
-            <TextBox x:Name="textBox" Height="23" Canvas.Left="110" TextWrapping="Wrap" Text="TextBox" Canvas.Top="6" Width="120"/>
-            <TextBox x:Name="textBox1" Height="23" Canvas.Left="110" TextWrapping="Wrap" Text="TextBox" Canvas.Top="32" Width="120"/>
-            <TextBox x:Name="textBox2" Height="23" Canvas.Left="110" TextWrapping="Wrap" Text="TextBox" Canvas.Top="58" Width="120"/>
-            <ComboBox x:Name="comboBox" Canvas.Left="110" Canvas.Top="86" Width="51"/>
-            <ComboBox x:Name="comboBox1" Canvas.Left="179" Canvas.Top="86" Width="51"/>
-            <Button x:Name="button" Content="Buy" Canvas.Left="179" Canvas.Top="125" Width="75" Click="button_Click"/>
+        <Canvas HorizontalAlignment="Left" Height="178" Margin="10,10,0,-155" VerticalAlignment="Top" Width="256">
+            <Label x:Name="label" Content="Card number" Canvas.Left="26" Canvas.Top="34"/>
+            <Label x:Name="label1" Content="Holders name" Canvas.Left="21" Canvas.Top="60"/>
+            <Label x:Name="label2" Content="Holders lastname" Canvas.Top="86" Canvas.Left="3"/>
+            <Label x:Name="label3" Content="Expiration date" Canvas.Top="112" Canvas.Left="16"/>
+            <TextBox x:Name="textBox" Height="23" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="37" Width="120" PreviewTextInput="textBox_PreviewTextInput"/>
+            <TextBox x:Name="textBox1" Height="23" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="63" Width="120" PreviewTextInput="textBox1_PreviewTextInput"/>
+            <TextBox x:Name="textBox2" Height="23" Canvas.Left="110" TextWrapping="Wrap" Canvas.Top="89" Width="120" PreviewTextInput="textBox2_PreviewTextInput"/>
+            <ComboBox x:Name="comboBox" Canvas.Left="110" Canvas.Top="117" Width="51"/>
+            <ComboBox x:Name="comboBox1" Canvas.Left="166" Canvas.Top="117" Width="64"/>
+            <Label x:Name="label4" Content="Enter credit card details:" Canvas.Left="10"/>
         </Canvas>
 
     </Grid>

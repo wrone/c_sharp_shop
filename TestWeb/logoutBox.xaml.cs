@@ -23,15 +23,18 @@ namespace TestWeb
     {
         MainWindow mw;
         DatabaseConnection dbConn;
+        string login;
 
-        public logoutBox(MainWindow mw, DatabaseConnection dbConn)
+        public logoutBox(MainWindow mw, DatabaseConnection dbConn, string login)
         {
             this.mw = mw;
             this.dbConn = dbConn;
+            this.login = login;
             InitializeComponent();
+            userNameTextBox.Content = this.login;
         }
 
-        private void LogOutButton_Click(object sender, RoutedEventArgs e)
+    private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
             mw.login_logout_StackPanel.Children.Clear();
             loginHeaderBox lHB = new loginHeaderBox(mw, dbConn);
@@ -40,6 +43,8 @@ namespace TestWeb
             mw.cartInfoBox.Children.Clear();
             mw.loginTmp = 0;
             mw.hideUnhideAddButton(1);
+
+            //lHB.cB.itemList.Clear();
         }
 
         private void testButton_Click(object sender, RoutedEventArgs e)
@@ -47,6 +52,21 @@ namespace TestWeb
             //mw.stackPanelMain.Children.Clear();
             //productAdd pA = new productAdd();
             //mw.stackPanelMain.Children.Add(pA);
+        }
+
+        private void ProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window profileWindow = new Window
+            {
+                Title = "Your profile",
+                Content = new userProfile(mw, dbConn, login),
+                Width = 300,
+                Height = 300,
+                ResizeMode = ResizeMode.NoResize,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+
+            };
+            profileWindow.ShowDialog();
         }
     }
 }

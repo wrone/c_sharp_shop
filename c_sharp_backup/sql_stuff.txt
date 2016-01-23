@@ -6,37 +6,37 @@ DECLARE tmpQuantity, tmpOrderID, tmpOrderItemID INT;
 SELECT
 Quantity
 FROM
-products
+Products
 WHERE
 Products.ID = param_id_product INTO tmpQuantity;
 IF tmpQuantity >= param_quant THEN
-	UPDATE products SET
+	UPDATE Products SET
 	Quantity = Quantity - param_quant
 	WHERE Products.ID = param_id_product;
 
 	SELECT
 	MAX(ID)
 	FROM
-	orders INTO tmpOrderID;
+	Orders INTO tmpOrderID;
     
 	IF tmpOrderID IS NULL THEN
     SET tmpOrderID = 0;
     END IF;
 
-	INSERT INTO orders (ID, Users_ID, Addresses_ID, Shipping_methods_ID, Payments_ID, Date)
+	INSERT INTO Orders (ID, Users_ID, Addresses_ID, Shipping_methods_ID, Payments_ID, Date)
 	VALUES (tmpOrderID + 1, param_id_user, param_id_addr, param_id_shipp_m, param_id_payment, NOW());
 	
 	SELECT
 	MAX(ID)
 	FROM
-	order_items INTO tmpOrderItemID;
+	Order_items INTO tmpOrderItemID;
     
 	IF tmpOrderItemID IS NULL THEN
     SET tmpOrderItemID = 0;
     END IF;
     
     
-	INSERT INTO order_items (ID, Products_ID, Quantity, Orders_ID)
+	INSERT INTO Order_items (ID, Products_ID, Quantity, Orders_ID)
 	VALUES (tmpOrderItemID + 1, param_id_product, param_quant, tmpOrderID + 1);
 	RETURN CONCAT('Successfully');
 ELSE

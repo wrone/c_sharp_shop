@@ -23,17 +23,82 @@ namespace TestWeb
         public usrCtrl_Address()
         {
             InitializeComponent();
+            textBox.MaxLength = 45;
+            textBox1.MaxLength = 45;
+            textBox2.MaxLength = 8;
+            textBox4.MaxLength = 45;
+            textBox4.MaxLength = 45;
+            textBox5.MaxLength = 45;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        //private void button_Click(object sender, RoutedEventArgs rea)
+        //{
+            //bool a = InputValidator(textBox, 5);
+            //bool b = InputValidator(textBox1, 5);
+            //bool c = InputValidator(textBox2, 8);
+            //bool d = InputValidator(textBox3, 8);
+            //bool e = InputValidator(textBox4, 8);
+            //bool f = InputValidator(textBox5, 5);
+
+            //if (!a && !b && !c && !d && !e && !f) ((Panel)this.Parent).Children.Remove(this);
+        //}
+
+        public bool Execute()
         {
-            ((Panel)this.Parent).Children.Remove(this);
+            bool a = InputValidator(textBox, 5);
+            bool b = InputValidator(textBox1, 5);
+            bool c = InputValidator(textBox2, 8);
+            bool d = InputValidator(textBox3, 8);
+            bool e = InputValidator(textBox4, 8);
+            bool f = InputValidator(textBox5, 5);
+
+            if (!a && !b && !c && !d && !e && !f) return true; //((Panel)this.Parent).Children.Remove(this);
+            else return false;
         }
+
 
         public Address GetAddress()
         {
             return new Address(-1, textBox.Text, textBox1.Text, textBox2.Text, textBox3.Text,
                 textBox4.Text, textBox5.Text);
+        }
+
+        private void textBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsLetter(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+        }
+
+        private void textBox1_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsLetter(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+        }
+
+        private void textBox5_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsLetter(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+        }
+
+        private void textBox2_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+                e.Handled = true;
+        }
+
+        private bool InputValidator(TextBox tb, int length)
+        {
+            bool failed = false;
+
+            if (string.IsNullOrWhiteSpace(tb.Text) || tb.Text.Length < length)
+            {
+                tb.Background = Brushes.Red;
+                failed = true;
+            }
+            else tb.Background = Brushes.White;
+
+            return failed;
         }
 
     }

@@ -40,7 +40,7 @@
             <StackPanel Height="100" Canvas.Left="34" Canvas.Top="26" Width="100" Visibility="Hidden"/>
             <StackPanel x:Name="homePage" Height="414" Canvas.Left="34" Canvas.Top="26" Width="821" Background="#FF8B8686"/>
         </Canvas>
-        <Button x:Name="button" Content="Add Product" HorizontalAlignment="Left" Margin="72,468,0,0" VerticalAlignment="Top" Width="128" Click="button_Click"/>
+        <Button x:Name="addNewProductButton" Visibility="Hidden" Content="Add Product" HorizontalAlignment="Left" Margin="72,468,0,0" VerticalAlignment="Top" Width="128" Click="button_Click"/>
 
     </Grid>
 </Window>

@@ -96,9 +96,19 @@
     <Compile Include="userAdd.xaml.cs">
       <DependentUpon>userAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="userProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="usrCtrl_Address.xaml.cs" />
+    <Compile Include="usrCtrl_CartInfo.xaml.cs">
+      <DependentUpon>usrCtrl_CartInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="usrCtrl_ItemInCart.xaml.cs">
+      <DependentUpon>usrCtrl_ItemInCart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="usrCtrl_Payment.xaml.cs" />
     <Compile Include="usrCtrl_Shipping_type.xaml.cs" />
+    <Compile Include="wndw_Product_Buy.xaml.cs" />
     <Page Include="cartBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,15 +165,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="usrCtrl_Address.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="usrCtrl_CartInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="usrCtrl_ItemInCart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="usrCtrl_Payment.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="usrCtrl_Shipping_type.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="wndw_Product_Buy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -186,8 +212,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
