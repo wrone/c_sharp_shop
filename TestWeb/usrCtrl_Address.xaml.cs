@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -48,7 +49,7 @@ namespace TestWeb
             bool a = InputValidator(textBox, 5);
             bool b = InputValidator(textBox1, 5);
             bool c = InputValidator(textBox2, 8);
-            bool d = InputValidator(textBox3, 8);
+            bool d = checkEmail(textBox3, textBox3.Text);
             bool e = InputValidator(textBox4, 8);
             bool f = InputValidator(textBox5, 5);
 
@@ -100,6 +101,26 @@ namespace TestWeb
 
             return failed;
         }
+
+        public bool checkEmail(TextBox tb, string email)
+        {
+            string pattern = @"([a-z]+)([@])([a-z]+)([.])([a-z]{2,3})";
+            Regex regex = new Regex(pattern);
+
+            if (!regex.IsMatch(email))
+            {
+                tb.Background = Brushes.Red;
+                return false;
+            }
+            if (email.Equals(""))
+            {
+                tb.Background = Brushes.Red;
+                return false;
+            }
+            tb.Background = Brushes.White;
+            return true;
+        }
+
 
     }
 }

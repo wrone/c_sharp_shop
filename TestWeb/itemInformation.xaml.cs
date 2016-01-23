@@ -41,9 +41,6 @@ namespace TestWeb
             descriptionBox.Text = productList[index - 1].getDescription();
             priceBox.Text = Convert.ToString(productList[index - 1].getPrice());
             image.Source = productList[index].getImage();
-
-
-
         }
 
         public void setItemFram(itemFrame iF)

@@ -22,8 +22,8 @@ namespace TestWeb
     /// </summary>
     public partial class usrCtrl_Shipping_type : UserControl
     {
-        DatabaseConnection conn;
-        List<Shipment> shipmnetsList;
+        private DatabaseConnection conn;
+        private List<Shipment> shipmnetsList;
 
         public usrCtrl_Shipping_type()
         {

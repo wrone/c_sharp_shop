@@ -43,6 +43,8 @@ namespace TestWeb
         List<string> AminoAcidsCount;
         List<string> CarbohydratesCount;
 
+        string pageTitle;
+
         int catergoryType;
         public int loginTmp = 0;
         int currentNumber;
@@ -68,7 +70,7 @@ namespace TestWeb
 
             ProteinCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Protein'");
             CreatineCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Creatine'");
-            AminoAcidsCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'AminoAcids'");
+            AminoAcidsCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Amino acids'");
             CarbohydratesCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Carbohydrates'");
 
             List<string> ID = dbConn.ReadData("select ID from Products");
@@ -79,6 +81,7 @@ namespace TestWeb
             List<string> Quantity = dbConn.ReadData("select Quantity from Products");
             List<string> Price = dbConn.ReadData("select Price from Products");
             List<string> Manufacturer = dbConn.ReadData("select Manufacturer from Products");
+            List<string> Category = dbConn.ReadData("select Category from Products");
             imageList = new List<BitmapImage>();
             for (int i = 0; i < ID.Count; i++)
             {
@@ -86,7 +89,7 @@ namespace TestWeb
             }
             for (int i = 0; i < ID.Count; i++)
             {
-                ProductClass pC = new ProductClass(Convert.ToInt32(ID[i]), Name[i], Description[i], "a", "b", Convert.ToInt32(Quantity[i]), Convert.ToDouble(Price[i]), Manufacturer[i], imageList[i]);
+                ProductClass pC = new ProductClass(Convert.ToInt32(ID[i]), Name[i], Description[i], "a", "b", Convert.ToInt32(Quantity[i]), Convert.ToDouble(Price[i]), Manufacturer[i], imageList[i], Category[i]);
                 productList.Add(pC);
             }
 
@@ -215,42 +218,47 @@ namespace TestWeb
 
         private void proteinButton_Click(object sender, RoutedEventArgs e)
         {
+            pageTitle = "Protein";
             catergoryType = 1;
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(ProteinCount.Count);
-            changePage(catergoryType);
+            //changePage(catergoryType);
+            changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void creatineButton_Click(object sender, RoutedEventArgs e)
         {
+            pageTitle = "Creatine";
             catergoryType = 2;
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(CreatineCount.Count);
-            changePage(catergoryType);
+            changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void aminoAcidsButton_Click(object sender, RoutedEventArgs e)
         {
+            pageTitle = "Amino acids";
             catergoryType = 3;
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(AminoAcidsCount.Count);
-            changePage(catergoryType);
+            changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void carbohydratesButton_Click(object sender, RoutedEventArgs e)
         {
+            pageTitle = "Carbohydrates";
             catergoryType = 4;
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(CarbohydratesCount.Count);
-            changePage(catergoryType);
+            changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
         //////////////////////////////////////////////////////////////////////////////////////////Hide home page and unhide 10stackpanel
         public void hideOrUnhideAll(int sk) // 0 unhide ... 1 hide
@@ -308,63 +316,46 @@ namespace TestWeb
 
         }
         //////////////////////////////////////////////////////////////////////////////////////////functions
-        public void changePage(int type)
+        public void changePage(string category, int page)
         {
-            int number = 0;
-            int test = 1;
+            VisibilityChanger(0, Visibility.Visible);
 
             for (int i = 0; i < 10; i++)
                 stackPanelList[i].Children.Clear();
-            itemFrame iF;
-            for (int i = 0; i < countOfItemsOnPage.Count; i++)
-            {
-                if (i + 1 == Convert.ToInt32(currentPageLabel.Content))
+
+            int counter = 0;
+            int productCounter = 0;
+            int startFrom = page * 10;
+       
+                foreach (ProductClass pc in productList)
                 {
-                    for (int j = 0; j < countOfItemsOnPage[i]; j++)
+                    if (pc.GetCategory().Equals(category) && counter < startFrom) counter++;
+                    if (pc.GetCategory().Equals(category) && counter >= startFrom)
                     {
-                      
-
-                        if (type == 2 && test == 1)
-                        {
-                            number += ProteinCount.Count;
-                            test = 0;
-                        }
-                        if (type == 3 && test == 1)
-                        {
-                            number += ProteinCount.Count + CreatineCount.Count;
-                            test = 0;
-                        }
-                        if (type == 4 && test == 1)
-                        {
-                            number += ProteinCount.Count + CreatineCount.Count + AminoAcidsCount.Count;
-                            test = 0;
-                        }
-
-                        iF = new itemFrame(this, iI);
-                        iF.nameLabel.Content = productList[number + (i * 10) + j].getName();
-                        iF.priceLabel.Content = productList[number + (i * 10) + j].getPrice();
-                        iF.SetImage(dbConn.ReadBlobData(number + (i * 10) + j + 1));
-                        //iI.changeInfo(number + (i * 10) + j + 1);
-                        iF.setIndex(number + (i * 10) + j + 1);
-                        stackPanelList[j].Children.Add(iF);
+                        itemFrame iF = new itemFrame(this, iI);
+                        iF.nameLabel.Content = pc.getName();
+                        iF.priceLabel.Content = pc.getPrice();
+                        iF.SetImage(dbConn.ReadBlobData(pc.getId()));
+                        stackPanelList[productCounter].Children.Add(iF);
                         itemFrameList.Add(iF);
+                        productCounter++;
 
-                        if(loginTmp == 0)
-                            hideUnhideAddButton(1);
+                        if (productCounter == 10) break;
                     }
                 }
 
-            }
+            VisibilityChanger(productCounter, Visibility.Hidden);
 
-
-            for (int i = 0; i < stackPanelList.Count; i++)
-            {
-                if (stackPanelList[i].Children.Count == 0)
-                    stackPanelList[i].Visibility = Visibility.Hidden;
-                else
-                    stackPanelList[i].Visibility = Visibility.Visible;
-            }
+            if (loginTmp == 0)
+                hideUnhideAddButton(1);
         }
+
+        public void VisibilityChanger(int idx, Visibility v)
+        {
+            for (int i = idx; i < stackPanelList.Count; i++)
+                stackPanelList[i].Visibility = v;
+        }
+
         //////////////////////////////////////////////////////////////////////////////////////////functions
         public int getPageCountFull(int count)
         {
@@ -413,12 +404,12 @@ namespace TestWeb
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
         {
             int nm;
-            if(currentPageLabel.Content != "1")
+            if(!currentPageLabel.Content.Equals("1"))
             {
                 nm = Convert.ToInt32(allPageLabel.Content);
                 nm = nm - 1;
                 currentPageLabel.Content = nm;
-                changePage(catergoryType);
+                changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
             }
         }
 
@@ -430,7 +421,8 @@ namespace TestWeb
                 nm = Convert.ToInt32(currentPageLabel.Content);
                 nm = nm + 1;
                 currentPageLabel.Content = nm;
-                changePage(catergoryType);
+                //changePage(catergoryType);
+                changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
             }
         }
         //////////////////////////////////////////////////////////////////////////////////////////

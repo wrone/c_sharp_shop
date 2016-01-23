@@ -20,15 +20,14 @@ namespace TestWeb
     /// </summary>
     public partial class wndw_Product_Buy : Window
     {
-        DatabaseConnection conn;
-        Payment payment;
-        Address address;
-        Shipment shipment;
-
-        string username;
-        List<Items> itemList;
-        int clickCounter;
-        string sum;
+        private DatabaseConnection conn;
+        private Payment payment;
+        private Address address;
+        private Shipment shipment;
+        private string username;
+        private List<Items> itemList;
+        private int clickCounter;
+        private string sum;
 
         public wndw_Product_Buy(DatabaseConnection conn, string username, List<Items> itemList, string sum)
         {

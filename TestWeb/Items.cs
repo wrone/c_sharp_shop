@@ -8,7 +8,7 @@ namespace TestWeb
 {
     public class Items
     {
-        int idx, count;
+        private int idx, count;
 
         public Items()
         {

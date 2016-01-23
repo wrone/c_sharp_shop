@@ -10,12 +10,12 @@ namespace TestWeb
     public class ProductClass
     {
         // SELECT ID, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer FROM Products
-        int ID, Quantity;
-        string Description, Release_date, End_date, Category, Manufacturer, Name;
-        double Price;
-        BitmapImage bmp;
+        private int ID, Quantity;
+        private string Description, Release_date, End_date, Category, Manufacturer, Name;
+        private double Price;
+        private BitmapImage bmp;
 
-        public ProductClass(int ID, string Name, string Description, string Release_date, string End_date, int Quantity, double Price, string Manufacturer, BitmapImage bmp)
+        public ProductClass(int ID, string Name, string Description, string Release_date, string End_date, int Quantity, double Price, string Manufacturer, BitmapImage bmp, string Category)
         {
             this.ID = ID;
             this.Name = Name;
@@ -26,6 +26,12 @@ namespace TestWeb
             this.Price = Price;
             this.Manufacturer = Manufacturer;
             this.bmp = bmp;
+            this.Category = Category;
+        }
+
+        public string GetCategory()
+        {
+            return Category;
         }
 
         public int getId()

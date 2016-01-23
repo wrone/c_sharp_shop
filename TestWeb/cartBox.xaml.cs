@@ -21,9 +21,9 @@ namespace TestWeb
     /// </summary>
     public partial class cartBox : UserControl
     {
-        DatabaseConnection conn;
-        MainWindow mw;
-        string name;
+        private DatabaseConnection conn;
+        private MainWindow mw;
+        private string name;
         public List<Items> itemList = new List<Items>();     
         public List<ProductClass> productList;            
         public List<BitmapImage> imageList;
@@ -35,9 +35,6 @@ namespace TestWeb
         {
             InitializeComponent();
             mw = new MainWindow();
-
-            
-
         }
 
         public cartBox(MainWindow mw, DatabaseConnection conn)
