@@ -65,7 +65,9 @@ namespace TestWeb
         {
             DateTime dateTime = DateTime.UtcNow.Date;
             string date = dateTime.ToString("yyyy-MM-dd");
-            string expDate = comboBox1.SelectedValue + "-" + comboBox.SelectedValue + "-01";//comboBox.SelectedValue + "/" + comboBox1.SelectedValue;
+
+            string month = Convert.ToInt32(comboBox.SelectedValue) < 10 ? "0" + comboBox.SelectedValue.ToString() : comboBox.SelectedValue.ToString();
+            string expDate = comboBox1.SelectedValue + "-" + month + "-01";//comboBox.SelectedValue + "/" + comboBox1.SelectedValue;
             return new Payment(-1, date, textBox.Text, textBox1.Text, textBox2.Text, expDate, 777);
         }
 

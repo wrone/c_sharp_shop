@@ -38,7 +38,7 @@ namespace TestWeb
 
         private void orderButton_Click(object sender, RoutedEventArgs e)
         {
-            wndw_Product_Buy window = new wndw_Product_Buy(conn, usernameTmp, itemList);
+            wndw_Product_Buy window = new wndw_Product_Buy(conn, usernameTmp, itemList, currentPriceBox.Text);
             window.ShowDialog();
         }
 
