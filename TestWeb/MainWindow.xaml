@@ -48,6 +48,14 @@
         <Button x:Name="typeChoiceButton9" Content="item category 9" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
         <Button x:Name="typeChoiceButton10" Content="item category 10" HorizontalAlignment="Left" Margin="10,502,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
         <Button x:Name="typeChoiceButton11" Content="item category 11" HorizontalAlignment="Left" Margin="10,524,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
+        <Button x:Name="button" Content="by date asc" HorizontalAlignment="Left" Margin="270,92,0,0" VerticalAlignment="Top" Width="75" Click="button_Click_1"/>
+        <Button x:Name="button1" Content="by date desc" HorizontalAlignment="Left" Margin="350,92,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="button2" Content="by price asc" HorizontalAlignment="Left" Margin="483,92,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        <Button x:Name="button3" Content="by price desc" HorizontalAlignment="Left" Margin="563,92,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="20" Margin="716,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button4" Content="Search" HorizontalAlignment="Left" Margin="841,91,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
+        <Button x:Name="button5" Content="by pop asc" HorizontalAlignment="Left" Margin="329,56,0,0" VerticalAlignment="Top" Width="75" Click="button5_Click"/>
+        <Button x:Name="button6" Content="by pop desc" HorizontalAlignment="Left" Margin="409,56,0,0" VerticalAlignment="Top" Width="75" Click="button6_Click"/>
 
     </Grid>
 </Window>

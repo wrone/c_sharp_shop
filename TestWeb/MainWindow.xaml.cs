@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
+using System.Windows.Controls.Primitives;
 
 namespace TestWeb
 {
@@ -34,6 +35,8 @@ namespace TestWeb
         public List<ProductClass> productList = new List<ProductClass>();
         public List<BitmapImage> imageList;
 
+        public List<ProductClass> searchProductList = new List<ProductClass>();
+
         List<int> countOfItemsOnPage;
         public List<itemFrame> itemFrameList = new List<itemFrame>();
 
@@ -43,13 +46,13 @@ namespace TestWeb
         List<string> AminoAcidsCount;
         List<string> CarbohydratesCount;
 
+        bool searched = true;
+
         string pageTitle;
         public int loginTmp = 0;
         int currentNumber;
 
         public newsHomePage nHP;
-
-
         public cartBox cartBoxNew;
 
 
@@ -230,7 +233,8 @@ namespace TestWeb
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(ProteinCount.Count);
-            changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            searched = false;
         }
 
         private void creatineButton_Click(object sender, RoutedEventArgs e)
@@ -240,7 +244,8 @@ namespace TestWeb
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(CreatineCount.Count);
-            changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            searched = false;
         }
 
         private void aminoAcidsButton_Click(object sender, RoutedEventArgs e)
@@ -250,7 +255,8 @@ namespace TestWeb
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(AminoAcidsCount.Count);
-            changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            searched = false;
         }
 
         private void carbohydratesButton_Click(object sender, RoutedEventArgs e)
@@ -260,7 +266,8 @@ namespace TestWeb
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(CarbohydratesCount.Count);
-            changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            searched = false;
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////Hide home page and unhide 10stackpanel
@@ -323,7 +330,7 @@ namespace TestWeb
         }
         //////////////////////////////////////////////////////////////////////////////////////////functions
 
-        public void changePage(string category, int page)
+        public void changePage(List<ProductClass> list, string category, int page)
         {
             VisibilityChanger(0, Visibility.Visible);
 
@@ -334,7 +341,7 @@ namespace TestWeb
             int productCounter = 0;
             int startFrom = page * 10;
 
-            foreach (ProductClass pc in productList)
+            foreach (ProductClass pc in list)
             {
                 if (pc.GetCategory().Equals(category) && counter < startFrom) counter++;
                 if (pc.GetCategory().Equals(category) && counter >= startFrom)
@@ -416,7 +423,8 @@ namespace TestWeb
                 nm = Convert.ToInt32(allPageLabel.Content);
                 nm = nm - 1;
                 currentPageLabel.Content = nm;
-                changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+                if (searched == true) changePage(searchProductList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+                else changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
             }
         }
 
@@ -428,8 +436,102 @@ namespace TestWeb
                 nm = Convert.ToInt32(currentPageLabel.Content);
                 nm = nm + 1;
                 currentPageLabel.Content = nm;
-                changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+                if(searched == true) changePage(searchProductList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+                else changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
             }
+        }
+
+        private void Sort(int type)
+        {
+            for (int i = 0; i < productList.Count; i++)
+                for (int j = i + 1; j < productList.Count; j++)
+                    if (type == 1 && productList[i].getId() > productList[j].getId()) Swap(i, j);               //by date asc
+                    else if (type == 2 && productList[i].getId() < productList[j].getId()) Swap(i, j);          //by date desc
+                    else if (type == 3 && productList[i].getPrice() > productList[j].getPrice()) Swap(i, j);    //by price asc
+                    else if (type == 4 && productList[i].getPrice() < productList[j].getPrice()) Swap(i, j);    //by price desc
+        }
+
+        private void Swap(int idx1, int idx2)
+        {
+            ProductClass tmp = productList[idx1];
+            productList[idx1] = productList[idx2];
+            productList[idx2] = tmp;
+        }
+
+        private void DetermineButton(string s)
+        {
+            if (s.Equals("Protein")) proteinButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            else if (s.Equals("Creatine")) creatineButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            else if (s.Equals("Amino acids")) aminoAcidsButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            else if (s.Equals("Carbohydrates")) carbohydratesButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+        }
+
+        private void button_Click_1(object sender, RoutedEventArgs e)   //by date asc
+        {
+            Sort(1);
+            DetermineButton(pageTitle);
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)    //by date desc
+        {
+            Sort(2);
+            DetermineButton(pageTitle);
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)    //by price asc
+        {
+            Sort(3);
+            DetermineButton(pageTitle);
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)    //by price desc
+        {
+            Sort(4);
+            DetermineButton(pageTitle);
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)    //search
+        {
+            if (textBox.Text.Length > 0)
+            {
+                searchProductList = new List<ProductClass>();
+                List<string> tmp = dbConn.ReadData("call productSearch('" + textBox.Text + "', '" + pageTitle + "')");
+                foreach (string s in tmp)
+                    foreach (ProductClass p in productList)
+                        if (p.getId() == Convert.ToInt32(s))
+                        {
+                            searchProductList.Add(p);
+                            Console.WriteLine(s + ",");
+                            break;
+                        }
+
+                searched = true;
+                changePage(searchProductList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            }
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)    //by price asc
+        {
+            PopularityHelper("SELECT * FROM mostPopularASC");
+            DetermineButton(pageTitle);
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)    //by price desc
+        {
+            PopularityHelper("SELECT * FROM mostPopularDESC");
+            DetermineButton(pageTitle);
+        }
+
+        private void PopularityHelper(string s)
+        {
+            List<string> tmp = dbConn.ReadData(s);
+            for (int i = 0; i < tmp.Count; i++)
+                for (int j = 0; j < productList.Count; j++)
+                    if (productList[j].getId() == Convert.ToInt32(tmp[i]))
+                    {
+                        Swap(i, j);
+                        break;
+                    }
         }
         //////////////////////////////////////////////////////////////////////////////////////////
 

@@ -33,11 +33,11 @@ ORDER BY Order_items.Quantity DESC;
 
 //poisk napitka
 DELIMITER //
-CREATE PROCEDURE beverageSearch(nosaukums CHAR(45))
+CREATE PROCEDURE productSearch(nosaukums CHAR(45), kategorija CHAR(45))
 BEGIN
 SELECT ID
 FROM Products
-WHERE Name LIKE CONCAT('%',nosaukums,'%');
+WHERE Name LIKE CONCAT('%',nosaukums,'%') and Category Like kategorija;
 END; //
 DELIMITER ;
 
