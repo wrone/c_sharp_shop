@@ -25,12 +25,6 @@ namespace TestWeb
     {
         List<StackPanel> stackPanelList = new List<StackPanel>();
         
-        //List<typeShopBox> typeList = new List<typeShopBox>();
-        // VAJSA
-        //private string MyConnection;
-        //private MySqlConnection connection;
-        //private MySqlCommand cmd;
-        //private MySqlDataReader dataReader;
         DatabaseConnection dbConn;
         public List<ProductClass> productList = new List<ProductClass>();
         public List<BitmapImage> imageList;
@@ -68,67 +62,11 @@ namespace TestWeb
             dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
             //dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
 
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////// News
-
-            List<string> ID_News = dbConn.ReadData("select ID from News");
-            List<string> Title_News = dbConn.ReadData("select Title from News");
-            List<string> Text_News = dbConn.ReadData("select Text from News");
-            List<string> Date_News = dbConn.ReadData("select Date from News");
-
-            for(int i = 0; i < ID_News.Count; i++)
-            {
-                newsClass nC = new newsClass(Convert.ToInt32(ID_News[i]), Title_News[i], Text_News[i], Date_News[i]);
-                newsClassList.Add(nC);
-            }
-
             drawNews();
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-            dbConn.ReadBlobData(1);
-            GetCategoryCount("Protein");
-
-            //UserRegister("da", "da", "da32ac", "da", "da", "da");
-            //ProductRegister("da", "da", "2008-11-11", "2008-11-11", 2, 2, "da", "da", "da");
-            //PaymentRegister("2008-11-11", "da", "da", "da", "2008-11-11", 12);
-            //AddressRegister("da", "da", "da2", "da", "da", "da");
-
-
-            ProteinCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Protein'");
-            CreatineCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Creatine'");
-            AminoAcidsCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Amino acids'");
-            CarbohydratesCount = dbConn.ReadData("select ID from Products WHERE Category LIKE 'Carbohydrates'");
-
-            List<string> ID = dbConn.ReadData("select ID from Products");
-            List<string> Name = dbConn.ReadData("select Name from Products");
-            List<string> Description = dbConn.ReadData("select Description from Products");
-            //List<string> Release_date = dbConn.ReadData("select Release_date from Products");
-            //List<string> End_date = dbConn.ReadData("select End_date from Products");
-            List<string> Quantity = dbConn.ReadData("select Quantity from Products");
-            List<string> Price = dbConn.ReadData("select Price from Products");
-            List<string> Category = dbConn.ReadData("select Category from Products");
-            List<string> Manufacturer = dbConn.ReadData("select Manufacturer from Products");
-            imageList = new List<BitmapImage>();
-            for (int i = 0; i < ID.Count; i++)
-            {
-                imageList.Add(dbConn.ReadBlobData(i));
-            }
-            for (int i = 0; i < ID.Count; i++)
-            {
-                if (Convert.ToInt32(Quantity[i]) > 0)
-                {
-                    ProductClass pC = new ProductClass(Convert.ToInt32(ID[i]), Name[i], Description[i], "a", "b", Convert.ToInt32(Quantity[i]), Convert.ToDouble(Price[i]), Manufacturer[i], imageList[i], Category[i]);
-                    productList.Add(pC);
-                }
-            }
-
-
-            Console.WriteLine(productList.Count);
+            startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            ReadData();
 
             iI = new itemInformation(this, productList);
-
 
             stackPanelList.Add(sp1);
             stackPanelList.Add(sp2);
@@ -144,7 +82,6 @@ namespace TestWeb
             // Login Register
             loginHeaderBox lHB = new loginHeaderBox(this, dbConn);
             login_logout_StackPanel.Children.Add(lHB);
-
 
             labelSort1.Visibility = Visibility.Hidden;
             labelSort2.Visibility = Visibility.Hidden;
@@ -177,44 +114,6 @@ namespace TestWeb
             }
             return false;
         }
-        public int ProductRegister(string name, string desc, string releaseDate, string endDate, int quantity, double price, string category, string manufacturer, Image image)
-        {
-            dbConn.WriteData("INSERT INTO Products(Name, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer, Picture)"
-                           + "VALUES('" + name + "', '" + desc + "', '" + releaseDate + "', '"
-                           + endDate + "', " + quantity + ", " + price + ", '" + category + "', '"
-                           + manufacturer + "', '" + image + "')");
-
-            return GetLastID("Products");
-        }
-        public List<string> ProductReader()
-        {
-            return dbConn.ReadData("SELECT ID, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer FROM Products");
-        }
-
-        public int PaymentRegister(string date, string cardNumber, string holdersName, string holdersLastname, string expDate, double money)
-        {
-            dbConn.WriteData("INSERT INTO Payments(Date, CardNumber, CardHoldersName, CardHoldersLastname, ExpDate, Amount)"
-                            + "VALUES('" + date + "', '" + cardNumber + "', '" + holdersName + "', '"
-                            + holdersLastname + "', '" + expDate + "', " + money + ")");
-
-            return GetLastID("Payments");
-        }
-        public int AddressRegister(string name, string lastname, string phone, string email, string address, string city)
-        {
-            dbConn.WriteData("INSERT INTO Addresses(Name, Lastname, Phone, Email, Address, City)"
-                           + "VALUES('" + name + "', '" + lastname + "', '" + phone + "', '"
-                           + email + "', '" + address + "', '" + city + "')");
-
-            return GetLastID("Addresses");
-        }
-
-
-
-        public int GetLastID(string table)
-        {
-            int id = Convert.ToInt32(dbConn.ReadData("select max(ID) from " + table)[0]);
-            return 0;
-        }
 
         public void drawNews()
         {
@@ -232,9 +131,6 @@ namespace TestWeb
                 homePage.Children.Add(nHP);
             }
         }
-
-
-
 
         public int GetCategoryCount(string category)
         {
@@ -285,6 +181,7 @@ namespace TestWeb
 
         private void proteinButton_Click(object sender, RoutedEventArgs e)
         {
+            ReadData();
             pageTitle = "Protein";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -296,6 +193,7 @@ namespace TestWeb
 
         private void creatineButton_Click(object sender, RoutedEventArgs e)
         {
+            ReadData();
             pageTitle = "Creatine";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -307,6 +205,7 @@ namespace TestWeb
 
         private void aminoAcidsButton_Click(object sender, RoutedEventArgs e)
         {
+            ReadData();
             pageTitle = "Amino acids";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -318,6 +217,7 @@ namespace TestWeb
 
         private void carbohydratesButton_Click(object sender, RoutedEventArgs e)
         {
+            ReadData();
             pageTitle = "Carbohydrates";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -458,12 +358,17 @@ namespace TestWeb
                     itemFrame iF = new itemFrame(this, iI);
                     iF.nameLabel.Content = pc.getName();
                     iF.priceLabel.Content = pc.getPrice();
-                    iF.SetImage(dbConn.ReadBlobData(pc.getId()));
+                    iF.SetImage(pc.getImage());
                     iF.setIndex(pc.getId());
                     stackPanelList[productCounter].Children.Add(iF);
                     itemFrameList.Add(iF);
                     productCounter++;
 
+                    if (pc.getQuantity() == 0)
+                    {
+                        iF.button.IsEnabled = false;
+                        iI.addButton.IsEnabled = false;
+                    }
                     if (productCounter == 10) break;
                 }
             }
@@ -639,6 +544,43 @@ namespace TestWeb
                         Swap(i, j);
                         break;
                     }
+        }
+
+        private void ReadData()
+        {
+            productList = new List<ProductClass>();
+            imageList = new List<BitmapImage>();
+            ProteinCount = new List<string>();
+            CreatineCount = new List<string>();
+            AminoAcidsCount = new List<string>();
+            CarbohydratesCount = new List<string>();
+
+            List<string> dataList = dbConn.ReadData("SELECT ID, Name, Description, Release_date, End_date, Quantity, Price, Manufacturer, Category FROM Products");
+            for (int i = 0; i < dataList.Count; i += 9)
+            {
+                BitmapImage img = dbConn.ReadBlobData(Convert.ToInt32(dataList[i]));
+                imageList.Add(img);
+
+                ProductClass pC = new ProductClass(Convert.ToInt32(dataList[i]),
+                                                    dataList[i + 1],
+                                                    dataList[i + 2],
+                                                    dataList[i + 3],
+                                                    dataList[i + 4], 
+                                                    Convert.ToInt32(dataList[i + 5]), 
+                                                    Convert.ToDouble(dataList[i + 6]),
+                                                    dataList[i + 7],
+                                                    img,
+                                                    dataList[i + 8]
+                                                  );
+                productList.Add(pC);
+            }
+
+            foreach (ProductClass pc in productList)
+                if ("Protein".Equals(pc.GetCategory())) ProteinCount.Add(pc.getId().ToString());
+                else if ("Creatine".Equals(pc.GetCategory())) CreatineCount.Add(pc.getId().ToString());
+                else if ("Amino acids".Equals(pc.GetCategory())) AminoAcidsCount.Add(pc.getId().ToString());
+                else if ("Carbohydrates".Equals(pc.GetCategory())) CarbohydratesCount.Add(pc.getId().ToString());
+
         }
 
     }

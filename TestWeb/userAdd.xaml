@@ -21,6 +21,6 @@
         <TextBox x:Name="userLastname" HorizontalAlignment="Left" Height="23" Margin="129,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="userPhone" HorizontalAlignment="Left" Height="23" Margin="129,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="userRegisterButton" Content="Register" HorizontalAlignment="Left" Margin="129,214,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="userRegisterButton_Click"/>
-
+        <Button x:Name="cancelButton" Content="Cancel" Margin="129,241,48.6,9" Width="120" Height="22" Click="cancelButton_Click"></Button>
     </Grid>
 </UserControl>

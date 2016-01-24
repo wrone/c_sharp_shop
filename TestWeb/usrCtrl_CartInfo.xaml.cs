@@ -25,20 +25,23 @@ namespace TestWeb
         List<Items> itemList;
         List<ProductClass> productList;
         DatabaseConnection conn;
+        public cartBox cB;
 
 
-        public usrCtrl_CartInfo(string name, List<Items> itemList, List<ProductClass> productList, DatabaseConnection conn)
+        public usrCtrl_CartInfo(string name, List<Items> itemList, List<ProductClass> productList, DatabaseConnection conn, cartBox cB)
         {
             InitializeComponent();
             usernameTmp = name;
             this.itemList = itemList;
             this.productList = productList;
             this.conn = conn;
+            this.cB = cB;
+            checkProductList();
         }
 
         private void orderButton_Click(object sender, RoutedEventArgs e)
         {
-            wndw_Product_Buy window = new wndw_Product_Buy(conn, usernameTmp, itemList, currentPriceBox.Text);
+            wndw_Product_Buy window = new wndw_Product_Buy(conn, usernameTmp, itemList, currentPriceBox.Text, cB);
             window.ShowDialog();
         }
 
@@ -50,6 +53,20 @@ namespace TestWeb
         public string GetUserName()
         {
             return usernameTmp;
+        }
+
+        public bool checkProductList()
+        {
+            if (this.itemList != null & this.itemList.Count > 0)
+            {
+                orderButton.IsEnabled = true;
+                return true;
+            }
+            else
+            {
+                orderButton.IsEnabled = false;
+                return false;
+            }
         }
 
     }

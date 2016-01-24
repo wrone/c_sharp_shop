@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TestWeb"
         xmlns:c_sharp_kursa="clr-namespace:c_sharp_kursa" x:Class="TestWeb.ProductRegister"
         mc:Ignorable="d"
-        Title="ProductRegister" Height="405" Width="341">
+        Title="ProductRegister" Height="429" Width="353.8">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

@@ -55,13 +55,13 @@ namespace TestWeb
             mw.homePage.Children.Clear();
             mw.hideOrUnhideAll(1);
 
-            cartUsr = new usrCtrl_CartInfo(name, itemList, productList, conn);
+            cartUsr = new usrCtrl_CartInfo(name, itemList, productList, conn, this);
             usrCtrl_ItemInCart item;
             itemListInCart = new List<usrCtrl_ItemInCart>();
             for (int i = 0; i < itemList.Count; i++)
             {
                 item = new usrCtrl_ItemInCart(this, cartUsr);
-                item.image.Source = imageList[itemList[i].getIndex() + 1];
+                item.image.Source = imageList[itemList[i].getIndex()];
                 item.text.Text = productList[itemList[i].getIndex()].getName();
                 item.priceBox.Text = Convert.ToString(productList[itemList[i].getIndex()].getPrice());
                 item.quantityLabel.Content = productList[itemList[i].getIndex()].getQuantity();
@@ -85,6 +85,18 @@ namespace TestWeb
             OrderToCache(name);
         }
 
+        public void RemoveAllOrders()
+        {
+            cartUsr.stackPanel.Children.Clear();
+            itemListInCart.Clear();
+            itemList.Clear();
+            price = 0;
+            cartUsr.currentPriceBox.Text = "0";
+            OrderToCache(name);
+            mw.cartBoxNew.cartInfoNumber.Content = Convert.ToString(mw.cartBoxNew.itemList.Count);
+            cartUsr.checkProductList();
+        }
+
         public void setName(string name)
         {
             this.name = name;
@@ -105,7 +117,7 @@ namespace TestWeb
         //Help function to use in itemFrame class
         public void PrepareCart()
         {
-            cartUsr = new usrCtrl_CartInfo(name, itemList, productList, conn);
+            cartUsr = new usrCtrl_CartInfo(name, itemList, productList, conn, this);
             usrCtrl_ItemInCart item;
             itemListInCart = new List<usrCtrl_ItemInCart>();
 
@@ -132,12 +144,14 @@ namespace TestWeb
 
                 if (productList != null)
                 {
-                    for (int i = 0; i < itemList.Count; i++)
-                    {
-                        orderInfo += productList[itemList[i].getIndex()].getId() + "/" + productList[itemList[i].getIndex()].getPrice() + "/" +
-                                itemListInCart[i].countBox.Text + "|";
-                    }
+                    if (itemList.Count > 0)
+                        for (int i = 0; i < itemList.Count; i++)
+                        {
+                            orderInfo += productList[itemList[i].getIndex()].getId() + "/" + productList[itemList[i].getIndex()].getPrice() + "/" +
+                                    itemListInCart[i].countBox.Text + "|";
+                        }
                     outputFile.WriteLine(orderInfo);
+                    outputFile.Close();
                 }
             }
         }

@@ -28,14 +28,16 @@ namespace TestWeb
         private List<Items> itemList;
         private int clickCounter;
         private string sum;
+        private cartBox cB;
 
-        public wndw_Product_Buy(DatabaseConnection conn, string username, List<Items> itemList, string sum)
+        public wndw_Product_Buy(DatabaseConnection conn, string username, List<Items> itemList, string sum, cartBox cB)
         {
             InitializeComponent();
             this.conn = conn;
             this.username = username;
             this.itemList = itemList;
             this.sum = sum;
+            this.cB = cB;
 
             ctrlShipping.Init(conn);
 
@@ -131,10 +133,11 @@ namespace TestWeb
                 foreach (Items item in itemList)
                     BuyProduct(item.getIndex()+1, item.getCount(), GetUserID(username), addrID, shipment.ID, payID, ordID);
 
-                MessageBox.Show("Successfully");
+                MessageBox.Show("Successfully", "Buy product", MessageBoxButton.OK, MessageBoxImage.Information);
+                cB.RemoveAllOrders();
                 this.Close();
             }
-            else MessageBox.Show("Something went wrong");
+            else MessageBox.Show("Something went wrong", "Buy product", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private int PaymentRegister(string date, string cardNumber, string holdersName, string holdersLastname, string expDate, string money)

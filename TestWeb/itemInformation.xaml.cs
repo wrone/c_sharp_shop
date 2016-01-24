@@ -38,7 +38,7 @@ namespace TestWeb
             nameBox.Text = productList[index - 1].getName();
             descriptionBox.Text = productList[index - 1].getDescription();
             priceBox.Text = Convert.ToString(productList[index - 1].getPrice());
-            image.Source = productList[index].getImage();
+            image.Source = productList[index - 1].getImage();
         }
 
         public void setItemFram(itemFrame iF)
@@ -63,6 +63,8 @@ namespace TestWeb
                 mw.cartBoxNew.productList = mw.productList;
                 mw.cartBoxNew.imageList = mw.imageList;
             }
+            else
+                MessageBox.Show("Product is already in the cart", "Add product to cart", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
             mw.cartBoxNew.cartInfoNumber.Content = Convert.ToString(mw.cartBoxNew.itemList.Count);
             mw.cartBoxNew.PrepareCart();

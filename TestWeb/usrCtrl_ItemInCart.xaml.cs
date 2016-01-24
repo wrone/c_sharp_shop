@@ -80,7 +80,7 @@ namespace TestWeb
 
                 cB.cartInfoButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
                 cB.cartInfoNumber.Content = cB.itemList.Count;
-
+                cB.cartUsr.checkProductList();
 
             }
         }

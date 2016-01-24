@@ -57,14 +57,14 @@ namespace c_sharp_kursa
                 if (lastNameOk && phoneOk)
                     if (mw.UserRegister(name, lastName, login, password1, email, phone))
                     {
-                        MessageBox.Show("User was successfully added");
+                        MessageBox.Show("User was successfully added", "Add new user", MessageBoxButton.OK, MessageBoxImage.Information);
                         Window parent = Window.GetWindow(this);
                         parent.Close();
 
                     }
             }
             else
-                MessageBox.Show("User was not added. Please re-check your data.");
+                MessageBox.Show("User was not added. Please re-check your data.", "Add new user", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         public bool checkName(string name)
@@ -165,6 +165,12 @@ namespace c_sharp_kursa
 
             userLastname.Background = Brushes.White;
             return true;
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window parent = Window.GetWindow(this);
+            parent.Close();
         }
     }
 }

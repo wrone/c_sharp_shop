@@ -72,6 +72,8 @@ namespace TestWeb
                 mw.cartBoxNew.productList = mw.productList;
                 mw.cartBoxNew.imageList = mw.imageList;
             }
+            else
+                MessageBox.Show("Product is already in the cart", "Add product to cart", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
             mw.cartBoxNew.cartInfoNumber.Content = Convert.ToString(mw.cartBoxNew.itemList.Count);
             mw.cartBoxNew.PrepareCart();

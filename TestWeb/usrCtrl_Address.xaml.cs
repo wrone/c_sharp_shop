@@ -53,7 +53,7 @@ namespace TestWeb
             bool e = InputValidator(textBox4, 8);
             bool f = InputValidator(textBox5, 5);
 
-            if (!a && !b && !c && !d && !e && !f) return true; //((Panel)this.Parent).Children.Remove(this);
+            if (!a && !b && !c && d && !e && !f) return true; //((Panel)this.Parent).Children.Remove(this);
             else return false;
         }
 

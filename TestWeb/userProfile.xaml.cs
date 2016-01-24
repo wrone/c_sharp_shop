@@ -64,13 +64,13 @@ namespace TestWeb
 
                 if (dbConn.WriteData(query))
                 {
-                    MessageBox.Show("User data was successfully modified");
+                    MessageBox.Show("User data was successfully modified", "Edit user data", MessageBoxButton.OK, MessageBoxImage.Information);
                     Window parent = Window.GetWindow(this);
                     parent.Close();
                 }
             }
             else
-                MessageBox.Show("Data you input is invalid. Please re-check.");
+                MessageBox.Show("Data you input is invalid. Please re-check.", "Edit user data", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         public bool checkName(string name)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWeb"
         mc:Ignorable="d"
-        Title="wndw_Product_Buy" Height="369.465" Width="328.474">
+        Title="Buy products" Height="369.465" Width="328.474">
     <Grid>
         <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="287" Margin="10,10,0,0" VerticalAlignment="Top" Width="293">
             <local:usrCtrl_Payment x:Name="ctrlPayment" Canvas.Top="40" Height="192" Width="276" Canvas.Left="9"/>

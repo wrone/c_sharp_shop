@@ -67,7 +67,7 @@ namespace TestWeb
                 mw.cartBoxNew.LoadOrders(login);
             }
             else
-                MessageBox.Show("Login or password is invalid", "Invalid credentials");
+                MessageBox.Show("Login or password is invalid", "Invalid credentials", MessageBoxButton.OK, MessageBoxImage.Error);
 
         }
 
