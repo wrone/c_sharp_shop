@@ -134,6 +134,8 @@ namespace TestWeb
                     BuyProduct(item.getIndex()+1, item.getCount(), GetUserID(username), addrID, shipment.ID, payID, ordID);
 
                 MessageBox.Show("Successfully", "Buy product", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                cB.mwReadData(); 
                 cB.RemoveAllOrders();
                 this.Close();
             }

@@ -83,6 +83,8 @@ namespace TestWeb
             mw.homePage.Children.Add(cartUsr);
 
             OrderToCache(name);
+
+            mw.ReadData();
         }
 
         public void RemoveAllOrders()
@@ -176,6 +178,11 @@ namespace TestWeb
                     }
                 }
             }
+        }
+
+        public void mwReadData()
+        {
+            mw.ReadData();
         }
 
         public void FillCartLists(int id, int count)

@@ -142,6 +142,7 @@ namespace TestWeb
         {
             ProductRegister reg = new ProductRegister(dbConn);
             reg.Show();
+            ReadData();
         }
         //////////////////////////////////////////////////////////////////////////////////////////Buttons
         private void startPageButton_Click(object sender, RoutedEventArgs e)
@@ -181,7 +182,7 @@ namespace TestWeb
 
         private void proteinButton_Click(object sender, RoutedEventArgs e)
         {
-            ReadData();
+            //ReadData();
             pageTitle = "Protein";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -193,7 +194,7 @@ namespace TestWeb
 
         private void creatineButton_Click(object sender, RoutedEventArgs e)
         {
-            ReadData();
+            //ReadData();
             pageTitle = "Creatine";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -205,7 +206,7 @@ namespace TestWeb
 
         private void aminoAcidsButton_Click(object sender, RoutedEventArgs e)
         {
-            ReadData();
+            //ReadData();
             pageTitle = "Amino acids";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -217,7 +218,7 @@ namespace TestWeb
 
         private void carbohydratesButton_Click(object sender, RoutedEventArgs e)
         {
-            ReadData();
+            //ReadData();
             pageTitle = "Carbohydrates";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -481,25 +482,29 @@ namespace TestWeb
         private void button_Click_1(object sender, RoutedEventArgs e)   //by date asc
         {
             Sort(1);
-            DetermineButton(pageTitle);
+            //DetermineButton(pageTitle);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)    //by date desc
         {
             Sort(2);
-            DetermineButton(pageTitle);
+            //DetermineButton(pageTitle);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)    //by price asc
         {
             Sort(3);
-            DetermineButton(pageTitle);
+            //DetermineButton(pageTitle);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)    //by price desc
         {
             Sort(4);
-            DetermineButton(pageTitle);
+            //DetermineButton(pageTitle);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)    //search
@@ -525,18 +530,22 @@ namespace TestWeb
         private void button5_Click(object sender, RoutedEventArgs e)    //by price asc
         {
             PopularityHelper("SELECT * FROM mostPopularASC");
-            DetermineButton(pageTitle);
+            //DetermineButton(pageTitle);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)    //by price desc
         {
             PopularityHelper("SELECT * FROM mostPopularDESC");
-            DetermineButton(pageTitle);
+            //DetermineButton(pageTitle);
+            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+
         }
 
         private void PopularityHelper(string s)
         {
             List<string> tmp = dbConn.ReadData(s);
+
             for (int i = 0; i < tmp.Count; i++)
                 for (int j = 0; j < productList.Count; j++)
                     if (productList[j].getId() == Convert.ToInt32(tmp[i]))
@@ -546,7 +555,7 @@ namespace TestWeb
                     }
         }
 
-        private void ReadData()
+        public void ReadData()
         {
             productList = new List<ProductClass>();
             imageList = new List<BitmapImage>();
