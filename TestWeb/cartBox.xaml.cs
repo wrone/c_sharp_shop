@@ -22,7 +22,7 @@ namespace TestWeb
     /// </summary>
     public partial class cartBox : UserControl
     {
-        private DatabaseConnection conn;
+        public DatabaseConnection conn;
         private MainWindow mw;
         public string name;
         public List<Items> itemList = new List<Items>();     
@@ -49,6 +49,20 @@ namespace TestWeb
 
         }
 
+        private int GetIndex(int ID)
+        {
+            int index = -1;
+
+            for (int i = 0; i < productList.Count; i++)
+                if (productList[i].getId() == ID)
+                {
+                    index = i;
+                    break;
+                }
+
+            return index;
+        }
+
         private void cartInfoButton_Click(object sender, RoutedEventArgs e)
         {
             price = 0;
@@ -60,20 +74,34 @@ namespace TestWeb
             itemListInCart = new List<usrCtrl_ItemInCart>();
             for (int i = 0; i < itemList.Count; i++)
             {
+                //item = new usrCtrl_ItemInCart(this, cartUsr);
+                //item.image.Source = imageList[itemList[i].getIndex()];
+                //item.text.Text = productList[itemList[i].getIndex()].getName();
+                //item.priceBox.Text = Convert.ToString(productList[itemList[i].getIndex()].getPrice());
+                //item.quantityLabel.Content = productList[itemList[i].getIndex()].getQuantity();
+                //item.countBox.Text = itemList[i].getCount().ToString();
+                //cartUsr.stackPanel.Children.Add(item);
+                //itemListInCart.Add(item);
+                //price += productList[itemList[i].getIndex()].getPrice() * Convert.ToInt32(item.countBox.Text);
+                //item.Tag = i;
+                //item.priceBox.Text = (productList[itemList[i].getIndex()].getPrice() * Convert.ToInt32(item.countBox.Text)).ToString();
+
+                int index = GetIndex(itemList[i].getIndex());
+
                 item = new usrCtrl_ItemInCart(this, cartUsr);
-                item.image.Source = imageList[itemList[i].getIndex()];
-                item.text.Text = productList[itemList[i].getIndex()].getName();
-                item.priceBox.Text = Convert.ToString(productList[itemList[i].getIndex()].getPrice());
-                item.quantityLabel.Content = productList[itemList[i].getIndex()].getQuantity();
+                item.image.Source = imageList[index];
+                item.text.Text = productList[index].getName();
+                item.priceBox.Text = Convert.ToString(productList[index].getPrice());
+                item.quantityLabel.Content = productList[index].getQuantity();
                 item.countBox.Text = itemList[i].getCount().ToString();
 
 
                 cartUsr.stackPanel.Children.Add(item);
                 itemListInCart.Add(item);
 
-                price += productList[itemList[i].getIndex()].getPrice() * Convert.ToInt32(item.countBox.Text);
+                price += productList[index].getPrice() * Convert.ToInt32(item.countBox.Text);
                 item.Tag = i;
-                item.priceBox.Text = (productList[itemList[i].getIndex()].getPrice() * Convert.ToInt32(item.countBox.Text)).ToString();
+                item.priceBox.Text = (productList[index].getPrice() * Convert.ToInt32(item.countBox.Text)).ToString();
             }
 
             cartUsr.username.Content = name;

@@ -24,12 +24,12 @@ namespace TestWeb
         MainWindow mw;
         itemInformation iI;
         int index;
+
         public itemFrame(MainWindow mw, itemInformation iI)
         {
             this.mw = mw;
             this.iI = iI;
             InitializeComponent();
-
         }
 
         public void setIndex(int index)
@@ -57,11 +57,11 @@ namespace TestWeb
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Items item = new Items(index - 1, 1);
+            Items item = new Items(index, 1);
             int test = 0;
             for (int i = 0; i < mw.cartBoxNew.itemList.Count; i++)
             {
-                if (index - 1 == mw.cartBoxNew.itemList[i].getIndex())
+                if (index == mw.cartBoxNew.itemList[i].getIndex())
                 {
                     test = 1;
                 }

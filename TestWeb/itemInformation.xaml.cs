@@ -34,11 +34,16 @@ namespace TestWeb
 
         public void changeInfo(int index)
         {
-            this.index = index;
-            nameBox.Text = productList[index - 1].getName();
-            descriptionBox.Text = productList[index - 1].getDescription();
-            priceBox.Text = Convert.ToString(productList[index - 1].getPrice());
-            image.Source = productList[index - 1].getImage();
+            for (int i = 0; i < productList.Count; i++)
+            {
+                if (index == productList[i].getId())
+                {
+                    nameBox.Text = productList[i].getName();
+                    descriptionBox.Text = productList[i].getDescription();
+                    priceBox.Text = Convert.ToString(productList[i].getPrice());
+                    image.Source = productList[i].getImage();
+                }
+            }
         }
 
         public void setItemFram(itemFrame iF)

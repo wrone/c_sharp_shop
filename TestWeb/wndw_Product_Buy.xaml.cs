@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -135,7 +136,8 @@ namespace TestWeb
 
                 MessageBox.Show("Successfully", "Buy product", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                cB.mwReadData(); 
+                cB.mwReadData();
+                SendNotification();
                 cB.RemoveAllOrders();
                 this.Close();
             }
@@ -186,6 +188,50 @@ namespace TestWeb
         private int QuantityChecker(int id)
         {
             return Convert.ToInt32(conn.ReadData("SELECT Quantity FROM Products WHERE Products.ID = " + id)[0]);
+        }
+
+        public void SendNotification()
+        {
+            List<string> sellerList = cB.conn.ReadData("SELECT Email FROM Users WHERE Role='Seller'");
+            MailMessage mail = new MailMessage();
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new System.Net.NetworkCredential("aigs9256@gmail.com", "plzk92JA8a");
+
+            mail.From = new MailAddress("aigs9256@gmail.com");
+
+            string message = "Name: " + address.Name + "\n" +
+                             "Lastname: " + address.Lastname + "\n" +
+                             "Address: " + address.Addresss + " " + address.City + "\n" +
+                             "Email: " + address.Email + "\n" +
+                             "Shipment type: " + shipment.Name + "\n" +
+                             "Products: ";
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                List<string> product = cB.conn.ReadData("SELECT Name FROM Products WHERE ID=" + itemList[i].getIndex());
+                message += "\n" + product[0] + " x" + itemList[i].getCount();
+            }
+
+
+            try
+            {
+                for (int i = 0; i < sellerList.Count; i++)
+                {
+                    mail.To.Add(sellerList[i]);
+                    mail.Subject = "New Order";
+                    mail.Body = message;
+
+                    smtp.Send(mail);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
 

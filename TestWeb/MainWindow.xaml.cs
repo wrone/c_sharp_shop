@@ -361,6 +361,7 @@ namespace TestWeb
                     iF.priceLabel.Content = pc.getPrice();
                     iF.SetImage(pc.getImage());
                     iF.setIndex(pc.getId());
+                    Console.WriteLine(pc.getId() + "______");
                     stackPanelList[productCounter].Children.Add(iF);
                     itemFrameList.Add(iF);
                     productCounter++;
@@ -482,29 +483,29 @@ namespace TestWeb
         private void button_Click_1(object sender, RoutedEventArgs e)   //by date asc
         {
             Sort(1);
-            //DetermineButton(pageTitle);
-            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            DetermineButton(pageTitle);
+            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)    //by date desc
         {
             Sort(2);
-            //DetermineButton(pageTitle);
-            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            DetermineButton(pageTitle);
+            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)    //by price asc
         {
             Sort(3);
-            //DetermineButton(pageTitle);
-            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            DetermineButton(pageTitle);
+            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)    //by price desc
         {
             Sort(4);
-            //DetermineButton(pageTitle);
-            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            DetermineButton(pageTitle);
+            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)    //search
@@ -530,15 +531,15 @@ namespace TestWeb
         private void button5_Click(object sender, RoutedEventArgs e)    //by price asc
         {
             PopularityHelper("SELECT * FROM mostPopularASC");
-            //DetermineButton(pageTitle);
-            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            DetermineButton(pageTitle);
+            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)    //by price desc
         {
             PopularityHelper("SELECT * FROM mostPopularDESC");
-            //DetermineButton(pageTitle);
-            changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+            DetermineButton(pageTitle);
+            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
 
         }
 
