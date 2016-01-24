@@ -55,6 +55,20 @@ namespace TestWeb
 
                 if (GetRole(login).Equals("Seller"))
                     mw.addNewProductButton.Visibility = Visibility.Visible;
+
+                if (GetRole(login).Equals("Admin"))
+                {
+                    mw.addNewsButton.Visibility = Visibility.Visible;
+                    mw.testButton2.Visibility = Visibility.Visible;
+                    mw.testButton3.Visibility = Visibility.Visible;
+
+                    for(int i = 0; i < mw.newsList.Count; i++)
+                    {
+                        mw.newsList[i].editButton.Visibility = Visibility.Visible;
+                        mw.newsList[i].deleteButton.Visibility = Visibility.Visible;
+                    }
+                }
+                mw.cartBoxNew.LoadOrders(login);
             }
             else
                 MessageBox.Show("Login or password is invalid", "Invalid credentials");

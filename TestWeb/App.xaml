@@ -5,13 +5,11 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!--<ResourceDictionary Source="D:\C# Course\TestWeb\TestWeb/" />-->
-                <!--<ResourceDictionary Source="pack://application:,,,component/ExpressionDark.xaml" />-->
-                <!--<ResourceDictionary Source="Resources/ExpressionDark.xaml" />-->
+            <!--<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="D:\C# Course\TestWeb\TestWeb/ExpressionDark.xaml" />
             </ResourceDictionary.MergedDictionaries>
-             <!--Believe it or not the next line fixes a bug MS acknowledges--> 
-            <Style TargetType="{x:Type Rectangle}" />
+            --><!-- Believe it or not the next line fixes a bug MS acknowledges --><!--
+            <Style TargetType="{x:Type Rectangle}" />-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

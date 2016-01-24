@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -34,7 +35,7 @@ namespace TestWeb
             userNameTextBox.Content = this.login;
         }
 
-    private void LogOutButton_Click(object sender, RoutedEventArgs e)
+        private void LogOutButton_Click(object sender, RoutedEventArgs e)
         {
             mw.login_logout_StackPanel.Children.Clear();
             loginHeaderBox lHB = new loginHeaderBox(mw, dbConn);
@@ -45,6 +46,17 @@ namespace TestWeb
             mw.hideUnhideAddButton(1);
 
             //lHB.cB.itemList.Clear();
+
+            mw.addNewsButton.Visibility = Visibility.Hidden;
+            mw.testButton2.Visibility = Visibility.Hidden;
+            mw.testButton3.Visibility = Visibility.Hidden;
+
+            for (int i = 0; i < mw.newsList.Count; i++)
+            {
+                mw.newsList[i].editButton.Visibility = Visibility.Hidden;
+                mw.newsList[i].deleteButton.Visibility = Visibility.Hidden;
+            }
+            mw.startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
 
         private void testButton_Click(object sender, RoutedEventArgs e)

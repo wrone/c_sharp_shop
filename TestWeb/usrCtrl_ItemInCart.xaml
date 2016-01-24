@@ -8,10 +8,12 @@
     <Grid Margin="10">
         <Image x:Name="image" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="88"/>
         <TextBox x:Name="text" HorizontalAlignment="Left" Height="60" Margin="93,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="311" IsEnabled="False"/>
-        <Label x:Name="label" Content="Count:" HorizontalAlignment="Left" Margin="409,17,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="countBox" HorizontalAlignment="Left" Height="23" Margin="459,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Text="1" HorizontalContentAlignment="Right" TextChanged="countBox_TextChanged"/>
+        <Label x:Name="label" Content="Count:" HorizontalAlignment="Left" Margin="404,17,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="countBox" HorizontalAlignment="Left" Height="23" Margin="449,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Text="1" HorizontalContentAlignment="Right" TextChanged="countBox_TextChanged"/>
         <Label x:Name="label1" Content="Price:" HorizontalAlignment="Left" Margin="535,17,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="priceBox" HorizontalAlignment="Left" Height="23" Margin="578,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" IsEnabled="False" HorizontalContentAlignment="Right"/>
         <Button x:Name="removeButton" Content="Remove" HorizontalAlignment="Left" Margin="675,10,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="removeButton_Click"/>
+        <Label x:Name="label2" Content="/" HorizontalAlignment="Left" Margin="507,17,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="quantityLabel" Content="" HorizontalAlignment="Left" Margin="513,17,0,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

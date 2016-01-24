@@ -1,6 +1,7 @@
 ﻿using c_sharp_kursa;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,15 @@ namespace TestWeb
     {
         private DatabaseConnection conn;
         private MainWindow mw;
-        private string name;
+        public string name;
         public List<Items> itemList = new List<Items>();     
         public List<ProductClass> productList;            
         public List<BitmapImage> imageList;
         public List<usrCtrl_ItemInCart> itemListInCart;
         public usrCtrl_CartInfo cartUsr;
         public double price = 0;
+        public string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        public const string folderName = "MyProteinOrders";
 
         public cartBox()
         {
@@ -61,6 +64,8 @@ namespace TestWeb
                 item.image.Source = imageList[itemList[i].getIndex() + 1];
                 item.text.Text = productList[itemList[i].getIndex()].getName();
                 item.priceBox.Text = Convert.ToString(productList[itemList[i].getIndex()].getPrice());
+                item.quantityLabel.Content = productList[itemList[i].getIndex()].getQuantity();
+                item.countBox.Text = itemList[i].getCount().ToString();
 
 
                 cartUsr.stackPanel.Children.Add(item);
@@ -68,18 +73,16 @@ namespace TestWeb
 
                 price += productList[itemList[i].getIndex()].getPrice() * Convert.ToInt32(item.countBox.Text);
                 item.Tag = i;
+                item.priceBox.Text = (productList[itemList[i].getIndex()].getPrice() * Convert.ToInt32(item.countBox.Text)).ToString();
             }
 
             cartUsr.username.Content = name;
 
-            //for(int i = 0; i < itemList.Count; i++)
-            //{
-            //    price += itemListInCart[i].price; ///////////////////////////////////////////////////////////////////////////////////////////// / sdelat summu price zatem sdelat remove knopku
-            //}
-
             cartUsr.currentPriceBox.Text = Convert.ToString(price);
 
             mw.homePage.Children.Add(cartUsr);
+
+            OrderToCache(name);
         }
 
         public void setName(string name)
@@ -96,7 +99,78 @@ namespace TestWeb
             }
 
             cartUsr.currentPriceBox.Text = price.ToString();
-            
+            OrderToCache(name);
+        }
+
+        //Help function to use in itemFrame class
+        public void PrepareCart()
+        {
+            cartUsr = new usrCtrl_CartInfo(name, itemList, productList, conn);
+            usrCtrl_ItemInCart item;
+            itemListInCart = new List<usrCtrl_ItemInCart>();
+
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                item = new usrCtrl_ItemInCart(this, cartUsr);
+
+                cartUsr.stackPanel.Children.Add(item);
+                itemListInCart.Add(item);
+            }
+        }
+
+        //Save orders to file
+        public void OrderToCache(string login)
+        {
+            bool exists = System.IO.Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + folderName);
+
+            if (!exists)
+                System.IO.Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + folderName);
+
+            using (StreamWriter outputFile = new StreamWriter(mydocpath + @"\MyProteinOrders\" + login + ".txt"))
+            {
+                string orderInfo = "";
+
+                if (productList != null)
+                {
+                    for (int i = 0; i < itemList.Count; i++)
+                    {
+                        orderInfo += productList[itemList[i].getIndex()].getId() + "/" + productList[itemList[i].getIndex()].getPrice() + "/" +
+                                itemListInCart[i].countBox.Text + "|";
+                    }
+                    outputFile.WriteLine(orderInfo);
+                }
+            }
+        }
+
+        public void LoadOrders(string login)
+        {
+            string pathToFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + folderName + @"\" + login + ".txt";
+            bool exists = System.IO.File.Exists(pathToFile);
+
+            if (exists)
+            {
+                string text = System.IO.File.ReadAllText(pathToFile);
+                if (!text.Equals(""))
+                {
+                    string[] orderInfo = text.Split('|');
+                    List<string> orderInfoDetails = new List<string>();
+
+                    for (int i = 0; i < orderInfo.Length - 1; i++)
+                    {
+                        string[] tmpInfo = orderInfo[i].Split('/');
+                        FillCartLists(int.Parse(tmpInfo[0]), int.Parse(tmpInfo[2]));
+                    }
+                }
+            }
+        }
+
+        public void FillCartLists(int id, int count)
+        {
+            Items item = new Items(id - 1, count);
+            mw.cartBoxNew.itemList.Add(item);
+            mw.cartBoxNew.productList = mw.productList;
+            mw.cartBoxNew.imageList = mw.imageList;
+            mw.cartBoxNew.cartInfoNumber.Content = Convert.ToString(mw.cartBoxNew.itemList.Count);
         }
     }
 }

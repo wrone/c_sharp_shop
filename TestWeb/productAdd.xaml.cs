@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,13 +27,11 @@ namespace c_sharp_kursa
         private FileStream fs;
         private Nullable<bool> result;
         private OpenFileDialog dlg;
-        private int counter;
 
         public productAdd()
         {
             InitializeComponent();
             AddCategories(cmbBoxCategory);
-            counter = 0;
         }
 
         public void SetConnection(DatabaseConnection conn)
@@ -62,17 +59,16 @@ namespace c_sharp_kursa
         {
             bool a = InputValidator(txtBoxName, 3);
             bool b = InputValidator(txtBoxDesc, 5);
-            //bool c = InputValidator(txtBoxPrice, 1);
-            bool c = checkPrice(txtBoxPrice);
+            bool c = InputValidator(txtBoxPrice, 1);
             bool d = InputValidator(txtBoxQuantity, 1);
             bool e = InputValidator(txtBoxManufacturer, 2);
 
-            if (!a && !b && !c && !d && !e
-                && cmbBoxCategory.SelectedIndex != -1
+            if (!a && !b && !c && !d && !e 
+                && cmbBoxCategory.SelectedIndex != -1 
                 && result == true
                 && datePicker1.SelectedDate != null
                 && datePicker2.SelectedDate != null)
-            {
+            { 
                 string releaseDate = datePicker1.SelectedDate.Value.Year + "-"
                                 + DateHalper(datePicker1.SelectedDate.Value.Month) + "-"
                                 + DateHalper(datePicker1.SelectedDate.Value.Day);
@@ -116,7 +112,7 @@ namespace c_sharp_kursa
         {
             string query = @"INSERT INTO Products(Name, Description, Release_date, End_date, Quantity, Price, Category, Manufacturer, Picture)"
                            + "VALUES('" + name + "', '" + desc + "', '" + releaseDate + "', '"
-                           + endDate + "', " + quantity + ", " + price + ", '" + category + "', '"
+                           + endDate + "', " + quantity + ", " + price + ", '" + "categorija" + "', '"
                            + manufacturer + "', x'" + picture + "')";
 
             conn.WriteData(query);
@@ -124,43 +120,8 @@ namespace c_sharp_kursa
 
         private void txtBoxPrice_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            //if ((e.Text.Last().Equals('.') || e.Text.Last().Equals(',')) && counter != -2)
-            //{
-            //    counter = -2;
-            //}
-            //else if (!char.IsDigit(e.Text, e.Text.Length - 1))
-            //{
-            //    e.Handled = true;
-            //}
-        }
-
-        public bool checkPrice(TextBox tb)
-        {
-            string pattern = @"^[0-9]{1,3}([.,][0-9]{1,2})?$";
-            Regex regex = new Regex(pattern);
-
-            if (!regex.IsMatch(tb.Text))
-            {
-                tb.Background = Brushes.Red;
-                return false;
-            }
-            if (tb.Equals(""))
-            {
-                tb.Background = Brushes.Red;
-                return false;
-            }
-            tb.Background = Brushes.White;
-            return true;
-        }
-
-        private void txtBoxPrice_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //string input = (sender as TextBox).Text; //1234567
-
-            //if (!Regex.IsMatch(input, @"^[0 - 9]([.,][0 - 9]{1,2})?$"))
-            //{
-            //    MessageBox.Show("Error!, check and try again");
-            //}
+            if (!char.IsDigit(e.Text, e.Text.Length - 1))
+                e.Handled = true;
         }
 
         private void txtBoxQuantity_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -197,6 +158,5 @@ namespace c_sharp_kursa
             cb.Items.Add("Foods");
         }
 
-        
     }
 }

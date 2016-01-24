@@ -30,9 +30,6 @@ namespace TestWeb
             this.iI = iI;
             InitializeComponent();
 
-
-            
-           
         }
 
         public void setIndex(int index)
@@ -77,6 +74,8 @@ namespace TestWeb
             }
 
             mw.cartBoxNew.cartInfoNumber.Content = Convert.ToString(mw.cartBoxNew.itemList.Count);
+            mw.cartBoxNew.PrepareCart();
+            mw.cartBoxNew.OrderToCache(mw.cartBoxNew.name);
         }
     }
 }

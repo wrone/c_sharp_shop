@@ -55,7 +55,7 @@ namespace c_sharp_kursa
                         phoneOk = false;
 
                 if (lastNameOk && phoneOk)
-                    if (UserRegister(name, lastName, login, password1, email, phone))
+                    if (mw.UserRegister(name, lastName, login, password1, email, phone))
                     {
                         MessageBox.Show("User was successfully added");
                         Window parent = Window.GetWindow(this);
@@ -166,21 +166,5 @@ namespace c_sharp_kursa
             userLastname.Background = Brushes.White;
             return true;
         }
-
-        public bool UserRegister(string name, string lastname, string login, string password, string email, string phone)
-        {
-            List<string> loginList = dbConn.ReadData("select Login from Users");
-
-            if (!loginList.Contains(login))
-            {
-                dbConn.WriteData("INSERT INTO Users(Name, Lastname, Login, Password, Email, Phone, Role)"
-                               + "VALUES('" + name + "', '" + lastname + "', '" + login + "', '"
-                               + password + "', '" + email + "', '" + phone + "', 'User')");
-
-                return true;
-            }
-            return false;
-        }
-
     }
 }

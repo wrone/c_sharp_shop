@@ -23,7 +23,7 @@ namespace TestWeb
     public partial class MainWindow : Window
     {
         List<StackPanel> stackPanelList = new List<StackPanel>();
-        List<newsHomePage> newsList = new List<newsHomePage>();
+        public List<newsHomePage> newsList = new List<newsHomePage>();
         //List<typeShopBox> typeList = new List<typeShopBox>();
         // VAJSA
         //private string MyConnection;
@@ -44,10 +44,10 @@ namespace TestWeb
         List<string> CarbohydratesCount;
 
         string pageTitle;
-
-        int catergoryType;
         public int loginTmp = 0;
         int currentNumber;
+
+        public newsHomePage nHP;
 
 
         public cartBox cartBoxNew;
@@ -80,8 +80,8 @@ namespace TestWeb
             //List<string> End_date = dbConn.ReadData("select End_date from Products");
             List<string> Quantity = dbConn.ReadData("select Quantity from Products");
             List<string> Price = dbConn.ReadData("select Price from Products");
-            List<string> Manufacturer = dbConn.ReadData("select Manufacturer from Products");
             List<string> Category = dbConn.ReadData("select Category from Products");
+            List<string> Manufacturer = dbConn.ReadData("select Manufacturer from Products");
             imageList = new List<BitmapImage>();
             for (int i = 0; i < ID.Count; i++)
             {
@@ -92,6 +92,8 @@ namespace TestWeb
                 ProductClass pC = new ProductClass(Convert.ToInt32(ID[i]), Name[i], Description[i], "a", "b", Convert.ToInt32(Quantity[i]), Convert.ToDouble(Price[i]), Manufacturer[i], imageList[i], Category[i]);
                 productList.Add(pC);
             }
+
+            Console.WriteLine(productList.Count);
 
             iI = new itemInformation(this, productList);
 
@@ -108,7 +110,10 @@ namespace TestWeb
             stackPanelList.Add(sp10);
 
             addNews("Today is bbbbbbbbbb", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "1.21.2016 14:33");
-            addNews("Today is aaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            addNews("Today is aaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "1.21.2016 15:33");
+            addNews("Today is cccccccccc", "cccccccccccccccccccc", "1.21.2016 16:33");
+            addNews("Today is dddddddddd", "dddddddddddddddddddd", "1.21.2016 17:33");
+            addNews("Today is eeeeeeeeee", "eeeeeeeeeeeeeeeeeeee");
             for (int i = 0; i < newsList.Count; i++)
             {
                 homePage.Children.Add(newsList[i]);
@@ -201,6 +206,8 @@ namespace TestWeb
             {
                 homePage.Children.Add(newsList[i]);
             }
+
+            //scrollViewer.Visibility = Visibility.Visible;
         }
 
         private void contactButton_Click(object sender, RoutedEventArgs e)
@@ -219,19 +226,16 @@ namespace TestWeb
         private void proteinButton_Click(object sender, RoutedEventArgs e)
         {
             pageTitle = "Protein";
-            catergoryType = 1;
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(ProteinCount.Count);
-            //changePage(catergoryType);
             changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void creatineButton_Click(object sender, RoutedEventArgs e)
         {
             pageTitle = "Creatine";
-            catergoryType = 2;
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
@@ -242,7 +246,6 @@ namespace TestWeb
         private void aminoAcidsButton_Click(object sender, RoutedEventArgs e)
         {
             pageTitle = "Amino acids";
-            catergoryType = 3;
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
@@ -253,13 +256,13 @@ namespace TestWeb
         private void carbohydratesButton_Click(object sender, RoutedEventArgs e)
         {
             pageTitle = "Carbohydrates";
-            catergoryType = 4;
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
             countOfItemsOnPage = new List<int>();
             allPageLabel.Content = getPageCountFull(CarbohydratesCount.Count);
             changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
+
         //////////////////////////////////////////////////////////////////////////////////////////Hide home page and unhide 10stackpanel
         public void hideOrUnhideAll(int sk) // 0 unhide ... 1 hide
         {
@@ -276,7 +279,7 @@ namespace TestWeb
                 PreviousButton.Visibility = Visibility.Visible;
                 nextButton.Visibility = Visibility.Visible;
 
-                homePage.Visibility = Visibility.Hidden;
+                scrollViewer.Visibility = Visibility.Hidden;
             }
             else if (sk == 1)
             {
@@ -292,6 +295,9 @@ namespace TestWeb
                 nextButton.Visibility = Visibility.Hidden;
 
                 homePage.Visibility = Visibility.Visible;
+
+                scrollViewer.Visibility = Visibility.Visible;
+
             }
         }
 
@@ -316,6 +322,7 @@ namespace TestWeb
 
         }
         //////////////////////////////////////////////////////////////////////////////////////////functions
+
         public void changePage(string category, int page)
         {
             VisibilityChanger(0, Visibility.Visible);
@@ -326,23 +333,24 @@ namespace TestWeb
             int counter = 0;
             int productCounter = 0;
             int startFrom = page * 10;
-       
-                foreach (ProductClass pc in productList)
-                {
-                    if (pc.GetCategory().Equals(category) && counter < startFrom) counter++;
-                    if (pc.GetCategory().Equals(category) && counter >= startFrom)
-                    {
-                        itemFrame iF = new itemFrame(this, iI);
-                        iF.nameLabel.Content = pc.getName();
-                        iF.priceLabel.Content = pc.getPrice();
-                        iF.SetImage(dbConn.ReadBlobData(pc.getId()));
-                        stackPanelList[productCounter].Children.Add(iF);
-                        itemFrameList.Add(iF);
-                        productCounter++;
 
-                        if (productCounter == 10) break;
-                    }
+            foreach (ProductClass pc in productList)
+            {
+                if (pc.GetCategory().Equals(category) && counter < startFrom) counter++;
+                if (pc.GetCategory().Equals(category) && counter >= startFrom)
+                {
+                    itemFrame iF = new itemFrame(this, iI);
+                    iF.nameLabel.Content = pc.getName();
+                    iF.priceLabel.Content = pc.getPrice();
+                    iF.SetImage(dbConn.ReadBlobData(pc.getId()));
+                    iF.setIndex(pc.getId());
+                    stackPanelList[productCounter].Children.Add(iF);
+                    itemFrameList.Add(iF);
+                    productCounter++;
+
+                    if (productCounter == 10) break;
                 }
+            }
 
             VisibilityChanger(productCounter, Visibility.Hidden);
 
@@ -355,7 +363,6 @@ namespace TestWeb
             for (int i = idx; i < stackPanelList.Count; i++)
                 stackPanelList[i].Visibility = v;
         }
-
         //////////////////////////////////////////////////////////////////////////////////////////functions
         public int getPageCountFull(int count)
         {
@@ -389,14 +396,14 @@ namespace TestWeb
         //////////////////////////////////////////////////////////////////////////////////////////News info functions
         public void addNews(string name, string text, string date)
         {
-            newsHomePage nHP = new newsHomePage();
+            nHP = new newsHomePage();
             nHP.addNew(name,text,date);
             newsList.Add(nHP);
         }
 
         public void addNews(string name, string text)
         {
-            newsHomePage nHP = new newsHomePage();
+            nHP = new newsHomePage();
             nHP.addNew(name, text);
             newsList.Add(nHP);
         }
@@ -404,7 +411,7 @@ namespace TestWeb
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
         {
             int nm;
-            if(!currentPageLabel.Content.Equals("1"))
+            if(currentPageLabel.Content != "1")
             {
                 nm = Convert.ToInt32(allPageLabel.Content);
                 nm = nm - 1;
@@ -421,7 +428,6 @@ namespace TestWeb
                 nm = Convert.ToInt32(currentPageLabel.Content);
                 nm = nm + 1;
                 currentPageLabel.Content = nm;
-                //changePage(catergoryType);
                 changePage(pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
             }
         }

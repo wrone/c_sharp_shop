@@ -29,12 +29,19 @@ namespace TestWeb
             this.cB = cB;
             this.cartUsr = cartUsr;
             InitializeComponent();
+
+            if (this.Tag != null)
+            {
+                price = cB.productList[cB.itemList[int.Parse(this.Tag.ToString())].getIndex()].getPrice() * Convert.ToInt32(countBox.Text);
+                priceBox.Text = price.ToString();
+            }
         }
 
         private void countBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (countBox.Text == "" || countBox.Text == "0")
                 countBox.Text = "1";
+
 
 
             //Nado dobavitj proverku vvoda
@@ -49,6 +56,10 @@ namespace TestWeb
                 cB.itemList[tag].setCount(Convert.ToInt32(countBox.Text));
                 //cB.price += price;
                 //cartUsr.currentPriceBox.Text = cB.price.ToString();
+
+
+                if (Convert.ToInt32(countBox.Text) > Convert.ToInt32(quantityLabel.Content))
+                    countBox.Text = quantityLabel.Content.ToString();
             }
 
 
