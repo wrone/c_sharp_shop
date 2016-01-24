@@ -13,7 +13,7 @@
         <ScrollViewer x:Name="scrollViewer" HorizontalAlignment="Left" Height="311" VerticalAlignment="Top" Width="780">
             <StackPanel x:Name="stackPanel"/>
         </ScrollViewer>
-        <Label x:Name="username" Content="Label" HorizontalAlignment="Left" Margin="490,329,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label x:Name="username" Content="Label" HorizontalAlignment="Left" Margin="490,329,0,0" VerticalAlignment="Top" Width="82" Visibility="Hidden"/>
 
     </Grid>
 </UserControl>

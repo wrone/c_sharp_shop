@@ -9,18 +9,26 @@
     <Grid>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="-38,385,0,0" VerticalAlignment="Top"/>
         <StackPanel x:Name="login_logout_StackPanel" HorizontalAlignment="Left" Height="138" Margin="10,14,0,0" VerticalAlignment="Top" Width="201"/>
-        <StackPanel x:Name="cartInfoBox" HorizontalAlignment="Left" Height="76" Margin="10,157,0,0" VerticalAlignment="Top" Width="201"/>
+        <StackPanel x:Name="cartInfoBox" Height="76" Margin="10,157,978,0" VerticalAlignment="Top"/>
         <Button x:Name="startPageButton" Content="Home" HorizontalAlignment="Left" Margin="216,132,0,0" VerticalAlignment="Top" Width="285" Click="startPageButton_Click"/>
         <Button x:Name="contactButton" Content="Contact" HorizontalAlignment="Left" Margin="516,132,0,0" VerticalAlignment="Top" Width="140" Click="contactButton_Click"/>
-        <Button x:Name="testButton2" Content="..." HorizontalAlignment="Left" Margin="1101,112,0,0" VerticalAlignment="Top" Width="78" Click="testButton_Click" Visibility="Collapsed"/>
-        <Button x:Name="addNewsButton" Content="Add news" HorizontalAlignment="Left" Margin="1101,92,0,0" VerticalAlignment="Top" Width="78" Visibility="Hidden"/>
+        <Button x:Name="testButton2" Content="???" HorizontalAlignment="Left" Margin="1101,112,0,0" VerticalAlignment="Top" Width="78" Click="testButton_Click" Visibility="Collapsed"/>
+        <Button x:Name="addNewsButton" Content="Add news" HorizontalAlignment="Left" Margin="1101,92,0,0" VerticalAlignment="Top" Width="78" Visibility="Hidden" Click="addNewsButton_Click"/>
         <Button x:Name="testButton3" Content="..." HorizontalAlignment="Left" Margin="1101,132,0,0" VerticalAlignment="Top" Width="78" Visibility="Hidden"/>
         <Button x:Name="proteinButton" Content="Protein" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" Width="201" Height="22" Click="proteinButton_Click"/>
         <Button x:Name="creatineButton" Content="Creatine" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="201" Height="22" Click="creatineButton_Click"/>
         <Button x:Name="aminoAcidsButton" Content="Amino acids" HorizontalAlignment="Left" Margin="10,348,0,0" VerticalAlignment="Top" Width="201" Height="22" Click="aminoAcidsButton_Click"/>
         <Button x:Name="carbohydratesButton" Content="Carbohydrates" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top" Width="201" Height="22" Click="carbohydratesButton_Click"/>
-        <Button x:Name="typeChoiceButton5" Content="item category 5" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="typeChoiceButton6" Content="item category 6" HorizontalAlignment="Left" Margin="10,414,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
+        <Button x:Name="typeChoiceButton5" Content="item category 5" HorizontalAlignment="Left" Margin="10,392,0,0" VerticalAlignment="Top" Width="201" Height="22" Visibility="Hidden"/>
+        <Button x:Name="typeChoiceButton6" Content="item category 6" HorizontalAlignment="Left" Margin="10,414,0,0" VerticalAlignment="Top" Width="201" Height="22" Visibility="Hidden"/>
+        <Button x:Name="button" Content="ASC" HorizontalAlignment="Left" Margin="100,497,0,0" VerticalAlignment="Top" Width="53" Click="button_Click_1"/>
+        <Button x:Name="button1" Content="DESC" HorizontalAlignment="Left" Margin="158,497,0,0" VerticalAlignment="Top" Width="58" Click="button1_Click"/>
+        <Button x:Name="button2" Content="ASC" HorizontalAlignment="Left" Margin="99,525,0,0" VerticalAlignment="Top" Width="54" Click="button2_Click"/>
+        <Button x:Name="button3" Content="DESC" HorizontalAlignment="Left" Margin="158,525,0,0" VerticalAlignment="Top" Width="59" Click="button3_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="20" Margin="16,572,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="button4" Content="Search" HorizontalAlignment="Left" Margin="141,599,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
+        <Button x:Name="button5" Content="ASC" HorizontalAlignment="Left" Margin="100,469,0,0" VerticalAlignment="Top" Width="53" Click="button5_Click"/>
+        <Button x:Name="button6" Content="DESC" HorizontalAlignment="Left" Margin="158,469,0,0" VerticalAlignment="Top" Width="58" Click="button6_Click"/>
         <Canvas HorizontalAlignment="Left" Height="473" Margin="216,157,0,0" VerticalAlignment="Top" Width="910" Background="#FF7A7A7A">
             <StackPanel x:Name="sp2" Height="177" Canvas.Left="199" Canvas.Top="10" Width="145" Background="Black" Visibility="Hidden"/>
             <StackPanel x:Name="sp1" Height="177" Canvas.Left="10" Canvas.Top="10" Width="144.334" Background="Black" Visibility="Hidden"/>
@@ -43,19 +51,16 @@
             </ScrollViewer>
         </Canvas>
         <Button x:Name="addNewProductButton" Content="Add Product" HorizontalAlignment="Left" Margin="732,132,0,0" VerticalAlignment="Top" Width="128" Click="button_Click" Visibility="Hidden"/>
-        <Button x:Name="typeChoiceButton7" Content="item category 7" HorizontalAlignment="Left" Margin="10,436,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="typeChoiceButton8" Content="item category 8" HorizontalAlignment="Left" Margin="10,458,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="typeChoiceButton9" Content="item category 9" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="typeChoiceButton10" Content="item category 10" HorizontalAlignment="Left" Margin="10,502,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="typeChoiceButton11" Content="item category 11" HorizontalAlignment="Left" Margin="10,524,0,0" VerticalAlignment="Top" Width="201" Height="22"/>
-        <Button x:Name="button" Content="by date asc" HorizontalAlignment="Left" Margin="270,92,0,0" VerticalAlignment="Top" Width="75" Click="button_Click_1"/>
-        <Button x:Name="button1" Content="by date desc" HorizontalAlignment="Left" Margin="350,92,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <Button x:Name="button2" Content="by price asc" HorizontalAlignment="Left" Margin="483,92,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
-        <Button x:Name="button3" Content="by price desc" HorizontalAlignment="Left" Margin="563,92,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="20" Margin="716,92,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button4" Content="Search" HorizontalAlignment="Left" Margin="841,91,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
-        <Button x:Name="button5" Content="by pop asc" HorizontalAlignment="Left" Margin="329,56,0,0" VerticalAlignment="Top" Width="75" Click="button5_Click"/>
-        <Button x:Name="button6" Content="by pop desc" HorizontalAlignment="Left" Margin="409,56,0,0" VerticalAlignment="Top" Width="75" Click="button6_Click"/>
+        <Button x:Name="typeChoiceButton7" Content="item category 7" HorizontalAlignment="Left" Margin="10,436,0,0" VerticalAlignment="Top" Width="201" Height="22" Visibility="Hidden"/>
+        <Button x:Name="typeChoiceButton8" Content="item category 8" HorizontalAlignment="Left" Margin="10,458,0,0" VerticalAlignment="Top" Width="201" Height="22" Visibility="Hidden"/>
+        <Button x:Name="typeChoiceButton9" Content="item category 9" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top" Width="201" Height="22" Visibility="Hidden"/>
+        <Button x:Name="typeChoiceButton10" Content="item category 10" HorizontalAlignment="Left" Margin="10,502,0,0" VerticalAlignment="Top" Width="201" Height="22" Visibility="Hidden"/>
+        <Button x:Name="typeChoiceButton11" Content="item category 11" HorizontalAlignment="Left" Margin="10,524,0,0" VerticalAlignment="Top" Width="201" Height="22" Visibility="Hidden"/>
+        <Label x:Name="labelSort1" Content="Sort items:" HorizontalAlignment="Left" Margin="16,439,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="labelSort2" Content="By pop:" HorizontalAlignment="Left" Margin="39,465,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelSort3" Content="By date:" HorizontalAlignment="Left" Margin="39,494,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelSort4" Content="By price:" HorizontalAlignment="Left" Margin="39,522,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelSort5" Content="Search items:" HorizontalAlignment="Left" Margin="16,546,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

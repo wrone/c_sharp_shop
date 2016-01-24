@@ -1,10 +1,12 @@
-﻿using System;
+﻿using c_sharp_kursa;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -20,23 +22,65 @@ namespace TestWeb
     /// </summary>
     public partial class newsHomePage : UserControl
     {
-        public newsHomePage()
+        MainWindow mw;
+        DatabaseConnection dbConn;
+        public newsHomePage(MainWindow mw, DatabaseConnection dbConn)
         {
+            this.dbConn = dbConn;
+            this.mw = mw;
             InitializeComponent();
         }
 
-        public void addNew(string name, string text, string date)
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            newsName.Content = name;
-            newsText.Content = text;
-            newsDateLabel.Content = date;
+            if (this.Tag != null)
+            {
+                mw.newsClassList.RemoveAt(Convert.ToInt32(this.Tag));
+                mw.newsList.RemoveAt(Convert.ToInt32(this.Tag));
+
+                mw.startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                mw.testButton2.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                dbConn.WriteData("DELETE FROM News WHERE ID = " + (mw.newsClassList[Convert.ToInt32(this.Tag)].getId() - 1));
+            }
         }
 
-        public void addNew(string name, string text)
+        private void editButton_Click(object sender, RoutedEventArgs e)
         {
-            newsName.Content = name;
-            newsText.Content = text;
-            newsDateLabel.Content = DateTime.Now;
+            if (this.Tag != null)
+            {
+                mw.homePage.Children.Clear();
+                mw.hideOrUnhideAll(1);
+
+                usrCtrl_addNews aN = new usrCtrl_addNews(mw, dbConn);
+                aN.name.Text = mw.newsClassList[Convert.ToInt32(this.Tag)].getName();
+                aN.text.Text = mw.newsClassList[Convert.ToInt32(this.Tag)].getText();
+                aN.text.IsEnabled = true;
+                aN.name.IsEnabled = true;
+                aN.addEditButton.Visibility = Visibility.Visible;
+                aN.addEditButton.Content = "Edit";
+                aN.Tag = this.Tag;
+                mw.homePage.Children.Add(aN);
+
+            }
+
+        }
+
+        private void moreDetailsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Tag != null)
+            {
+                mw.homePage.Children.Clear();
+                mw.hideOrUnhideAll(1);
+
+                usrCtrl_addNews aN = new usrCtrl_addNews(mw, dbConn);
+                aN.name.Text = mw.newsClassList[Convert.ToInt32(this.Tag)].getName();
+                aN.text.Text = mw.newsClassList[Convert.ToInt32(this.Tag)].getText();
+                aN.text.IsEnabled = false;
+                aN.name.IsEnabled = false;
+                aN.addEditButton.Visibility = Visibility.Hidden;
+                aN.Tag = this.Tag;
+                mw.homePage.Children.Add(aN);
+            }
         }
     }
 }

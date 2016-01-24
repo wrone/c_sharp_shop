@@ -62,11 +62,7 @@ namespace TestWeb
                     mw.testButton2.Visibility = Visibility.Visible;
                     mw.testButton3.Visibility = Visibility.Visible;
 
-                    for(int i = 0; i < mw.newsList.Count; i++)
-                    {
-                        mw.newsList[i].editButton.Visibility = Visibility.Visible;
-                        mw.newsList[i].deleteButton.Visibility = Visibility.Visible;
-                    }
+                    mw.hideUnhideAdminButton(0);
                 }
                 mw.cartBoxNew.LoadOrders(login);
             }

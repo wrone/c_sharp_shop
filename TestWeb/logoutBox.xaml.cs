@@ -51,11 +51,7 @@ namespace TestWeb
             mw.testButton2.Visibility = Visibility.Hidden;
             mw.testButton3.Visibility = Visibility.Hidden;
 
-            for (int i = 0; i < mw.newsList.Count; i++)
-            {
-                mw.newsList[i].editButton.Visibility = Visibility.Hidden;
-                mw.newsList[i].deleteButton.Visibility = Visibility.Hidden;
-            }
+            mw.hideUnhideAdminButton(1);
             mw.startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
 

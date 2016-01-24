@@ -28,6 +28,7 @@ ORDER BY TotalOrders DESC;
 SELECT SUM(Order_items.Quantity) AS Amount, Products.Name AS Name
 FROM Order_items
 LEFT JOIN Products ON Order_items.ID = Products.ID
+WHERE Products.Quantity > 0 
 GROUP BY Products.Name
 ORDER BY Order_items.Quantity DESC;
 
@@ -52,3 +53,19 @@ JOIN Products ON Products.ID = Order_items.ID
 WHERE Orders.Date BETWEEN date1 AND date2;
 END; //
 DELIMITER ;
+
+//dlja istorii
+SELECT
+Orders.ID
+FROM Orders
+WHERE Orders.Users_ID = 13;
+
+select 
+Products.Name,
+Products.Category,
+Products.Price,
+Order_items.Quantity
+FROM Order_items
+JOIN Orders on Order_items.Orders_ID = Orders.ID
+JOIN Products on Products.ID = Order_items.Products_ID
+WHERE Orders.ID = 23;

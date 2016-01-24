@@ -9,9 +9,9 @@
     <Grid Background="#FFEAE1E1" Margin="10">
         <Label x:Name="newsName" Content="Name ...." HorizontalAlignment="Left" Margin="47,10,0,0" VerticalAlignment="Top" Width="190" Background="#FF979797"/>
         <Label x:Name="newsText" Content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="42" Width="672"/>
-        <Button x:Name="moreDetailsButton" Content="More details" HorizontalAlignment="Left" Margin="687,68,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="newsDateLabel" Content="00/00/0000" HorizontalAlignment="Left" Margin="600,10,0,0" VerticalAlignment="Top" Width="116"/>
-        <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="721,10,0,0" VerticalAlignment="Top" Width="41" Visibility="Hidden"/>
-        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="721,36,0,0" VerticalAlignment="Top" Width="41" Visibility="Hidden"/>
+        <Button x:Name="moreDetailsButton" Content="More details" HorizontalAlignment="Left" Margin="687,68,0,0" VerticalAlignment="Top" Width="75" Click="moreDetailsButton_Click"/>
+        <Label x:Name="newsDateLabel" Content="00/00/0000" HorizontalAlignment="Left" Margin="552,10,0,0" VerticalAlignment="Top" Width="164"/>
+        <Button x:Name="editButton" Content="Edit" HorizontalAlignment="Left" Margin="721,10,0,0" VerticalAlignment="Top" Width="41" Visibility="Hidden" Click="editButton_Click"/>
+        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="721,36,0,0" VerticalAlignment="Top" Width="41" Visibility="Hidden" Click="deleteButton_Click"/>
     </Grid>
 </UserControl>

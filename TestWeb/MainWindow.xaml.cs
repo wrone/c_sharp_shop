@@ -24,7 +24,7 @@ namespace TestWeb
     public partial class MainWindow : Window
     {
         List<StackPanel> stackPanelList = new List<StackPanel>();
-        public List<newsHomePage> newsList = new List<newsHomePage>();
+        
         //List<typeShopBox> typeList = new List<typeShopBox>();
         // VAJSA
         //private string MyConnection;
@@ -35,10 +35,12 @@ namespace TestWeb
         public List<ProductClass> productList = new List<ProductClass>();
         public List<BitmapImage> imageList;
 
-        public List<ProductClass> searchProductList = new List<ProductClass>();
-
         List<int> countOfItemsOnPage;
         public List<itemFrame> itemFrameList = new List<itemFrame>();
+
+        public List<newsHomePage> newsList = new List<newsHomePage>();
+        public List<newsClass> newsClassList = new List<newsClass>();
+        public newsHomePage nHP;
 
         itemInformation iI;
         List<string> ProteinCount;
@@ -47,12 +49,16 @@ namespace TestWeb
         List<string> CarbohydratesCount;
 
         bool searched = true;
+        public List<ProductClass> searchProductList = new List<ProductClass>();
+
 
         string pageTitle;
         public int loginTmp = 0;
         int currentNumber;
 
-        public newsHomePage nHP;
+        
+
+
         public cartBox cartBoxNew;
 
 
@@ -61,6 +67,25 @@ namespace TestWeb
             InitializeComponent();
             dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
             //dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
+
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////// News
+
+            List<string> ID_News = dbConn.ReadData("select ID from News");
+            List<string> Title_News = dbConn.ReadData("select Title from News");
+            List<string> Text_News = dbConn.ReadData("select Text from News");
+            List<string> Date_News = dbConn.ReadData("select Date from News");
+
+            for(int i = 0; i < ID_News.Count; i++)
+            {
+                newsClass nC = new newsClass(Convert.ToInt32(ID_News[i]), Title_News[i], Text_News[i], Date_News[i]);
+                newsClassList.Add(nC);
+            }
+
+            drawNews();
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
             dbConn.ReadBlobData(1);
             GetCategoryCount("Protein");
@@ -92,9 +117,13 @@ namespace TestWeb
             }
             for (int i = 0; i < ID.Count; i++)
             {
-                ProductClass pC = new ProductClass(Convert.ToInt32(ID[i]), Name[i], Description[i], "a", "b", Convert.ToInt32(Quantity[i]), Convert.ToDouble(Price[i]), Manufacturer[i], imageList[i], Category[i]);
-                productList.Add(pC);
+                if (Convert.ToInt32(Quantity[i]) > 0)
+                {
+                    ProductClass pC = new ProductClass(Convert.ToInt32(ID[i]), Name[i], Description[i], "a", "b", Convert.ToInt32(Quantity[i]), Convert.ToDouble(Price[i]), Manufacturer[i], imageList[i], Category[i]);
+                    productList.Add(pC);
+                }
             }
+
 
             Console.WriteLine(productList.Count);
 
@@ -112,22 +141,24 @@ namespace TestWeb
             stackPanelList.Add(sp9);
             stackPanelList.Add(sp10);
 
-            addNews("Today is bbbbbbbbbb", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "1.21.2016 14:33");
-            addNews("Today is aaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "1.21.2016 15:33");
-            addNews("Today is cccccccccc", "cccccccccccccccccccc", "1.21.2016 16:33");
-            addNews("Today is dddddddddd", "dddddddddddddddddddd", "1.21.2016 17:33");
-            addNews("Today is eeeeeeeeee", "eeeeeeeeeeeeeeeeeeee");
-            for (int i = 0; i < newsList.Count; i++)
-            {
-                homePage.Children.Add(newsList[i]);
-            }
-
-
             // Login Register
             loginHeaderBox lHB = new loginHeaderBox(this, dbConn);
             login_logout_StackPanel.Children.Add(lHB);
-            
 
+
+            labelSort1.Visibility = Visibility.Hidden;
+            labelSort2.Visibility = Visibility.Hidden;
+            labelSort3.Visibility = Visibility.Hidden;
+            labelSort4.Visibility = Visibility.Hidden;
+            labelSort5.Visibility = Visibility.Hidden;
+            button.Visibility = Visibility.Hidden;
+            button1.Visibility = Visibility.Hidden;
+            button2.Visibility = Visibility.Hidden;
+            button3.Visibility = Visibility.Hidden;
+            button4.Visibility = Visibility.Hidden;
+            button5.Visibility = Visibility.Hidden;
+            button6.Visibility = Visibility.Hidden;
+            textBox.Visibility = Visibility.Hidden;
         }
 
 
@@ -185,6 +216,22 @@ namespace TestWeb
             return 0;
         }
 
+        public void drawNews()
+        {
+            homePage.Children.Clear();
+            
+
+            for(int i = 0; i < newsClassList.Count; i++)
+            {
+                nHP = new newsHomePage(this, dbConn);
+                nHP.newsName.Content = newsClassList[i].getName();
+                nHP.newsText.Content = newsClassList[i].getText();
+                nHP.newsDateLabel.Content = newsClassList[i].getDate();
+                nHP.Tag = i;
+                newsList.Add(nHP);
+                homePage.Children.Add(nHP);
+            }
+        }
 
 
 
@@ -205,10 +252,20 @@ namespace TestWeb
         {
             homePage.Children.Clear();
             hideOrUnhideAll(1);
-            for(int i = 0; i < newsList.Count; i++)
+
+            newsClassList.Clear();
+            List<string> ID_News = dbConn.ReadData("select ID from News");
+            List<string> Title_News = dbConn.ReadData("select Title from News");
+            List<string> Text_News = dbConn.ReadData("select Text from News");
+            List<string> Date_News = dbConn.ReadData("select Date from News");
+
+            for (int i = 0; i < ID_News.Count; i++)
             {
-                homePage.Children.Add(newsList[i]);
+                newsClass nC = new newsClass(Convert.ToInt32(ID_News[i]), Title_News[i], Text_News[i], Date_News[i]);
+                newsClassList.Add(nC);
             }
+
+            drawNews();
 
             //scrollViewer.Visibility = Visibility.Visible;
         }
@@ -223,7 +280,7 @@ namespace TestWeb
 
         private void testButton_Click(object sender, RoutedEventArgs e) ////////////////////////////////////////////////////////////////test
         {
-
+            hideUnhideAdminButton(0);
         }
 
         private void proteinButton_Click(object sender, RoutedEventArgs e)
@@ -279,6 +336,23 @@ namespace TestWeb
                 {
                     stackPanelList[i].Visibility = Visibility.Visible;
                 }
+
+                button.Visibility = Visibility.Visible;
+                button1.Visibility = Visibility.Visible;
+                button2.Visibility = Visibility.Visible;
+                button3.Visibility = Visibility.Visible;
+                button4.Visibility = Visibility.Visible;
+                button5.Visibility = Visibility.Visible;
+                button6.Visibility = Visibility.Visible;
+                textBox.Visibility = Visibility.Visible;
+                labelSort1.Visibility = Visibility.Visible;
+                labelSort2.Visibility = Visibility.Visible;
+                labelSort3.Visibility = Visibility.Visible;
+                labelSort4.Visibility = Visibility.Visible;
+                labelSort5.Visibility = Visibility.Visible;
+
+                textBox.Text = "";
+
                 currentPageLabel.Visibility = Visibility.Visible;
                 label.Visibility = Visibility.Visible;
                 allPageLabel.Visibility = Visibility.Visible;
@@ -294,6 +368,21 @@ namespace TestWeb
                 {
                     stackPanelList[i].Visibility = Visibility.Hidden;
                 }
+                button.Visibility = Visibility.Hidden;
+                button1.Visibility = Visibility.Hidden;
+                button2.Visibility = Visibility.Hidden;
+                button3.Visibility = Visibility.Hidden;
+                button4.Visibility = Visibility.Hidden;
+                button5.Visibility = Visibility.Hidden;
+                button6.Visibility = Visibility.Hidden;
+                textBox.Visibility = Visibility.Hidden;
+                labelSort1.Visibility = Visibility.Hidden;
+                labelSort2.Visibility = Visibility.Hidden;
+                labelSort3.Visibility = Visibility.Hidden;
+                labelSort4.Visibility = Visibility.Hidden;
+                labelSort5.Visibility = Visibility.Hidden;
+
+
                 currentPageLabel.Visibility = Visibility.Hidden;
                 label.Visibility = Visibility.Hidden;
                 allPageLabel.Visibility = Visibility.Hidden;
@@ -327,6 +416,26 @@ namespace TestWeb
                 }
             }
 
+        }
+
+        public void hideUnhideAdminButton(int sk)
+        {
+            if (sk == 0)
+            {
+                for (int i = 0; i < newsList.Count; i++)
+                {
+                    newsList[i].editButton.Visibility = Visibility.Visible;
+                    newsList[i].deleteButton.Visibility = Visibility.Visible;
+                }
+            }
+            else if (sk == 1)
+            {
+                for (int i = 0; i < newsList.Count; i++)
+                {
+                    newsList[i].editButton.Visibility = Visibility.Hidden;
+                    newsList[i].deleteButton.Visibility = Visibility.Hidden;
+                }
+            }
         }
         //////////////////////////////////////////////////////////////////////////////////////////functions
 
@@ -400,25 +509,12 @@ namespace TestWeb
         {
             return Convert.ToInt32(allPageLabel.Content);
         }
-        //////////////////////////////////////////////////////////////////////////////////////////News info functions
-        public void addNews(string name, string text, string date)
-        {
-            nHP = new newsHomePage();
-            nHP.addNew(name,text,date);
-            newsList.Add(nHP);
-        }
 
-        public void addNews(string name, string text)
-        {
-            nHP = new newsHomePage();
-            nHP.addNew(name, text);
-            newsList.Add(nHP);
-        }
         //////////////////////////////////////////////////////////////////////////////////////////Button < >
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
         {
             int nm;
-            if(currentPageLabel.Content != "1")
+            if (currentPageLabel.Content != "1")
             {
                 nm = Convert.ToInt32(allPageLabel.Content);
                 nm = nm - 1;
@@ -436,9 +532,20 @@ namespace TestWeb
                 nm = Convert.ToInt32(currentPageLabel.Content);
                 nm = nm + 1;
                 currentPageLabel.Content = nm;
-                if(searched == true) changePage(searchProductList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
+                if (searched == true) changePage(searchProductList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
                 else changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
             }
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////
+        private void addNewsButton_Click(object sender, RoutedEventArgs e)
+        {
+            homePage.Children.Clear();
+            hideOrUnhideAll(1);
+
+            usrCtrl_addNews aN = new usrCtrl_addNews(this, dbConn);
+            aN.addEditButton.Content = "Add";
+
+            homePage.Children.Add(aN);
         }
 
         private void Sort(int type)
@@ -533,8 +640,6 @@ namespace TestWeb
                         break;
                     }
         }
-        //////////////////////////////////////////////////////////////////////////////////////////
-
 
     }
 }
