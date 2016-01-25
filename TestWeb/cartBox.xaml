@@ -4,10 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestWeb"
-             mc:Ignorable="d" d:DesignWidth="300" Width="201" Height="73.5">
+             mc:Ignorable="d" Width="203.933" Height="73.5">
     <Grid>
-        <Label x:Name="label1" Content="Items count in cart:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="cartInfoButton" Content="..." HorizontalAlignment="Left" Margin="105,41,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="cartInfoNumber" Content="0" HorizontalAlignment="Left" Margin="126,10,0,0" VerticalAlignment="Top" Width="54"/>
+        <Label x:Name="label1" Content="Items in cart:" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" Width="98" FontSize="13.333"/>
+        <Button x:Name="cartInfoButton" Content="Order information" HorizontalAlignment="Left" Margin="78,41,0,0" VerticalAlignment="Top" Width="112" Click="cartInfoButton_Click" FontFamily="Lucida Bright" Height="23"/>
+        <Label x:Name="cartInfoNumber" Content="0" HorizontalAlignment="Left" Margin="124,10,0,0" VerticalAlignment="Top" Width="54" FontFamily="Lucida Bright" FontWeight="Bold" FontSize="13.333"/>
     </Grid>
 </UserControl>

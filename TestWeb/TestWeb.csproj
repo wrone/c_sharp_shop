@@ -64,27 +64,69 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Address.cs" />
     <Compile Include="cartBox.xaml.cs">
       <DependentUpon>cartBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="contactInfo.xaml.cs">
+      <DependentUpon>contactInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="itemInformation.xaml.cs">
+      <DependentUpon>itemInformation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="loginHeaderBox.xaml.cs">
       <DependentUpon>loginHeaderBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="logoutBox.xaml.cs">
       <DependentUpon>logoutBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="newsClass.cs" />
+    <Compile Include="newsHomePage.xaml.cs">
+      <DependentUpon>newsHomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs" />
     <Compile Include="productAdd.xaml.cs">
       <DependentUpon>productAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProductClass.cs" />
+    <Compile Include="ProductRegister.xaml.cs">
+      <DependentUpon>ProductRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shipment.cs" />
     <Compile Include="userAdd.xaml.cs">
       <DependentUpon>userAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="userProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="usrCtrl_addNews.xaml.cs">
+      <DependentUpon>usrCtrl_addNews.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="usrCtrl_Address.xaml.cs" />
+    <Compile Include="usrCtrl_CartInfo.xaml.cs">
+      <DependentUpon>usrCtrl_CartInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="usrCtrl_ItemInCart.xaml.cs">
+      <DependentUpon>usrCtrl_ItemInCart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="usrCtrl_Payment.xaml.cs" />
+    <Compile Include="usrCtrl_Shipping_type.xaml.cs" />
+    <Compile Include="wndw_OrderHistory.xaml.cs" />
+    <Compile Include="wndw_Product_Buy.xaml.cs" />
     <Page Include="cartBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="contactInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="itemFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="itemInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,11 +154,55 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="newsHomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="productAdd.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ProductRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="userAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="usrCtrl_addNews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="usrCtrl_Address.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="usrCtrl_CartInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="usrCtrl_ItemInCart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="usrCtrl_Payment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="usrCtrl_Shipping_type.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="wndw_OrderHistory.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="wndw_Product_Buy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -157,6 +243,35 @@
   <ItemGroup>
     <Analyzer Include="bin\Debug\MySql.Data.dll" />
     <Analyzer Include="bin\Debug\MySql.Web.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BannerHome-MuscleCore-UK.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\332876.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Myprotein.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wallpaper-713522.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Arnold-Schwarzenegger-Bodybuilding-Arnold-Schwarzenegger-Workout-Gym-6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\protein-shake-bottle-container_318-47898.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\10658641-1399395144-390489.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MyproteinProducts_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MyproteinProducts_0.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

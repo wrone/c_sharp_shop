@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:TestWeb"
              mc:Ignorable="d" Width="177.333" Height="138.667">
     <Grid>
-        <Button x:Name="loginButton" Content="Log in" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="75" Click="loginButton_Click"/>
-        <TextBox x:Name="loginIn" HorizontalAlignment="Left" Height="23" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="passwordIn" HorizontalAlignment="Left" Height="23" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="signInButton" Content="Sign In" HorizontalAlignment="Left" Margin="90,111,0,0" VerticalAlignment="Top" Width="75" Click="signInButton_Click"/>
-        <Label x:Name="label1" Content="Login:" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="loginButton" Content="Log in" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="75" Click="loginButton_Click" FontFamily="Lucida Bright" Height="20"/>
+        <TextBox x:Name="loginIn" HorizontalAlignment="Left" Height="23" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="" FontFamily="Lucida Bright" FontSize="13.333"/>
+        <PasswordBox x:Name="passwordIn" HorizontalAlignment="Left" Height="23" Margin="10,83,0,0" VerticalAlignment="Top" Width="120" Password=""/>
+        <Button x:Name="signInButton" Content="New Account" HorizontalAlignment="Left" Margin="90,111,0,0" VerticalAlignment="Top" Width="82" Click="signInButton_Click" FontFamily="Lucida Bright" Height="20"/>
+        <Label x:Name="label1" Content="Login:" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright" FontSize="13.333"/>
     </Grid>
 </UserControl>

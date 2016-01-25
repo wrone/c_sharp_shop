@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestWeb"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Width="177" Height="139">
+             d:DesignHeight="300" Width="185.933" Height="139">
     <Grid>
-        <Label x:Name="userNameTextBox" Content="" HorizontalAlignment="Left" Margin="82,46,0,0" VerticalAlignment="Top" Width="85"/>
-        <Button x:Name="ProfileButton" Content="Profile info" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="LogOutButton" Content="Log out" HorizontalAlignment="Left" Margin="53,109,0,0" VerticalAlignment="Top" Width="75" Click="LogOutButton_Click"/>
-        <Label x:Name="label" Content="Nickname:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="67"/>
-        <Button x:Name="testButton" Content="" HorizontalAlignment="Left" Margin="154,109,0,0" VerticalAlignment="Top" Width="13" Click="testButton_Click"/>
+        <Label x:Name="userNameTextBox" Content="" HorizontalAlignment="Left" Margin="82,31,0,0" VerticalAlignment="Top" Width="85" FontFamily="Lucida Bright" FontSize="13.333" FontWeight="Bold"/>
+        <Button x:Name="ProfileButton" Content="Profile info" HorizontalAlignment="Left" Margin="15,57,0,0" VerticalAlignment="Top" Width="86" Click="ProfileButton_Click" FontFamily="Lucida Bright" Height="20"/>
+        <Button x:Name="LogOutButton" Content="Log out" HorizontalAlignment="Left" Margin="101,106,0,0" VerticalAlignment="Top" Width="75" Click="LogOutButton_Click" FontFamily="Lucida Bright" Height="19"/>
+        <Label x:Name="label" Content="Nickname:" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="80" FontFamily="Lucida Bright" FontSize="13.333"/>
+        <Button x:Name="btnOrderHistory" Content="Order history" HorizontalAlignment="Left" Margin="15,82,0,0" VerticalAlignment="Top" Width="86" Click="btnOrderHistory_Click" Height="19" FontFamily="Lucida Bright"/>
     </Grid>
 </UserControl>

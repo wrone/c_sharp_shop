@@ -4,11 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestWeb"
-             mc:Ignorable="d" Height="177" Width="144.334">
+             mc:Ignorable="d" Height="177" Width="144.334" Foreground="{x:Null}">
     <Grid Background="#FF919191" Width="139" HorizontalAlignment="Left" Margin="3,3,0,3">
-        <Button x:Name="button" Content="Add to cart" HorizontalAlignment="Left" Margin="6,147,0,0" VerticalAlignment="Top" Width="59" Height="20" Background="#FF999999" FontSize="10.667" BorderBrush="Black"/>
-        <Label x:Name="priceLabel" Content="0.00" HorizontalAlignment="Left" Margin="83,147,0,0" VerticalAlignment="Top" Height="20" Width="39" FontSize="9.333" Background="#FFFBEAEA"/>
-        <Label x:Name="nameLabel" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="139"/>
-        <Label x:Name="textLabel" Content="Text" HorizontalAlignment="Center" VerticalAlignment="Top" Height="122" Width="139" Margin="0,25,0,0" FontSize="9.333"/>
+        <Button x:Name="button" Content="Add to cart" HorizontalAlignment="Left" Margin="6,147,0,0" VerticalAlignment="Top" Width="54" Height="20" Background="#FF999999" FontSize="8" BorderBrush="Black" Click="button_Click" FontFamily="Lucida Bright"/>
+        <Label x:Name="priceLabel" Content="0.00" HorizontalAlignment="Left" Margin="68,147,0,0" VerticalAlignment="Top" Height="20" Width="39" FontSize="9.333" Background="#FFB6B6B6" FontFamily="Lucida Bright"/>
+        <Label x:Name="nameLabel" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25" Width="139" FontFamily="Lucida Bright"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="113" Margin="6,25,0,0" VerticalAlignment="Top" Width="123"/>
+        <Button x:Name="informationButton" Content="?" HorizontalAlignment="Left" Margin="112,147,0,0" VerticalAlignment="Top" Width="17" Background="#FF9E9E9E" Click="informationButton_Click" FontFamily="Lucida Bright"/>
     </Grid>
 </UserControl>

@@ -4,28 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:c_sharp_kursa"
-             mc:Ignorable="d" Height="345" Width="310">
+             mc:Ignorable="d" Height="365" Width="310">
     <Grid>
-        <Label x:Name="label_Copy" Content="Product add:" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" Width="122"/>
-        <Label x:Name="label" Content="Name*:" HorizontalAlignment="Left" Margin="54,35,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="Description:" HorizontalAlignment="Left" Margin="30,61,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy2" Content="Release &#xD;&#xA;   date*:" HorizontalAlignment="Left" Margin="50,141,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy3" Content="End &#xD;&#xA;date*:" HorizontalAlignment="Left" Margin="183,141,0,0" VerticalAlignment="Top" Width="87"/>
-        <Label x:Name="label_Copy4" Content="Quantity*:" HorizontalAlignment="Left" Margin="40,235,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy5" Content="Price*:" HorizontalAlignment="Left" Margin="60,183,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy6" Content="Category*:" HorizontalAlignment="Left" Margin="37,209,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy7" Content="Manufacturer*:" HorizontalAlignment="Left" Margin="14,261,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy8" Content="Picture:" HorizontalAlignment="Left" Margin="54,287,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="productName" HorizontalAlignment="Left" Height="23" Margin="108,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="productDescription" HorizontalAlignment="Left" Height="77" Margin="108,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox x:Name="productReleaseDate" HorizontalAlignment="Left" Height="23" Margin="103,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="productEndDate" HorizontalAlignment="Left" Height="23" Margin="225,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="productPrice" HorizontalAlignment="Left" Height="23" Margin="103,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="productQuantity" HorizontalAlignment="Left" Height="23" Margin="103,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="productManufacturer" HorizontalAlignment="Left" Height="23" Margin="103,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="productCategoryComboBox" HorizontalAlignment="Left" Margin="103,209,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="productPictureSelectButton" Content="Select" HorizontalAlignment="Left" Margin="103,290,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="productAddButton" Content="Add" HorizontalAlignment="Left" Margin="225,315,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label x:Name="label_Copy" Content="Product add:" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Top" Width="122" FontFamily="Lucida Bright"/>
+        <Label x:Name="label" Content="Name*:" HorizontalAlignment="Left" Margin="51,37,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <Label x:Name="label_Copy1" Content="Description:" HorizontalAlignment="Left" Margin="24,61,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <Label x:Name="label_Copy2" Content="Release date*:" HorizontalAlignment="Left" Margin="13,145,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <Label x:Name="label_Copy3" Content="End date*:" HorizontalAlignment="Left" Margin="35,176,0,0" VerticalAlignment="Top" Width="71" Height="26" FontFamily="Lucida Bright"/>
+        <Label x:Name="label_Copy4" Content="Quantity*:" HorizontalAlignment="Left" Margin="37,256,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <Label x:Name="label_Copy5" Content="Price*:" HorizontalAlignment="Left" Margin="58,204,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <Label x:Name="label_Copy6" Content="Category*:" HorizontalAlignment="Left" Margin="35,230,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <Label x:Name="label_Copy7" Content="Manufacturer*:" HorizontalAlignment="Left" Margin="10,282,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <Label x:Name="label_Copy8" Content="Picture:" HorizontalAlignment="Left" Margin="53,308,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="txtBoxName" HorizontalAlignment="Left" Height="23" Margin="108,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="txtBoxDesc" HorizontalAlignment="Left" Height="77" Margin="108,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="txtBoxPrice" HorizontalAlignment="Left" Height="23" Margin="109,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txtBoxPrice_PreviewTextInput" FontFamily="Lucida Bright" MaxLength="5" MaxLines="1"/>
+        <TextBox x:Name="txtBoxQuantity" HorizontalAlignment="Left" Height="23" Margin="109,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="txtBoxQuantity_PreviewTextInput" FontFamily="Lucida Bright" MaxLines="1" MaxLength="4"/>
+        <TextBox x:Name="txtBoxManufacturer" HorizontalAlignment="Left" Height="23" Margin="109,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <ComboBox x:Name="cmbBoxCategory" HorizontalAlignment="Left" Margin="109,230,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <Button x:Name="openDialog" Content="Select" HorizontalAlignment="Left" Margin="109,311,0,0" VerticalAlignment="Top" Width="120" Click="productPictureSelectButton_Click" FontFamily="Lucida Bright"/>
+        <Button x:Name="productAddButton" Content="Add" HorizontalAlignment="Left" Margin="231,342,0,0" VerticalAlignment="Top" Width="78" Click="productAddButton_Click" FontFamily="Lucida Bright"/>
+        <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Margin="108,146,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" />
+        <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Margin="109,176,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" />
 
     </Grid>
 </UserControl>

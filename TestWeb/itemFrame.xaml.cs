@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,63 @@ namespace TestWeb
     /// </summary>
     public partial class itemFrame : UserControl
     {
-        public itemFrame()
+        MainWindow mw;
+        itemInformation iI;
+        int index;
+
+        public itemFrame(MainWindow mw, itemInformation iI)
         {
+            this.mw = mw;
+            this.iI = iI;
             InitializeComponent();
+        }
+
+        public void setIndex(int index)
+        {
+            this.index = index;
+        }
+
+        public int getIndex()
+        {
+            return index;
+        }
+
+        public void SetImage(BitmapImage img)
+        {
+            image.Source = img;
+        }
+
+        private void informationButton_Click(object sender, RoutedEventArgs e)
+        {
+            mw.homePage.Children.Clear();
+            mw.hideOrUnhideAll(1);
+            mw.homePage.Children.Add(iI);
+            iI.changeInfo(index);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Items item = new Items(index, 1);
+            int test = 0;
+            for (int i = 0; i < mw.cartBoxNew.itemList.Count; i++)
+            {
+                if (index == mw.cartBoxNew.itemList[i].getIndex())
+                {
+                    test = 1;
+                }
+            }
+            if (test == 0)
+            {
+                mw.cartBoxNew.itemList.Add(item);
+                mw.cartBoxNew.productList = mw.productList;
+                mw.cartBoxNew.imageList = mw.imageList;
+            }
+            else
+                MessageBox.Show("Product is already in the cart", "Add product to cart", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
+            mw.cartBoxNew.cartInfoNumber.Content = Convert.ToString(mw.cartBoxNew.itemList.Count);
+            mw.cartBoxNew.PrepareCart();
+            mw.cartBoxNew.OrderToCache(mw.cartBoxNew.name);
         }
     }
 }

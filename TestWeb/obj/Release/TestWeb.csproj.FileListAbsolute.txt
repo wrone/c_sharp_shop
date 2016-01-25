@@ -1,0 +1,164 @@
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Release\TestWeb.exe.config
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Release\TestWeb.exe
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Release\TestWeb.pdb
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Release\MySql.Data.dll
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\bin\Release\MySql.Web.dll
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\cartBox.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\contactInfo.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\itemFrame.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\itemInformation.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\loginHeaderBox.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\logoutBox.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\MainWindow.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\newsHomePage.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\productAdd.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\ProductRegister.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\userAdd.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\UserProfile.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_addNews.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Address.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_CartInfo.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_ItemInCart.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Payment.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Shipping_type.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\wndw_OrderHistory.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\wndw_Product_Buy.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\App.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb_MarkupCompile.cache
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb_MarkupCompile.lref
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\App.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\cartBox.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\contactInfo.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\itemFrame.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\itemInformation.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\loginHeaderBox.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\logoutBox.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\MainWindow.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\newsHomePage.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\productAdd.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\ProductRegister.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\userAdd.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\UserProfile.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_addNews.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Address.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_CartInfo.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_ItemInCart.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Payment.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Shipping_type.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\wndw_OrderHistory.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\wndw_Product_Buy.baml
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.g.resources
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.Properties.Resources.resources
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.exe
+C:\Users\admin\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.pdb
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\bin\Release\TestWeb.exe
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\bin\Release\TestWeb.exe.config
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\bin\Release\MySql.Data.dll
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\bin\Release\MySql.Web.dll
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\cartBox.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\contactInfo.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\itemFrame.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\itemInformation.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\loginHeaderBox.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\logoutBox.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\MainWindow.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\newsHomePage.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\productAdd.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\ProductRegister.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\userAdd.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\UserProfile.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_addNews.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_Address.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_CartInfo.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_ItemInCart.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_Payment.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_Shipping_type.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\wndw_OrderHistory.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\wndw_Product_Buy.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\App.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\TestWeb_MarkupCompile.cache
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\TestWeb_MarkupCompile.lref
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\App.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\cartBox.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\contactInfo.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\itemFrame.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\itemInformation.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\loginHeaderBox.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\logoutBox.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\MainWindow.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\newsHomePage.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\productAdd.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\ProductRegister.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\userAdd.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\UserProfile.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_addNews.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_Address.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_CartInfo.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_ItemInCart.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_Payment.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\usrCtrl_Shipping_type.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\wndw_OrderHistory.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\wndw_Product_Buy.baml
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\TestWeb.g.resources
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\TestWeb.Properties.Resources.resources
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\TestWeb.csproj.GenerateResource.Cache
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\TestWeb.exe
+C:\Users\Alexey\Documents\Visual Studio 2015\Projects\tmp\TestWeb\obj\Release\TestWeb.pdb
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Release\TestWeb.exe.config
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.exe
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.pdb
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Release\TestWeb.exe
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Release\TestWeb.pdb
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Release\MySql.Data.dll
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\bin\Release\MySql.Web.dll
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\cartBox.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\contactInfo.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\itemFrame.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\itemInformation.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\loginHeaderBox.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\logoutBox.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\MainWindow.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\newsHomePage.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\productAdd.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\ProductRegister.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\userAdd.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\UserProfile.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_addNews.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Address.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_CartInfo.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_ItemInCart.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Payment.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Shipping_type.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\wndw_OrderHistory.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\wndw_Product_Buy.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\App.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb_MarkupCompile.cache
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb_MarkupCompile.lref
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\App.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\cartBox.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\contactInfo.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\itemFrame.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\itemInformation.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\loginHeaderBox.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\logoutBox.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\MainWindow.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\newsHomePage.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\productAdd.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\ProductRegister.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\userAdd.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\UserProfile.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_addNews.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Address.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_CartInfo.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_ItemInCart.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Payment.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\usrCtrl_Shipping_type.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\wndw_OrderHistory.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\wndw_Product_Buy.baml
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.g.resources
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.Properties.Resources.resources
+C:\Users\wrofex\Desktop\c_sharp_shop\TestWeb\obj\Release\TestWeb.csproj.GenerateResource.Cache

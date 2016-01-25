@@ -4,26 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:c_sharp_kursa"
-             mc:Ignorable="d" d:DesignWidth="300" Height="315.184">
+             mc:Ignorable="d" Height="316.784" Width="297.6">
+    <UserControl.Background>
+        <ImageBrush ImageSource="Resources/Arnold-Schwarzenegger-Bodybuilding-Arnold-Schwarzenegger-Workout-Gym-6.jpg"/>
+    </UserControl.Background>
     <Grid>
-        <Label x:Name="label" Content="Name*:" HorizontalAlignment="Left" Margin="59,28,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy" Content="Registration:" HorizontalAlignment="Left" Margin="82,2,0,0" VerticalAlignment="Top" Width="122"/>
-        <Label x:Name="label_Copy1" Content="Lastname:" HorizontalAlignment="Left" Margin="45,184,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy2" Content="Login*:" HorizontalAlignment="Left" Margin="61,55,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy3" Content="Password*:" HorizontalAlignment="Left" Margin="40,107,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy4" Content="Repeat password*:" HorizontalAlignment="Left" Margin="0,133,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy5" Content="E-mail*:" HorizontalAlignment="Left" Margin="57,81,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy6" Content="Phone:" HorizontalAlignment="Left" Margin="62,210,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy7" Content="Role:" HorizontalAlignment="Left" Margin="72,236,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="userName" HorizontalAlignment="Left" Height="23" Margin="118,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="userLogin" HorizontalAlignment="Left" Height="23" Margin="118,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="userEmail" HorizontalAlignment="Left" Height="23" Margin="118,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="userPassword1" HorizontalAlignment="Left" Height="23" Margin="118,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="userPassword2" HorizontalAlignment="Left" Height="23" Margin="118,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="userLastname" HorizontalAlignment="Left" Height="23" Margin="118,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="userPhone" HorizontalAlignment="Left" Height="23" Margin="118,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="userRole" HorizontalAlignment="Left" Height="23" Margin="118,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="userRegisterButton" Content="Register" HorizontalAlignment="Left" Margin="234,285,0,0" VerticalAlignment="Top" Width="56" Height="22"/>
-
+        <Label x:Name="label" Content="Name*:" HorizontalAlignment="Left" Margin="72,12,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" FontWeight="Bold"/>
+        <Label x:Name="label_Copy1" Content="Lastname:" HorizontalAlignment="Left" Margin="54,162,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" FontWeight="Bold"/>
+        <Label x:Name="label_Copy2" Content="Login*:" HorizontalAlignment="Left" Margin="74,39,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" FontWeight="Bold"/>
+        <Label x:Name="label_Copy3" Content="Password*:" HorizontalAlignment="Left" Margin="48,91,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" FontWeight="Bold"/>
+        <Label x:Name="label_Copy4" Content="Repeat password*:" HorizontalAlignment="Left" Margin="3,118,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" FontWeight="Bold"/>
+        <Label x:Name="label_Copy5" Content="E-mail*:" HorizontalAlignment="Left" Margin="70,66,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" FontWeight="Bold"/>
+        <Label x:Name="label_Copy6" Content="Phone:" HorizontalAlignment="Left" Margin="73,185,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright" FontWeight="Bold"/>
+        <TextBox x:Name="userName" HorizontalAlignment="Left" Height="23" Margin="130,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="userLogin" HorizontalAlignment="Left" Height="23" Margin="130,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="userEmail" HorizontalAlignment="Left" Height="23" Margin="130,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <PasswordBox x:Name="userPassword1" HorizontalAlignment="Left" Height="23" Margin="130,92,0,0"  VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <PasswordBox x:Name="userPassword2" HorizontalAlignment="Left" Height="23" Margin="130,118,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="userLastname" HorizontalAlignment="Left" Height="23" Margin="129,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="userPhone" HorizontalAlignment="Left" Height="23" Margin="129,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Lucida Bright"/>
+        <Button x:Name="userRegisterButton" Content="Register" HorizontalAlignment="Left" Margin="129,214,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="userRegisterButton_Click" FontFamily="Lucida Bright"/>
+        <Button x:Name="cancelButton" Content="Cancel" Margin="129,241,48.6,49" Width="120" Height="22" Click="cancelButton_Click" FontFamily="Lucida Bright"></Button>
     </Grid>
 </UserControl>
