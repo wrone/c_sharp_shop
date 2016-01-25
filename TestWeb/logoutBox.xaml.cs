@@ -45,8 +45,6 @@ namespace TestWeb
             mw.loginTmp = 0;
             mw.hideUnhideAddButton(1);
 
-            //lHB.cB.itemList.Clear();
-
             mw.addNewsButton.Visibility = Visibility.Hidden;
             mw.testButton2.Visibility = Visibility.Hidden;
             mw.testButton3.Visibility = Visibility.Hidden;
@@ -57,9 +55,7 @@ namespace TestWeb
 
         private void testButton_Click(object sender, RoutedEventArgs e)
         {
-            //mw.stackPanelMain.Children.Clear();
-            //productAdd pA = new productAdd();
-            //mw.stackPanelMain.Children.Add(pA);
+
         }
 
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
@@ -69,12 +65,19 @@ namespace TestWeb
                 Title = "Your profile",
                 Content = new userProfile(mw, dbConn, login),
                 Width = 300,
-                Height = 300,
+                Height = 246.276,
                 ResizeMode = ResizeMode.NoResize,
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
 
             };
             profileWindow.ShowDialog();
+        }
+
+        private void btnOrderHistory_Click(object sender, RoutedEventArgs e)
+        {
+            wndw_OrderHistory oH = new wndw_OrderHistory(dbConn, login);
+            oH.ShowDialog();
+
         }
     }
 }

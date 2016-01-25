@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Width="804" Height="414">
     <Grid>
-        <Label x:Name="label" Content="News name:" HorizontalAlignment="Left" Margin="79,77,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="name" HorizontalAlignment="Left" Height="23" Margin="158,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323"/>
-        <Label x:Name="label1" Content="News text:" HorizontalAlignment="Left" Margin="88,108,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="text" HorizontalAlignment="Left" Height="160" Margin="158,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323"/>
+        <Label x:Name="label" Content="News name:" HorizontalAlignment="Left" Margin="79,77,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Height="23" Margin="158,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323" FontFamily="Lucida Bright"/>
+        <Label x:Name="label1" Content="News text:" HorizontalAlignment="Left" Margin="88,108,0,0" VerticalAlignment="Top" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="text" HorizontalAlignment="Left" Height="160" Margin="158,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323" FontFamily="Lucida Bright"/>
         <Button x:Name="addEditButton" Content="Add" HorizontalAlignment="Left" Margin="406,310,0,0" VerticalAlignment="Top" Width="75" Click="addEditButton_Click"/>
     </Grid>
 </UserControl>

@@ -78,13 +78,10 @@ namespace TestWeb
                 Title = "New account",
                 Content = new userAdd(mw, dbConn),
                 Width = 300,
-                Height = 300,
+                Height = 320,
                 ResizeMode = ResizeMode.NoResize
             };
             registerWindow.ShowDialog();
-            //mw.stackPanelMain.Children.Clear();
-            //userAdd uA = new userAdd();
-            //mw.stackPanelMain.Children.Add(uA);
 
         }
 

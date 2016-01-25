@@ -63,9 +63,89 @@ namespace TestWeb.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10658641_1399395144_390489 {
+            get {
+                object obj = ResourceManager.GetObject("_10658641_1399395144_390489", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _332876 {
+            get {
+                object obj = ResourceManager.GetObject("_332876", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Arnold_Schwarzenegger_Bodybuilding_Arnold_Schwarzenegger_Workout_Gym_6 {
+            get {
+                object obj = ResourceManager.GetObject("Arnold_Schwarzenegger_Bodybuilding_Arnold_Schwarzenegger_Workout_Gym_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BannerHome_MuscleCore_UK {
+            get {
+                object obj = ResourceManager.GetObject("BannerHome_MuscleCore_UK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Myprotein {
+            get {
+                object obj = ResourceManager.GetObject("Myprotein", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MyproteinProducts_0 {
+            get {
+                object obj = ResourceManager.GetObject("MyproteinProducts_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MyproteinProducts_01 {
+            get {
+                object obj = ResourceManager.GetObject("MyproteinProducts_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap protein_shake_bottle_container_318_47898 {
+            get {
+                object obj = ResourceManager.GetObject("protein_shake_bottle_container_318_47898", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

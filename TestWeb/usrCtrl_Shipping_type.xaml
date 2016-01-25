@@ -7,11 +7,11 @@
              mc:Ignorable="d" Height="149.737" Width="256.401">
     <Grid>
         <Canvas HorizontalAlignment="Left" Height="144" VerticalAlignment="Top" Width="253">
-            <Label x:Name="label" Content="Shipping method" Canvas.Left="10" Canvas.Top="53"/>
-            <Label x:Name="label1" Content="Shipping price" Canvas.Left="26" Canvas.Top="84"/>
-            <ComboBox x:Name="comboBox" Canvas.Left="118" Canvas.Top="53" Width="120" SelectionChanged="comboBox_SelectionChanged"/>
-            <TextBox x:Name="textBox" Height="23" Canvas.Left="118" TextWrapping="Wrap" Canvas.Top="88" Width="120" IsEnabled="False"/>
-            <Label x:Name="label2" Content="Choose sipping method:" Canvas.Left="10" Canvas.Top="15"/>
+            <Label x:Name="label" Content="Shipping method" Canvas.Left="10" Canvas.Top="53" FontFamily="Lucida Bright"/>
+            <Label x:Name="label1" Content="Shipping price" Canvas.Left="26" Canvas.Top="84" FontFamily="Lucida Bright"/>
+            <ComboBox x:Name="comboBox" Canvas.Left="118" Canvas.Top="53" Width="120" SelectionChanged="comboBox_SelectionChanged" FontFamily="Lucida Bright"/>
+            <TextBox x:Name="textBox" Height="23" Canvas.Left="118" TextWrapping="Wrap" Canvas.Top="88" Width="120" IsEnabled="False" FontFamily="Lucida Bright"/>
+            <Label x:Name="label2" Content="Choose sipping method:" Canvas.Left="10" Canvas.Top="15" FontFamily="Lucida Bright"/>
         </Canvas>
 
     </Grid>

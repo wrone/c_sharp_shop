@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Width="800" Height="405">
     <Grid Margin="10">
-        <Label x:Name="label2" Content="Current price:" HorizontalAlignment="Left" Margin="27,329,0,0" VerticalAlignment="Top" Width="96"/>
-        <TextBox x:Name="currentPriceBox" HorizontalAlignment="Left" Height="23" Margin="123,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" IsEnabled="False"/>
-        <Button x:Name="orderButton" Content="Buy" HorizontalAlignment="Left" Margin="618,324,0,0" VerticalAlignment="Top" Width="120" Height="37" Click="orderButton_Click"/>
+        <Label x:Name="label2" Content="Current price:" HorizontalAlignment="Left" Margin="27,329,0,0" VerticalAlignment="Top" Width="96" FontFamily="Lucida Bright"/>
+        <TextBox x:Name="currentPriceBox" HorizontalAlignment="Left" Height="23" Margin="123,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" IsEnabled="False" FontFamily="Lucida Bright"/>
+        <Button x:Name="orderButton" Content="Buy" HorizontalAlignment="Left" Margin="618,324,0,0" VerticalAlignment="Top" Width="120" Height="37" Click="orderButton_Click" FontFamily="Lucida Bright"/>
         <ScrollViewer x:Name="scrollViewer" HorizontalAlignment="Left" Height="311" VerticalAlignment="Top" Width="780">
             <StackPanel x:Name="stackPanel"/>
         </ScrollViewer>

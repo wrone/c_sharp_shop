@@ -74,22 +74,10 @@ namespace TestWeb
             itemListInCart = new List<usrCtrl_ItemInCart>();
             for (int i = 0; i < itemList.Count; i++)
             {
-                //item = new usrCtrl_ItemInCart(this, cartUsr);
-                //item.image.Source = imageList[itemList[i].getIndex()];
-                //item.text.Text = productList[itemList[i].getIndex()].getName();
-                //item.priceBox.Text = Convert.ToString(productList[itemList[i].getIndex()].getPrice());
-                //item.quantityLabel.Content = productList[itemList[i].getIndex()].getQuantity();
-                //item.countBox.Text = itemList[i].getCount().ToString();
-                //cartUsr.stackPanel.Children.Add(item);
-                //itemListInCart.Add(item);
-                //price += productList[itemList[i].getIndex()].getPrice() * Convert.ToInt32(item.countBox.Text);
-                //item.Tag = i;
-                //item.priceBox.Text = (productList[itemList[i].getIndex()].getPrice() * Convert.ToInt32(item.countBox.Text)).ToString();
-
                 int index = GetIndex(itemList[i].getIndex());
 
                 item = new usrCtrl_ItemInCart(this, cartUsr);
-                item.image.Source = imageList[index];
+                item.image.Source = productList[index].getImage();
                 item.text.Text = productList[index].getName();
                 item.priceBox.Text = Convert.ToString(productList[index].getPrice());
                 item.quantityLabel.Content = productList[index].getQuantity();

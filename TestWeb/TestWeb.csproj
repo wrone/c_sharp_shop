@@ -244,6 +244,35 @@
     <Analyzer Include="bin\Debug\MySql.Data.dll" />
     <Analyzer Include="bin\Debug\MySql.Web.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BannerHome-MuscleCore-UK.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\332876.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Myprotein.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wallpaper-713522.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Arnold-Schwarzenegger-Bodybuilding-Arnold-Schwarzenegger-Workout-Gym-6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\protein-shake-bottle-container_318-47898.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\10658641-1399395144-390489.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MyproteinProducts_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MyproteinProducts_0.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -60,7 +60,6 @@ namespace TestWeb
                 button1.Visibility = Visibility.Visible;
 
                 shipment = ctrlShipping.GetShipment();
-                //canvas.Children.Remove(ctrlShipping);
                 ctrlShipping.Visibility = Visibility.Hidden;
                 clickCounter = 1;
 
@@ -69,7 +68,6 @@ namespace TestWeb
             else if (clickCounter == 1 && ctrlAddress.Execute() == true)    // address 
             {
                 address = ctrlAddress.GetAddress();
-                //canvas.Children.Remove(ctrlAddress);
                 ctrlAddress.Visibility = Visibility.Hidden;
                 clickCounter = 2;
 
@@ -79,7 +77,6 @@ namespace TestWeb
             else if (clickCounter == 2 && ctrlPayment.Execute() == true)    // payment
             {
                 payment = ctrlPayment.GetPayment();
-                //canvas.Children.Remove(ctrlPayment);
                 Buy();
             }
  
@@ -105,18 +102,9 @@ namespace TestWeb
 
         private void Buy()
         {
-            //int payID = PaymentRegister("2008-11-11", "asd", "asd", "asd", "2008-11-11", "14,87");
-            //int addrID = AddressRegister("asd", "asd", "asd", "asd", "asd", "asd");
-            //// BuyProduct(int productID, int quantity, int userID, int addrID, int shipID, int payID)
-            //BuyProduct(1, 3, 1, 4, 1, 4);
-
-            //int payID = PaymentRegister(payment.Date, payment.CardNumber, payment.CardHolderName, payment.CardHolderLastname, payment.ExpDate, sum);
-            //int addrID = AddressRegister(address.Name, address.Lastname, address.Phone, address.Email, address.Addresss, address.City);
-
             bool failed = false;
             foreach (Items item in itemList)
             {
-                //BuyProduct(item.getIndex()+1, item.getCount(), GetUserID(username), addrID, shipment.ID, payID);
                 if (QuantityChecker(item.getIndex() + 1) < item.getCount())
                 {
                     failed = true;

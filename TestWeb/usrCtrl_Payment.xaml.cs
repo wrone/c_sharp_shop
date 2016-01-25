@@ -36,18 +36,6 @@ namespace TestWeb
             textBox2.MaxLength = 45;
         }
 
-        //private void button_Click(object sender, RoutedEventArgs e)
-        //{
-            //bool a = InputValidator(textBox, 12);
-            //bool b = InputValidator(textBox1, 5);
-            //bool c = InputValidator(textBox2, 5);
-
-            //if (comboBox.SelectedIndex == -1) comboBox.IsDropDownOpen = true;
-            //else if (comboBox1.SelectedIndex == -1) comboBox1.IsDropDownOpen = true;
-
-            //if (!a && !b && !c && comboBox.SelectedIndex != -1 && comboBox1.SelectedIndex != -1) ((Panel)this.Parent).Children.Remove(this);
-        //}
-
         public bool Execute()
         {
             bool a = InputValidator(textBox, 12);
@@ -57,7 +45,7 @@ namespace TestWeb
             if (comboBox.SelectedIndex == -1) comboBox.IsDropDownOpen = true;
             else if (comboBox1.SelectedIndex == -1) comboBox1.IsDropDownOpen = true;
 
-            if (!a && !b && !c && comboBox.SelectedIndex != -1 && comboBox1.SelectedIndex != -1) return true; //((Panel)this.Parent).Children.Remove(this);
+            if (!a && !b && !c && comboBox.SelectedIndex != -1 && comboBox1.SelectedIndex != -1) return true;
             else return false;
         }
 
@@ -67,7 +55,7 @@ namespace TestWeb
             string date = dateTime.ToString("yyyy-MM-dd");
 
             string month = Convert.ToInt32(comboBox.SelectedValue) < 10 ? "0" + comboBox.SelectedValue.ToString() : comboBox.SelectedValue.ToString();
-            string expDate = comboBox1.SelectedValue + "-" + month + "-01";//comboBox.SelectedValue + "/" + comboBox1.SelectedValue;
+            string expDate = comboBox1.SelectedValue + "-" + month + "-01";
             return new Payment(-1, date, textBox.Text, textBox1.Text, textBox2.Text, expDate, 777);
         }
 

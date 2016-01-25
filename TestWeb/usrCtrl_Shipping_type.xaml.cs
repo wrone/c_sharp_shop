@@ -46,12 +46,6 @@ namespace TestWeb
                 comboBox.Items.Add(s.Name);
         }
 
-        //private void button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (comboBox.SelectedIndex == -1) comboBox.IsDropDownOpen = true;
-        //    else ((Panel)this.Parent).Children.Remove(this);
-        //}
-
         public bool Execute()
         {
             if (comboBox.SelectedIndex == -1)

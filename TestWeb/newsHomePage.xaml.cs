@@ -29,6 +29,7 @@ namespace TestWeb
             this.dbConn = dbConn;
             this.mw = mw;
             InitializeComponent();
+            newsText.IsReadOnly = true;
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
@@ -40,7 +41,13 @@ namespace TestWeb
 
                 mw.startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
                 mw.testButton2.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
-                dbConn.WriteData("DELETE FROM News WHERE ID = " + (mw.newsClassList[Convert.ToInt32(this.Tag)].getId() - 1));
+
+                dbConn.WriteData("DELETE FROM News WHERE ID = " + (mw.newsClassList[Convert.ToInt32(this.Tag)].getId()));
+                Console.Write(mw.newsClassList[Convert.ToInt32(this.Tag)].getId());
+
+
+                mw.startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                mw.testButton2.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
             }
         }
 

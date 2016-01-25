@@ -36,12 +36,24 @@ namespace TestWeb
             int tmp = Convert.ToInt32(this.Tag);
             if (addEditButton.Content == "Add")
             {
-                newsClass nC = new newsClass(mw.newsClassList[mw.newsClassList.Count - 1].getId() + 1, name.Text, text.Text);
-                mw.newsClassList.Add(nC);
-                dbConn.WriteData("INSERT INTO News (ID, Title, Text, Date) VALUES (" + (mw.newsClassList[mw.newsClassList.Count - 1].getId() + 1) + ", '"+name.Text+"', '"+text.Text+"', '"+DateTime.Now+"')");
-                MessageBox.Show("Succesfuly added.", "News additing", MessageBoxButton.OK, MessageBoxImage.Information);
-                mw.startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
-                mw.testButton2.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                if (mw.newsClassList.Count >= 1)
+                {
+                    newsClass nC = new newsClass(mw.newsClassList[mw.newsClassList.Count - 1].getId() + 1, name.Text, text.Text);
+                    mw.newsClassList.Add(nC);
+                    dbConn.WriteData("INSERT INTO News (ID, Title, Text, Date) VALUES (" + (mw.newsClassList[mw.newsClassList.Count - 1].getId() + 1) + ", '" + name.Text + "', '" + text.Text + "', '" + DateTime.Now + "')");
+                    MessageBox.Show("Succesfuly added.", "News additing", MessageBoxButton.OK, MessageBoxImage.Information);
+                    mw.startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                    mw.testButton2.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                }
+                else if (mw.newsClassList.Count == 0)
+                {
+                    newsClass nC = new newsClass(1, name.Text, text.Text);
+                    mw.newsClassList.Add(nC);
+                    dbConn.WriteData("INSERT INTO News (ID, Title, Text, Date) VALUES (" + 1 + ", '" + name.Text + "', '" + text.Text + "', '" + DateTime.Now + "')");
+                    MessageBox.Show("Succesfuly added.", "News additing", MessageBoxButton.OK, MessageBoxImage.Information);
+                    mw.startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                    mw.testButton2.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+                }
 
 
             }

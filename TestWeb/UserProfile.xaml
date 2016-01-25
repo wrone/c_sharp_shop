@@ -6,19 +6,22 @@
              xmlns:local="clr-namespace:TestWeb"
              mc:Ignorable="d" Height="222.276" Width="291.504">
     <Canvas>
-        <Label Canvas.Left="37" Canvas.Top="18">Name:</Label>
-        <TextBox x:Name="userNameTB" Canvas.Left="134" Canvas.Top="23" Width="128"></TextBox>
-        <Label Canvas.Left="37" Canvas.Top="43">Lastname:</Label>
-        <TextBox x:Name="lastNameTB" Canvas.Left="134" Canvas.Top="48" Width="128"></TextBox>
-        <Label Canvas.Left="37" Canvas.Top="69">Password:</Label>
-        <PasswordBox x:Name="password1PB"  Canvas.Left="134" Canvas.Top="72" Width="128"></PasswordBox>
-        <Label Canvas.Left="37" Canvas.Top="94">Repeat pasword:</Label>
-        <PasswordBox x:Name="password2PB" Canvas.Left="134" Canvas.Top="99" Width="128"></PasswordBox>
-        <Label Canvas.Left="37" Canvas.Top="120">Email:</Label>
-        <TextBox x:Name="emailTB" Canvas.Left="134" Canvas.Top="125" Width="128"></TextBox>
-        <Label Canvas.Left="37" Canvas.Top="146">Phone:</Label>
-        <TextBox x:Name="phoneTB"  Canvas.Left="134" Canvas.Top="151" Width="128"></TextBox>
-        <Button x:Name="saveButton" Canvas.Left="134" Canvas.Top="178" Width="60" Click="saveButton_Click">Save</Button>
-        <Button x:Name="cancelButton" Canvas.Left="202" Canvas.Top="178" Width="60">Cancel</Button>
+        <Canvas.Background>
+            <ImageBrush ImageSource="Resources/Arnold-Schwarzenegger-Bodybuilding-Arnold-Schwarzenegger-Workout-Gym-6.jpg" Stretch="UniformToFill"/>
+        </Canvas.Background>
+        <Label Canvas.Left="72" Canvas.Top="19" FontFamily="Lucida Bright" FontWeight="Bold">Name:</Label>
+        <TextBox x:Name="userNameTB" Canvas.Left="134" Canvas.Top="23" Width="128" FontFamily="Lucida Bright"></TextBox>
+        <Label Canvas.Left="50" Canvas.Top="43" FontFamily="Lucida Bright" FontWeight="Bold">Lastname:</Label>
+        <TextBox x:Name="lastNameTB" Canvas.Left="134" Canvas.Top="48" Width="128" FontFamily="Lucida Bright"></TextBox>
+        <Label Canvas.Left="50" Canvas.Top="67" FontWeight="Bold" FontFamily="Lucida Bright">Password:</Label>
+        <PasswordBox x:Name="password1PB"  Canvas.Left="134" Canvas.Top="72" Width="128" FontFamily="Lucida Bright"></PasswordBox>
+        <Label Canvas.Left="10" Canvas.Top="96" FontFamily="Lucida Bright" FontWeight="Bold">Repeat pasword:</Label>
+        <PasswordBox x:Name="password2PB" Canvas.Left="134" Canvas.Top="99" Width="128" FontFamily="Lucida Bright"></PasswordBox>
+        <Label Canvas.Left="74" Canvas.Top="120" FontFamily="Lucida Bright" FontWeight="Bold">Email:</Label>
+        <TextBox x:Name="emailTB" Canvas.Left="134" Canvas.Top="125" Width="128" FontFamily="Lucida Bright"></TextBox>
+        <Label Canvas.Left="69" Canvas.Top="149" FontFamily="Lucida Bright" FontWeight="Bold">Phone:</Label>
+        <TextBox x:Name="phoneTB"  Canvas.Left="134" Canvas.Top="151" Width="128" FontFamily="Lucida Bright"></TextBox>
+        <Button x:Name="saveButton" Canvas.Left="134" Canvas.Top="178" Width="60" Click="saveButton_Click" FontFamily="Lucida Bright" Height="19">Save</Button>
+        <Button x:Name="cancelButton" Canvas.Left="202" Canvas.Top="178" Width="60" FontFamily="Lucida Bright" Height="19" Click="cancelButton_Click">Cancel</Button>
     </Canvas>
 </UserControl>

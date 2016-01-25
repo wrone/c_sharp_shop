@@ -32,18 +32,6 @@ namespace TestWeb
             textBox5.MaxLength = 45;
         }
 
-        //private void button_Click(object sender, RoutedEventArgs rea)
-        //{
-            //bool a = InputValidator(textBox, 5);
-            //bool b = InputValidator(textBox1, 5);
-            //bool c = InputValidator(textBox2, 8);
-            //bool d = InputValidator(textBox3, 8);
-            //bool e = InputValidator(textBox4, 8);
-            //bool f = InputValidator(textBox5, 5);
-
-            //if (!a && !b && !c && !d && !e && !f) ((Panel)this.Parent).Children.Remove(this);
-        //}
-
         public bool Execute()
         {
             bool a = InputValidator(textBox, 5);
@@ -53,7 +41,7 @@ namespace TestWeb
             bool e = InputValidator(textBox4, 8);
             bool f = InputValidator(textBox5, 5);
 
-            if (!a && !b && !c && d && !e && !f) return true; //((Panel)this.Parent).Children.Remove(this);
+            if (!a && !b && !c && d && !e && !f) return true;
             else return false;
         }
 

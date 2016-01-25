@@ -57,7 +57,6 @@ namespace c_sharp_kursa
 
         public List<string> ReadData(string query)
         {
-            //string text = "";
             List<string> list = new List<string>();
             cmd.CommandText = query;
             dataReader = cmd.ExecuteReader();
@@ -67,7 +66,6 @@ namespace c_sharp_kursa
             {
                 for (int i = 0; i < count; i++)
                 {
-                    //text += dataReader.GetValue(i) + " ";
                     list.Add(dataReader.GetValue(i).ToString());
                 }
             }

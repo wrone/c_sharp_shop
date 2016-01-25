@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestWeb"
         mc:Ignorable="d"
-        Title="Buy products" Height="369.465" Width="328.474">
+        Title="Buy products" Height="369.465" Width="328.474" Foreground="White" BorderBrush="White" OpacityMask="White">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/MyproteinProducts_0.jpg"/>
+    </Window.Background>
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="White"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="287" Margin="10,10,0,0" VerticalAlignment="Top" Width="293">
             <local:usrCtrl_Payment x:Name="ctrlPayment" Canvas.Top="40" Height="192" Width="276" Canvas.Left="9"/>
             <local:usrCtrl_Address x:Name="ctrlAddress" Canvas.Left="9" Canvas.Top="21" Height="266" Width="280"/>

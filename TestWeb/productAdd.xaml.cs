@@ -63,13 +63,17 @@ namespace c_sharp_kursa
             bool c = checkPrice(txtBoxPrice);
             bool d = InputValidator(txtBoxQuantity, 1);
             bool e = InputValidator(txtBoxManufacturer, 2);
+            bool f = checkDate(datePicker1, datePicker2);
 
-            if (!a && !b && c && !d && !e 
-                && cmbBoxCategory.SelectedIndex != -1 
+            if (!a && !b && c && !d && !e
+                && cmbBoxCategory.SelectedIndex != -1
                 && result == true
                 && datePicker1.SelectedDate != null
-                && datePicker2.SelectedDate != null)
-            { 
+                && datePicker2.SelectedDate != null
+                && f)
+            {
+                openDialog.Background = Brushes.White;
+
                 string releaseDate = datePicker1.SelectedDate.Value.Year + "-"
                                 + DateHalper(datePicker1.SelectedDate.Value.Month) + "-"
                                 + DateHalper(datePicker1.SelectedDate.Value.Day);
@@ -88,7 +92,7 @@ namespace c_sharp_kursa
             else if (cmbBoxCategory.SelectedIndex == -1) cmbBoxCategory.IsDropDownOpen = true;
             else if (datePicker1.SelectedDate == null) datePicker1.IsDropDownOpen = true;
             else if (datePicker2.SelectedDate == null) datePicker2.IsDropDownOpen = true;
-            else if (result != true) openDialog.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            else if (result != true) openDialog.Background = Brushes.Red;
         }
 
         public string ImageToHEX(FileStream fs)
@@ -122,8 +126,7 @@ namespace c_sharp_kursa
 
         private void txtBoxPrice_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            //if (!char.IsDigit(e.Text, e.Text.Length - 1))
-            //    e.Handled = true;
+
         }
 
         private void txtBoxQuantity_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -177,6 +180,33 @@ namespace c_sharp_kursa
             }
             tb.Background = Brushes.White;
             return true;
+        }
+
+        public bool checkDate(DatePicker dp1, DatePicker dp2)
+        {
+            int result = 6;
+
+            if (dp1.SelectedDate == null || dp2.SelectedDate == null) return false;
+            else result = DateTime.Compare(dp1.SelectedDate.Value, dp2.SelectedDate.Value);
+
+            if (result < 0)                       // pervaja menjwe vtoroj
+            {
+                dp1.Background = Brushes.White;
+                dp2.Background = Brushes.White;
+                return true;                      // vse good
+            }
+            else if (result == 0)                 // odinakovie
+            {
+                dp1.Background = Brushes.Red;
+                dp2.Background = Brushes.Red;
+                return false;
+            }
+            else                                  // pervaja pozze vtoroj
+            {
+                dp1.Background = Brushes.Red;
+                dp2.Background = Brushes.Red;
+                return false;
+            }
         }
 
     }

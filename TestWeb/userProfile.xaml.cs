@@ -159,5 +159,11 @@ namespace TestWeb
             lastNameTB.Background = Brushes.White;
             return true;
         }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window parent = Window.GetWindow(this);
+            parent.Close();
+        }
     }
 }

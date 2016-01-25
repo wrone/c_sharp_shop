@@ -48,10 +48,6 @@ namespace TestWeb
 
         string pageTitle;
         public int loginTmp = 0;
-        int currentNumber;
-
-        
-
 
         public cartBox cartBoxNew;
 
@@ -60,7 +56,6 @@ namespace TestWeb
         {
             InitializeComponent();
             dbConn = new DatabaseConnection("46.109.120.29", "3306", "shop", "csharp", "FSzWUcCcm8fAsdJe");
-            //dbConn = new DatabaseConnection("127.0.0.1", "3306", "shop", "root", "root");
 
             drawNews();
             startPageButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
@@ -124,18 +119,12 @@ namespace TestWeb
             {
                 nHP = new newsHomePage(this, dbConn);
                 nHP.newsName.Content = newsClassList[i].getName();
-                nHP.newsText.Content = newsClassList[i].getText();
+                nHP.newsText.Text = newsClassList[i].getText();
                 nHP.newsDateLabel.Content = newsClassList[i].getDate();
                 nHP.Tag = i;
                 newsList.Add(nHP);
                 homePage.Children.Add(nHP);
             }
-        }
-
-        public int GetCategoryCount(string category)
-        {
-            //Console.WriteLine(dbConn.ReadData("SELECT ID FROM Products WHERE Category = " + category));
-            return 0;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -163,8 +152,6 @@ namespace TestWeb
             }
 
             drawNews();
-
-            //scrollViewer.Visibility = Visibility.Visible;
         }
 
         private void contactButton_Click(object sender, RoutedEventArgs e)
@@ -182,7 +169,6 @@ namespace TestWeb
 
         private void proteinButton_Click(object sender, RoutedEventArgs e)
         {
-            //ReadData();
             pageTitle = "Protein";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -194,7 +180,6 @@ namespace TestWeb
 
         private void creatineButton_Click(object sender, RoutedEventArgs e)
         {
-            //ReadData();
             pageTitle = "Creatine";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -206,7 +191,6 @@ namespace TestWeb
 
         private void aminoAcidsButton_Click(object sender, RoutedEventArgs e)
         {
-            //ReadData();
             pageTitle = "Amino acids";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -218,7 +202,6 @@ namespace TestWeb
 
         private void carbohydratesButton_Click(object sender, RoutedEventArgs e)
         {
-            //ReadData();
             pageTitle = "Carbohydrates";
             hideOrUnhideAll(0);
             currentPageLabel.Content = "1";
@@ -361,7 +344,6 @@ namespace TestWeb
                     iF.priceLabel.Content = pc.getPrice();
                     iF.SetImage(pc.getImage());
                     iF.setIndex(pc.getId());
-                    Console.WriteLine(pc.getId() + "______");
                     stackPanelList[productCounter].Children.Add(iF);
                     itemFrameList.Add(iF);
                     productCounter++;
@@ -484,28 +466,24 @@ namespace TestWeb
         {
             Sort(1);
             DetermineButton(pageTitle);
-            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)    //by date desc
         {
             Sort(2);
             DetermineButton(pageTitle);
-            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)    //by price asc
         {
             Sort(3);
             DetermineButton(pageTitle);
-            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)    //by price desc
         {
             Sort(4);
             DetermineButton(pageTitle);
-            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)    //search
@@ -532,15 +510,12 @@ namespace TestWeb
         {
             PopularityHelper("SELECT * FROM mostPopularASC");
             DetermineButton(pageTitle);
-            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)    //by price desc
         {
             PopularityHelper("SELECT * FROM mostPopularDESC");
             DetermineButton(pageTitle);
-            //changePage(productList, pageTitle, Convert.ToInt32(currentPageLabel.Content) - 1);
-
         }
 
         private void PopularityHelper(string s)

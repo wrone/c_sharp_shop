@@ -8,10 +8,10 @@
              d:DesignHeight="300" d:DesignWidth="300" Width="792" Height="376">
     <Grid Margin="10">
         <StackPanel HorizontalAlignment="Left" Height="121" Margin="10,10,0,0" VerticalAlignment="Top" Width="300" Background="#FFE0E0E0">
-            <Label x:Name="label" Content="Tel."/>
-            <Label x:Name="label1" Content="     Test1: 2515125124"/>
-            <Label x:Name="label2" Content="     Test2: 2515125124"/>
-            <Label x:Name="label3" Content="     Test3: 2515125124"/>
+            <Label x:Name="label" Content="Tel." FontFamily="Lucida Bright"/>
+            <Label x:Name="label1" Content="     Test1: 2515125124" FontFamily="Lucida Bright"/>
+            <Label x:Name="label2" Content="     Test2: 2515125124" FontFamily="Lucida Bright"/>
+            <Label x:Name="label3" Content="     Test3: 2515125124" FontFamily="Lucida Bright"/>
         </StackPanel>
 
     </Grid>

@@ -42,28 +42,32 @@ namespace TestWeb
             if (countBox.Text == "" || countBox.Text == "0")
                 countBox.Text = "1";
 
-
-
-            //Nado dobavitj proverku vvoda
-            if (this.Tag != null)
+            if (this.Tag != null && IsDigit(countBox.Text))
             {
                 int tag = int.Parse(this.Tag.ToString());
 
-                price = cB.productList[cB.itemList[tag].getIndex()].getPrice() * Convert.ToInt32(countBox.Text);
+                price = cB.productList[cB.itemList[tag].getIndex()].getPrice() * int.Parse(countBox.Text);
                 priceBox.Text = price.ToString();
                 cB.RecalculateEndPrice();
 
-                cB.itemList[tag].setCount(Convert.ToInt32(countBox.Text));
-                //cB.price += price;
-                //cartUsr.currentPriceBox.Text = cB.price.ToString();
-
+                cB.itemList[tag].setCount(int.Parse(countBox.Text));
 
                 if (Convert.ToInt32(countBox.Text) > Convert.ToInt32(quantityLabel.Content))
                     countBox.Text = quantityLabel.Content.ToString();
             }
+        }
 
-
-
+        public bool IsDigit(string txt)
+        {
+            try
+            {
+                int.Parse(txt);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
         }
 
         public double getPrice()
